@@ -1,0 +1,96 @@
+<div class="viewport">
+  <nav class="nav-superior">
+    <a class="navbar-brand" href="">
+      <img class="simbolo-logo" src="assets/images/simbolo.png">
+    </a>
+    <ul>
+      <li routeLinkActive="active">
+        <a routerLink="/">Entrar </a>
+      </li>
+      <li routeLinkActive="active">
+        <a routerLink="/">
+          <img class="local" src="assets/images/local.png"> Estações
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="voltar" routerLinkActive="active">
+        
+      <a routerLink="/header"><img class="volt" src="assets/images/voltar.png">Voltar</a>
+    </div>
+    <div class="form">
+      <div class="form-facebook">
+        <button type="submit" class="botao-facebook" (click)="addUsuario($event)">
+          <img class="facebook" src="assets/images/facebook-icon.png"> Cadastre-se com Facebook </button>
+      </div>
+    </div>
+    <form class="form-horizontal">
+      <div class="form">
+        <div class="form-nome">
+          <input [(ngModel)]="nome" name="nome" type="text" class="form-control" id="inputName" placeholder="Name">
+        </div>
+      </div>
+      <div class="form">
+        <div class="form-email">
+          <input [(ngModel)]='email' name='email' type="email" class="form-control" id="inputEmail" placeholder="Email">
+
+        </div>
+      </div>
+      <div class="form">
+        <div class="form-password">
+          <input [(ngModel)]="password" name="password" type="password" class="form-control" id="inputPassword" placeholder="Password">
+        </div>
+      </div>
+      <div class="form">
+        <div class="form-cidade">
+          <select [(ngModel)]="cidade" name="cidade" class="form-control">
+            <option *ngFor="let cidade of cidades" value= {{cidade.id}}>
+              {{cidade.nome}}
+            </option>
+          </select>
+        </div>
+      </div>
+      <div class="form">
+        <div class="form-sub">
+          <button type="submit" class="submit" (click)="addUsuario($event)">Sign in</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="footer">
+    <ul>
+      <li routeLinkActive="active">
+        <a routerLink="/">HOME </a>
+      </li>
+      <li routeLinkActive="active">
+        <a routerLink="/"> CIDADE
+        </a>
+      </li>
+      <li routeLinkActive="active">
+        <a routerLink="/">SOBRE NÓS </a>
+      </li>
+      <li routeLinkActive="active">
+        <a routerLink="/"> CONTATO
+        </a>
+      </li>
+    </ul>
+    <ul>
+      <li routeLinkActive="active">
+        <a routerLink="/">
+          <img class="facebook" src="assets/images/facebook-icon.png">
+        </a>
+      </li>
+      <li routeLinkActive="active">
+        <a routerLink="/">
+          <img class="facebook" src="assets/images/twitter-icon.png">
+        </a>
+      </li>
+      <li routeLinkActive="active">
+        <a routerLink="/">
+          <img class="facebook" src="assets/images/instagram-icon.png"> </a>
+      </li>
+    </ul>
+  </div>
+</div>
