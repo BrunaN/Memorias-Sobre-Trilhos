@@ -1,19 +1,18 @@
 <div class="viewport">
   <div class="container-fluid">
     <div class="voltar" routerLinkActive="active">
-        
-      <a routerLink="/header"><img class="volt" src="assets/images/voltar.png">Voltar</a>
+      <!-- <a routerLink="/header"><img class="volt" src="assets/images/voltar.png">Voltar</a> -->
     </div>
     <div class="form">
-      <div class="form-facebook">
+      <!-- <div class="form-facebook">
         <button type="submit" class="botao-facebook" (click)="addUsuario($event)">
           <img class="facebook" src="assets/images/facebook-icon.png"> Cadastre-se com Facebook </button>
       </div>
-    </div>
+    </div> -->
     <form class="form-horizontal">
       <div class="form">
         <div class="form-nome">
-          <input [(ngModel)]="nome" name="nome" type="text" class="form-control" id="inputName" placeholder="Name">
+          <input [(ngModel)]="nome" name="nome" type="text" class="form-control" id="inputName" placeholder="Nome">
         </div>
       </div>
       <div class="form">
@@ -24,7 +23,7 @@
       </div>
       <div class="form">
         <div class="form-password">
-          <input [(ngModel)]="password" name="password" type="password" class="form-control" id="inputPassword" placeholder="Password">
+          <input [(ngModel)]="password" name="password" type="password" class="form-control" id="inputPassword" placeholder="Senha">
         </div>
       </div>
       <div class="form">
@@ -37,8 +36,8 @@
         </div>
       </div>
       <div class="form">
-        <div class="form-sub">
-          <button type="submit" class="submit" (click)="addUsuario($event)">Sign in</button>
+        <div>
+          <button type="submit" class="submit button botao-verde" (click)="addUsuario($event)">Cadastrar</button>
         </div>
       </div>
     </form>

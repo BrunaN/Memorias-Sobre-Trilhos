@@ -1,19 +1,20 @@
 .mapa{
-    width: 100vw;
+    width: calc(100vw - 2px);
+    box-sizing: border-box;
     padding: 30px;
     background-image: url("/assets/img/textura_1.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    box-sizing: border-box;
     background-color: #E9D4A9;
     background-size: cover;
 }
- .mapa .selecione{
+.mapa .selecione{
     margin-left: 120px;
     margin-top: 30px;
     width: 350px; 
     height: 80px;
     text-align: left;
+    box-sizing: border-box;
 }
 
 .mapa .selecione > h1{
@@ -23,13 +24,19 @@
     font-size: 30px;
 }
 
- .mapa .selecione > img{
+.mapa .selecione > img{
     height: 25px;
     margin-bottom: 20px;
 }
 
-.mapa .content-mapa > img{
+.mapa .content-mapa{
     width: 100%;
+    text-align: center;
+}
+
+.mapa .content-mapa > img{
+    width: 450px;
+    box-sizing: border-box;
     margin-bottom: 100px;
 }
 
@@ -45,6 +52,7 @@
 
 .sobre .logo{
     width: 700px;
+    box-sizing: border-box;
     margin: auto;
     padding-top: 20px;
     padding-bottom: 30px;
@@ -65,7 +73,6 @@
     background-image: url("/assets/img/textura_3.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    height: 100vh;
     box-sizing: border-box;
     background-color: #CED186;
     padding: 100px 30px;
@@ -93,21 +100,6 @@ h2{
     width: 100%;
 }
 
-button{
-    margin: auto;
-    border-radius: 8px;
-    text-align: center;
-    width: 200px;
-    border: none;
-    font-size: 25px;
-    padding: 10px 30px;
-    color: #333530;
-    background-color: #E9D4A9; 
-    cursor: pointer;
-    user-select: none;
-    box-shadow: 1px 1px 2px #333530;
-}
-
 .outro input{
     border-radius: 8px;
     display: block;
@@ -123,9 +115,4 @@ button{
     outline: none;
     margin-top: 30px;
     margin-bottom: 30px;
-}
-
-.outro .botao .botao-verde{
-    background-color: #3E4238;
-    color: #E9D4A9;
 }

@@ -4,7 +4,8 @@ footer{
     font-size: 16px;
     color: #E9D4A9;
     text-align: center;
-    width: 100vw;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 footer .logo{

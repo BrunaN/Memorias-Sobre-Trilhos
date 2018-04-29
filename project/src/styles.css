@@ -7,3 +7,23 @@
     padding: 0;
     font-family: sans-serif;
 }
+
+.button{
+    margin: auto;
+    border-radius: 8px;
+    text-align: center;
+    width: 200px;
+    border: none;
+    font-size: 25px;
+    padding: 10px 30px;
+    color: #333530;
+    background-color: #E9D4A9; 
+    cursor: pointer;
+    user-select: none;
+    box-shadow: 1px 1px 2px #333530;
+}
+
+.botao-verde{
+    background-color: #3E4238;
+    color: #E9D4A9;
+}
