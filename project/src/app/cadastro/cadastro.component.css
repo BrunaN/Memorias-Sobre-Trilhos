@@ -1,0 +1,140 @@
+.nav-superior{
+    width:100%;
+    overflow: auto;
+}
+
+.simbolo-logo{
+    display: block;
+    margin: 20px;
+    max-height: 40px;
+    max-width: 30px;
+}
+.local{
+    max-height: 20px;
+    max-width: 10px;
+}
+
+.nav-superior ul {
+    list-style-type: none;
+    overflow: hidden;
+    padding:30px 30px;
+}
+
+.nav-superior li {
+    float: right;
+}
+
+.nav-superior li a {
+    font-family:"Century Gothic";
+    color: #30322B;
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.voltar a{
+    display: block;
+    text-align: left;
+    font-family:"Century Gothic";
+    text-decoration: none;
+    color:#30322B;
+    margin-left: 33%;
+}
+
+.volt{
+    max-height: 30px;
+    max-width: 20px; 
+    padding: 5px;  
+}
+
+.container-fluid{
+    padding-bottom: 40px;
+    width:100%;
+    overflow: auto;
+    position: relative;
+
+}
+.form-horizontal{
+    display: inline-block;
+    position: relative;
+    margin: 10px;
+}
+
+.botao-facebook{
+    background-color: #485992;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12;
+    font-family:"Century Gothic";
+    border-radius: 5px;
+    width: 250px;
+}
+.facebook{
+    max-height: 40px;
+    max-width: 30px;
+    
+}
+.form-control{
+    box-shadow: 0;
+    border: 0;
+    background-color: #fff;
+    border-bottom: solid 2px #30322B;
+    color: #000;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 5px;
+    transition: all 250ms ease; 
+    width: 250px;
+}
+.form{
+    padding: 8px;
+}
+.form-sub .submit{
+    background-color:#4E4130;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: right;
+    text-decoration: none;
+    display: block;
+    font-size: 12;
+    font-family:"Century Gothic";
+    border-radius: 5px;
+}
+.footer{
+    background-color: #55989B;
+    position: relative;
+    padding: 20px;
+}
+
+.footer ul {
+    list-style-type: none;
+    overflow: auto;
+    text-align: center;
+}
+
+.footer ul li{
+    display: inline-block;
+}
+.footer li a {
+    font-family:"Century Gothic";
+    color: #30322B;
+    display: block;
+    padding: 10px 10px;
+    text-decoration: none;
+}
+.viewport{
+    width: 100vw;
+    height: 100vh;
+    background: url('/assets/images/background.jpg');
+    background-repeat: no-repeat;
+    overflow: auto;
+    position: relative;
+    text-align: center;
+    background-position: center;
+    background-size: cover;
+}
