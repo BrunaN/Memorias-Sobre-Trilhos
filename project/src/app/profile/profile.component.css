@@ -43,7 +43,7 @@
     height: 15px;
     width: 12px;
     margin-right: 2px;
-    background-image: url("marcador_2.png");
+    background-image: url("/assets/img/marcador_2.png");
     background-size: 100% 100%;
 }
 
