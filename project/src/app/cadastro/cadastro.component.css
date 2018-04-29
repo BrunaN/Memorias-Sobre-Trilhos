@@ -1,38 +1,3 @@
-.nav-superior{
-    width:100%;
-    overflow: auto;
-}
-
-.simbolo-logo{
-    display: block;
-    margin: 20px;
-    max-height: 40px;
-    max-width: 30px;
-}
-.local{
-    max-height: 20px;
-    max-width: 10px;
-}
-
-.nav-superior ul {
-    list-style-type: none;
-    overflow: hidden;
-    padding:30px 30px;
-}
-
-.nav-superior li {
-    float: right;
-}
-
-.nav-superior li a {
-    font-family:"Century Gothic";
-    color: #30322B;
-    display: block;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
 .voltar a{
     display: block;
     text-align: left;
@@ -105,36 +70,13 @@
     font-family:"Century Gothic";
     border-radius: 5px;
 }
-.footer{
-    background-color: #55989B;
-    position: relative;
-    padding: 20px;
-}
-
-.footer ul {
-    list-style-type: none;
-    overflow: auto;
-    text-align: center;
-}
-
-.footer ul li{
-    display: inline-block;
-}
-.footer li a {
-    font-family:"Century Gothic";
-    color: #30322B;
-    display: block;
-    padding: 10px 10px;
-    text-decoration: none;
-}
 .viewport{
-    width: 100vw;
-    height: 100vh;
-    background: url('/assets/images/background.jpg');
+    background: url('/assets/img/textura_1.png');
     background-repeat: no-repeat;
     overflow: auto;
     position: relative;
     text-align: center;
     background-position: center;
     background-size: cover;
+    background-color: #E9D4A9;
 }

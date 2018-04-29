@@ -4,7 +4,7 @@ import { NgModel } from '@angular/forms';
 import { Usuario } from '../usuario/usuario.model';
 import { Cidade } from '../cadastro/cidade.model'
 @Component({
-  selector: 'cadastro',
+  selector: 'app-cadastro',
   templateUrl: './cadastro.component.html',
   styleUrls: ['./cadastro.component.css']
 })

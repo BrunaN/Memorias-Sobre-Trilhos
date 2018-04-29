@@ -1,11 +1,12 @@
 .mapa{
     width: 100vw;
     padding: 30px;
-    background-image: url("textura_1.png");
+    background-image: url("/assets/img/textura_1.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
     box-sizing: border-box;
     background-color: #E9D4A9;
+    background-size: cover;
 }
  .mapa .selecione{
     margin-left: 120px;
@@ -39,6 +40,7 @@
     height: 100vh;
     box-sizing: border-box;
     background-color: #b55480;
+    background-size: cover;
     padding: 30px;
 }
 
@@ -68,6 +70,7 @@
     box-sizing: border-box;
     background-color: #CED186;
     padding: 100px 30px;
+    background-size: cover;
 }
 
 h2{

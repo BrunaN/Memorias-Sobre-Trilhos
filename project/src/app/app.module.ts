@@ -12,14 +12,12 @@ import { AppComponent } from './app.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { UsuarioComponent } from './usuario/usuario.component';
 import { FormsModule } from '@angular/forms';
-import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CadastroComponent,
     UsuarioComponent,
-    HeaderComponent,
     FooterComponent,
     NavbarComponent,
     ProfileComponent,
