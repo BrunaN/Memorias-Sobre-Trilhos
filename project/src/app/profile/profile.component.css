@@ -1,0 +1,85 @@
+.perfil{
+    padding: 20px;
+    font-family: sans-serif;
+}
+
+.perfil .img{
+    margin: auto;
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+    background-color: palevioletred;
+}
+
+.perfil .informacoes{
+    padding: 20px;
+    padding-top: 15x;
+    color:#333530;
+    border-bottom: 1px solid #333530;
+    border-bottom-color: rgba(0, 0, 0, .1);
+    text-align: center;
+}
+
+.perfil .informacoes h2 {
+    font-size: 25px;
+}
+
+.perfil .informacoes p, ul{
+    font-size: 15px;
+    margin-top: 7px;
+    margin-bottom: 5px;
+}
+
+.perfil .informacoes ul{
+    margin: 0;
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.perfil .informacoes ul li:before{
+    content: '';
+    padding: 0;
+    display: inline-block;
+    height: 15px;
+    width: 12px;
+    margin-right: 2px;
+    background-image: url("marcador_2.png");
+    background-size: 100% 100%;
+}
+
+.perfil .pessoal{
+    padding: 20px;
+    text-align: center;
+}
+
+.perfil .pessoal ul{
+    list-style: none;
+    font-size: 18px;
+}
+
+.perfil .pessoal li, a{
+    text-decoration: none;
+    color:#333530;
+    padding: 5px;
+}
+
+.perfil .pessoal li a:hover{
+    border-bottom: 2px solid #56989B;
+}
+
+button{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin: auto;
+    border-radius: 8px;
+    text-align: center;
+    width: 150px;
+    border: none;
+    font-size: 18px;
+    padding: 10px 30px;
+    color: #333530;
+    background-color: #E9D4A9; 
+    cursor: pointer;
+    user-select: none;
+    box-shadow: 1px 1px 2px #333530;
+}

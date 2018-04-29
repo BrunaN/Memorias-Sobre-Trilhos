@@ -1,0 +1,119 @@
+.mapa{
+    width: 100vw;
+    padding: 30px;
+    background-image: url("textura_1.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    box-sizing: border-box;
+    background-color: #E9D4A9;
+}
+ .mapa .selecione{
+    margin-left: 120px;
+    margin-top: 30px;
+    width: 350px; 
+    height: 80px;
+    text-align: left;
+}
+
+.mapa .selecione > h1{
+    display: inline;
+    padding: 0;
+    padding-left: 5px;
+    font-size: 30px;
+}
+
+ .mapa .selecione > img{
+    height: 25px;
+    margin-bottom: 20px;
+}
+
+.mapa .content-mapa > img{
+    width: 100%;
+    margin-bottom: 100px;
+}
+
+.sobre{
+    background-image: url("textura_2.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 100vh;
+    box-sizing: border-box;
+    background-color: #b55480;
+    padding: 30px;
+}
+
+.sobre .logo{
+    width: 700px;
+    margin: auto;
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
+.sobre .logo img{
+    width: 100%;
+}
+
+.sobre .botao{
+    width: 200px;
+    margin: auto;
+    padding-top: 75px;
+    padding-bottom: 30px;
+}
+
+.outro{
+    background-image: url("textura_3.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 100vh;
+    box-sizing: border-box;
+    background-color: #CED186;
+    padding: 100px 30px;
+}
+
+h2{
+    margin: auto;
+    text-align: center;
+    color: #E9D4A9;
+    padding: 30px;
+    padding-top: 10px;
+}
+
+.imagem{
+    margin: auto;
+    height: 210px;
+    width: 210px;
+    background-color: pink;
+    border-radius: 50%;
+}
+
+button{
+    margin: auto;
+    border-radius: 8px;
+    text-align: center;
+    width: 200px;
+    border: none;
+    font-size: 25px;
+    padding: 10px 30px;
+    color: #333530;
+    background-color: #E9D4A9; 
+    cursor: pointer;
+    user-select: none;
+    box-shadow: 1px 1px 2px #333530;
+}
+
+.outro input{
+    border-radius: 8px;
+    display: block;
+    margin: auto;
+    border: 1px solid transparent;
+    font-size: 18px;
+    padding: 7px 10px;
+    background-color: #ffff;
+    opacity: 0.6;
+    box-shadow: none;
+    box-sizing: border-box;
+    width: 270px;
+    outline: none;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}

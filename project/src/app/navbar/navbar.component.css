@@ -1,0 +1,75 @@
+header{
+    background-color: #E9D4A9;
+    font-family: sans-serif;
+}
+nav{
+    top: 0;
+    display: block;
+    width: 100vw;
+    height: 80px;
+    padding: 0 60px;
+    line-height: 80px;
+    box-sizing: border-box;
+    z-index: 100;
+}
+
+nav .logo img{
+    height: 80px;
+    padding: 5px 0;
+    box-sizing: border-box;
+}
+
+nav div{
+    display: inline;
+}
+
+.links{
+    float: right;
+}
+
+nav .links a{
+    text-decoration: none;
+    font-size: 18px;
+    padding: 7px 10px;
+    color: #333530;
+}
+
+nav .links a:hover{
+    border-radius: 6px;
+    background-color: rgba(0, 0, 0, .1);
+}
+
+.pesquisar{
+    width: 400px;
+    margin: auto;
+}
+
+.pesquisar input{
+    border-radius: 8px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border: 1px solid transparent;
+    font-size: 18px;
+    padding: 7px 10px;
+    background-color: #ffff;
+    opacity: 0.6;
+    box-shadow: none;
+    box-sizing: border-box;
+    width: 270px;
+    outline: none;
+}
+
+.pesquisar #pesquisa{
+    border-radius: 8px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border: 1px solid transparent;
+    box-sizing: border-box;
+    font-size: 18px;
+    padding: 7px 10px;
+    outline: none;
+    box-shadow: none;
+    background-color: #333530;
+    color: #E9D4A9;
+    cursor: pointer;
+}
