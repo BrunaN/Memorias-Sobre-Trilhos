@@ -68,14 +68,12 @@
 }
 
 button{
-    margin-top: 10px;
-    margin-bottom: 10px;
     margin: auto;
     border-radius: 8px;
     text-align: center;
-    width: 150px;
+    width: 200px;
     border: none;
-    font-size: 18px;
+    font-size: 25px;
     padding: 10px 30px;
     color: #333530;
     background-color: #E9D4A9; 

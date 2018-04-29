@@ -1,6 +1,8 @@
 header{
     background-color: #E9D4A9;
     font-family: sans-serif;
+    background-image: url("/assets/img/textura_1.png");
+    background-size: cover;
 }
 nav{
     top: 0;
