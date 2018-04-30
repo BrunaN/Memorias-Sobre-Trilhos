@@ -1,0 +1,42 @@
+footer{
+    background-color: #56989B;
+    padding: 30px;
+    font-size: 16px;
+    color: #E9D4A9;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+footer .logo{
+    padding: 15px;
+}
+
+footer .logo img{
+    height: 50px;
+}
+
+footer .links{
+    padding: 20px;
+}
+
+footer .links ul li, .redes ul li{
+    text-decoration-style: none;
+    display: inline;
+    font-size: 18px;
+    padding: 7px;
+}
+
+footer .links ul li a{
+    text-decoration: none;
+    color: #E9D4A9;
+    padding: 5px;
+}
+
+footer .links ul li a:hover{
+    border-bottom: 2px solid #333530;
+}
+
+footer .redes ul li img{
+    height: 35px;
+}

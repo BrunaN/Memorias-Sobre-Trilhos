@@ -1,0 +1,63 @@
+*{
+    margin:0;
+    padding: 0;
+}
+
+.login{
+    margin:0;
+    background-repeat: no-repeat;
+    background-image: url(/assets/img/textura_1.png);
+    background-color: #E9D4A9;
+    background-size: cover;
+    padding: 50px;
+    text-align: center;
+    margin: auto;
+    box-sizing: border-box;
+}
+
+form{
+    margin: 0;
+    margin: auto;
+    width: 360px;
+    box-sizing: border-box;
+}
+
+.login input{
+    display: block;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    font-size: 18px;
+    padding: 7px 10px;
+    background-color: #ffff;
+    opacity: 0.6;
+    box-shadow: none;
+    box-sizing: border-box;
+    width: 360px;
+    outline: none;
+    box-shadow: 1px 1px 2px #333530;
+    margin: auto;
+    margin: 20px 0;
+}
+
+.login div{
+    display: block;
+    width: 360px;
+    box-sizing: border-box;
+}
+
+.login div button{
+    float: right;
+    border-radius: 8px;
+    text-align: center;
+    width: 150px;
+    border: none;
+    font-size: 18px;
+    padding: 10px 30px;
+    color: #E9D4A9;
+    background-color: #333530; 
+    cursor: pointer;
+    user-select: none;
+    box-shadow: 1px 1px 2px #333530;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}

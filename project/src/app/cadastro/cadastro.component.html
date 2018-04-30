@@ -1,0 +1,33 @@
+<div class="viewport">
+  <div class="container-fluid">
+    <div class="voltar" routerLinkActive="active">
+      <!-- <a routerLink="/header"><img class="volt" src="assets/images/voltar.png">Voltar</a> -->
+    </div>
+    <div class="form">
+      <!-- <div class="form-facebook">
+        <button type="submit" class="botao-facebook" (click)="addUsuario($event)">
+          <img class="facebook" src="assets/images/facebook-icon.png"> Cadastre-se com Facebook </button>
+      </div>
+    </div> -->
+    <form class="form-horizontal">
+        <div class="form-nome">
+          <input [(ngModel)]="nome" name="nome" type="text" id="inputName" placeholder="Nome">
+        </div>
+        <div class="form-email">
+          <input [(ngModel)]='email' name='email' type="email"  id="inputEmail" placeholder="Email">
+        </div>
+        <div class="form-password">
+          <input [(ngModel)]="password" name="password" type="password" id="inputPassword" placeholder="Senha">
+        </div>
+        <div class="form-cidade">
+          <select [(ngModel)]="cidade" name="cidade">
+            <option *ngFor="let cidade of cidades" value= {{cidade.id}}>
+              {{cidade.nome}}
+            </option>
+          </select>
+        </div>
+        <div>
+          <button type="submit" class="submit" (click)="addUsuario($event)">Cadastrar</button>
+        </div>
+    </form>
+  </div>

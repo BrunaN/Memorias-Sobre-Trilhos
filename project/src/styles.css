@@ -1,0 +1,53 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.button{
+    margin: auto;
+    border-radius: 8px;
+    text-align: center;
+    width: 200px;
+    border: none;
+    font-size: 25px;
+    padding: 10px 30px;
+    color: #333530;
+    background-color: #E9D4A9; 
+    cursor: pointer;
+    user-select: none;
+    box-shadow: 1px 1px 2px #333530;
+}
+
+.botao-verde{
+    background-color: #3E4238;
+    color: #E9D4A9;
+}
+
+.marcadores {
+    fill: hotpink;
+}
+
+.cidades {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+    margin-left: 10%;
+}
+
+.cidades a {
+   cursor: pointer; 
+   fill: #3e4238;
+}
+
+.cidades a:hover{
+    fill: hotpink;
+    text-decoration: none;
+}
+
+.mapa {
+    fill:#333530;
+}

@@ -1,0 +1,113 @@
+.profile{
+    padding: 50px;
+    width: calc(100vw - 2px);
+    box-sizing: border-box;
+    background-color: #E9D4A9;
+    background-image: url("/assets/img/textura_1.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.perfil{
+    box-sizing: border-box;
+    margin-top: 20px;
+    font-family: sans-serif;
+    border-right: 1px solid rgba(0, 0, 0, .1);
+}
+
+.perfil .img{
+    margin: auto;
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+    background-color: palevioletred;
+}
+
+.perfil .informacoes{
+    box-sizing: border-box;
+    padding: 20px;
+    padding-top: 10px;
+    color:#333530;
+    border-bottom: 1px solid #333530;
+    border-bottom-color: rgba(0, 0, 0, .1);
+    text-align: center;
+}
+
+.perfil .informacoes h2 {
+    margin:0;
+    font-size: 25px;
+}
+
+.perfil .informacoes p, ul{
+    font-size: 15px;
+    margin-top: 7px;
+    margin-bottom: 5px;
+}
+
+.perfil .informacoes ul{
+    margin: 0;
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.perfil .informacoes ul li:before{
+    content: '';
+    padding: 0;
+    display: inline-block;
+    height: 15px;
+    width: 12px;
+    margin-right: 2px;
+    background-image: url("/assets/img/marcador_2.png");
+    background-size: 100% 100%;
+}
+
+.perfil .pessoal{
+    padding: 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.perfil .pessoal ul{
+    list-style: none;
+    font-size: 18px;
+}
+
+.perfil .pessoal li, a{
+    text-decoration: none;
+    color:#333530;
+    padding: 5px;
+}
+
+.perfil .pessoal li a:hover{
+    border-bottom: 2px solid #56989B;
+}
+
+.conteudo{
+    padding: 20px;
+}
+
+.conteudo .conteudo-vazio{
+    border-radius: 8px;
+    background-color: #b55480;
+    color: #E9D4A9;
+    font-size: 20px;
+    padding: 15px;
+    box-sizing: border-box;
+    width: 360px;
+    margin-top: 30px;
+}
+
+button{
+    margin: auto;
+    border-radius: 8px;
+    text-align: center;
+    width: 150px;
+    border: none;
+    font-size: 18px;
+    padding: 10px 30px;
+    color: #333530;
+    background-color: #E9D4A9; 
+    cursor: pointer;
+    user-select: none;
+    box-shadow: 1px 1px 2px #333530;
+}
