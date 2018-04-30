@@ -1,6 +1,18 @@
+.profile{
+    padding: 50px;
+    width: calc(100vw - 2px);
+    box-sizing: border-box;
+    background-color: #E9D4A9;
+    background-image: url("/assets/img/textura_1.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 .perfil{
-    padding: 20px;
+    box-sizing: border-box;
+    margin-top: 20px;
     font-family: sans-serif;
+    border-right: 1px solid rgba(0, 0, 0, .1);
 }
 
 .perfil .img{
@@ -12,8 +24,9 @@
 }
 
 .perfil .informacoes{
+    box-sizing: border-box;
     padding: 20px;
-    padding-top: 15x;
+    padding-top: 10px;
     color:#333530;
     border-bottom: 1px solid #333530;
     border-bottom-color: rgba(0, 0, 0, .1);
@@ -21,6 +34,7 @@
 }
 
 .perfil .informacoes h2 {
+    margin:0;
     font-size: 25px;
 }
 
@@ -50,6 +64,7 @@
 .perfil .pessoal{
     padding: 20px;
     text-align: center;
+    box-sizing: border-box;
 }
 
 .perfil .pessoal ul{
@@ -67,13 +82,28 @@
     border-bottom: 2px solid #56989B;
 }
 
+.conteudo{
+    padding: 20px;
+}
+
+.conteudo .conteudo-vazio{
+    border-radius: 8px;
+    background-color: #b55480;
+    color: #E9D4A9;
+    font-size: 20px;
+    padding: 15px;
+    box-sizing: border-box;
+    width: 360px;
+    margin-top: 30px;
+}
+
 button{
     margin: auto;
     border-radius: 8px;
     text-align: center;
-    width: 200px;
+    width: 150px;
     border: none;
-    font-size: 25px;
+    font-size: 18px;
     padding: 10px 30px;
     color: #333530;
     background-color: #E9D4A9; 

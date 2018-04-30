@@ -30,6 +30,11 @@ footer .links ul li, .redes ul li{
 footer .links ul li a{
     text-decoration: none;
     color: #E9D4A9;
+    padding: 5px;
+}
+
+footer .links ul li a:hover{
+    border-bottom: 2px solid #333530;
 }
 
 footer .redes ul li img{
