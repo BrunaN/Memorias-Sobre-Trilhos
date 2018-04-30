@@ -10,35 +10,24 @@
       </div>
     </div> -->
     <form class="form-horizontal">
-      <div class="form">
         <div class="form-nome">
-          <input [(ngModel)]="nome" name="nome" type="text" class="form-control" id="inputName" placeholder="Nome">
+          <input [(ngModel)]="nome" name="nome" type="text" id="inputName" placeholder="Nome">
         </div>
-      </div>
-      <div class="form">
         <div class="form-email">
-          <input [(ngModel)]='email' name='email' type="email" class="form-control" id="inputEmail" placeholder="Email">
-
+          <input [(ngModel)]='email' name='email' type="email"  id="inputEmail" placeholder="Email">
         </div>
-      </div>
-      <div class="form">
         <div class="form-password">
-          <input [(ngModel)]="password" name="password" type="password" class="form-control" id="inputPassword" placeholder="Senha">
+          <input [(ngModel)]="password" name="password" type="password" id="inputPassword" placeholder="Senha">
         </div>
-      </div>
-      <div class="form">
         <div class="form-cidade">
-          <select [(ngModel)]="cidade" name="cidade" class="form-control">
+          <select [(ngModel)]="cidade" name="cidade">
             <option *ngFor="let cidade of cidades" value= {{cidade.id}}>
               {{cidade.nome}}
             </option>
           </select>
         </div>
-      </div>
-      <div class="form">
         <div>
-          <button type="submit" class="submit button botao-verde" (click)="addUsuario($event)">Cadastrar</button>
+          <button type="submit" class="submit" (click)="addUsuario($event)">Cadastrar</button>
         </div>
-      </div>
     </form>
   </div>

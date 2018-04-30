@@ -1,3 +1,8 @@
+*{
+    margin:0;
+    padding: 0;
+}
+
 .voltar a{
     display: block;
     text-align: left;
@@ -14,16 +19,14 @@
 }
 
 .container-fluid{
-    padding-bottom: 40px;
     width:100%;
     overflow: auto;
     position: relative;
-
 }
+
 .form-horizontal{
     display: inline-block;
     position: relative;
-    margin: 10px;
 }
 
 .botao-facebook{
@@ -35,7 +38,6 @@
     text-decoration: none;
     display: inline-block;
     font-size: 12;
-    font-family:"Century Gothic";
     border-radius: 5px;
     width: 250px;
 }
@@ -43,11 +45,15 @@
 .facebook{
     max-height: 40px;
     max-width: 30px;
-    
 }
 
-.form-control{
+form{
+    margin-top: 20px;
+}
+
+input, select{
     border-radius: 8px;
+    margin-bottom: 20px;
     border: 1px solid transparent;
     font-size: 18px;
     padding: 7px 10px;
@@ -55,13 +61,9 @@
     opacity: 0.6;
     box-shadow: none;
     box-sizing: border-box;
-    width: 320px;
+    width: 360px;
     outline: none;
     box-shadow: 1px 1px 2px #333530;
-}
-
-.form{
-    padding: 8px;
 }
 
 .viewport{
@@ -74,4 +76,21 @@
     background-position: center;
     background-size: cover;
     background-color: #E9D4A9;
+}
+
+.submit{
+    float: right;
+    border-radius: 8px;
+    text-align: center;
+    width: 150px;
+    border: none;
+    font-size: 18px;
+    padding: 10px 30px;
+    color: #E9D4A9;
+    background-color: #333530; 
+    cursor: pointer;
+    user-select: none;
+    box-shadow: 1px 1px 2px #333530;
+    margin-bottom: 20px;
+    box-sizing: border-box;
 }

@@ -12,6 +12,8 @@ import { AppComponent } from './app.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { UsuarioComponent } from './usuario/usuario.component';
 import { FormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component';
+import { StationContentComponent } from './station-content/station-content.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { FormsModule } from '@angular/forms';
     FooterComponent,
     NavbarComponent,
     ProfileComponent,
-    HomeComponent
+    HomeComponent,
+    LoginComponent,
+    StationContentComponent
   ],
   imports: [
     BrowserModule,
