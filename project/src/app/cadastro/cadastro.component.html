@@ -21,6 +21,7 @@
         </div>
         <div class="form-cidade">
           <select [(ngModel)]="cidade" name="cidade">
+            <option value="" selected="selected" disabled="disabled"> Selecione sua cidade</option>
             <option *ngFor="let cidade of cidades" value= {{cidade.id}}>
               {{cidade.nome}}
             </option>
