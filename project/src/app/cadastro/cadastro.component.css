@@ -20,7 +20,6 @@
 
 .container-fluid{
     width:100%;
-    overflow: auto;
     position: relative;
 }
 
@@ -70,12 +69,12 @@ input, select{
     padding: 50px;
     background: url('/assets/img/textura_1.png');
     background-repeat: no-repeat;
-    overflow: auto;
     position: relative;
     text-align: center;
     background-position: center;
     background-size: cover;
     background-color: #E9D4A9;
+    min-height: calc(100vh - 121px - 260px);
 }
 
 .submit{

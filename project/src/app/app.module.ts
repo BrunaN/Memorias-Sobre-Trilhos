@@ -14,6 +14,7 @@ import { UsuarioComponent } from './usuario/usuario.component';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { StationContentComponent } from './station-content/station-content.component';
+import { RecoverPasswordComponent } from './recover-password/recover-password.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { StationContentComponent } from './station-content/station-content.compo
     ProfileComponent,
     HomeComponent,
     LoginComponent,
-    StationContentComponent
+    StationContentComponent,
+    RecoverPasswordComponent
   ],
   imports: [
     BrowserModule,

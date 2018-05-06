@@ -1,3 +1,4 @@
+import { RecoverPasswordComponent } from './recover-password/recover-password.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
@@ -7,6 +8,8 @@ const APP_ROUTES: Routes=[
     {path: "", redirectTo: "/home", pathMatch: "full"},
     {path: "home", component: HomeComponent},
     {path: "cadastro", component: CadastroComponent},
-    {path: "login", component: LoginComponent}
+    {path: "login", component: LoginComponent},
+
+    {path: "redefinir-senha", component: RecoverPasswordComponent}
 ]
 export const routing=RouterModule.forRoot(APP_ROUTES);
