@@ -1,8 +1,11 @@
 export class Cidade {
-    id : string;
-    nome : string;
-    constructor(id, nome) {
+    id: number;
+    nome: string;
+    estadoId: number;
+
+    constructor(id, nome, estadoId) {
         this.id = id;
         this.nome = nome;
+        this.estadoId = estadoId;
      }
   }

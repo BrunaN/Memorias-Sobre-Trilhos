@@ -20,17 +20,19 @@
           <input [(ngModel)]="password" name="password" type="password" id="inputPassword" placeholder="Senha">
         </div>
         <div>
-          <select [(ngModel)]="cidade" name="cidade">
-            <option value="" selected="selected" disabled="disabled"> Selecione seu estado</option>
-            <option *ngFor="let cidade of cidades" value= {{cidade.id}}>
-              {{cidade.nome}}
+          <select [(ngModel)]="estadoSelecionado.id" 
+                  (change)="onSelect($event.target.value)" 
+                  id="sel1" name="estado">
+            <option value="0" disabled="disabled"> Selecione seu estado</option>
+            <option *ngFor="let estado of estados" value = {{estado.id}}>
+              {{estado.nome}}
             </option>
           </select>
         </div>
         <div class="form-cidade">
           <select [(ngModel)]="cidade" name="cidade">
-            <option value="" selected="selected" disabled="disabled"> Selecione sua cidade</option>
-            <option *ngFor="let cidade of cidades" value= {{cidade.id}}>
+            <option value="" disabled="disabled"> Selecione sua cidade</option>
+            <option *ngFor="let cidade of cidades" value = {{cidade.id}}>
               {{cidade.nome}}
             </option>
           </select>

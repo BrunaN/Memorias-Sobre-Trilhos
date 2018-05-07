@@ -1,13 +1,19 @@
+import { DataService } from './../data.service';
 import { UsuarioService } from './../usuario.service';
 import { Component, OnInit } from '@angular/core';
 import { NgModel } from '@angular/forms';
+
+import { Estado } from './estado.model';
 import { Usuario } from '../usuario/usuario.model';
 import { Cidade } from '../cadastro/cidade.model'
+
 @Component({
   selector: 'app-cadastro',
   templateUrl: './cadastro.component.html',
-  styleUrls: ['./cadastro.component.css']
+  styleUrls: ['./cadastro.component.css'],
+  providers: [DataService]
 })
+
 export class CadastroComponent implements OnInit {
 
   id : number;
@@ -16,7 +22,18 @@ export class CadastroComponent implements OnInit {
   password : string = "";
   cidade : string = "";
 
-  constructor(private service : UsuarioService) { }
+  estadoSelecionado: Estado = new Estado(0, "Acre");
+
+  estados: Estado[];
+  cidades: Cidade[];
+
+  constructor(private service : UsuarioService, private data : DataService) { 
+    this.estados = this.data.getEstados();
+  }
+
+  onSelect(id){
+    this.cidades = this.data.getCidades().filter((item)=>item.estadoId==id);
+  }
 
   ngOnInit() {
   }
@@ -29,11 +46,5 @@ export class CadastroComponent implements OnInit {
         error => console.log(error)
     });
   }
-  selectCidade : Cidade = new Cidade(5, 'Ama');
-   cidades = [
-     new Cidade(1, 'Crato' ),
-     new Cidade(2, 'Fortaleza' ),
-     new Cidade(3, 'Quixadá' ),
-     new Cidade(4, 'Quixeramobim')
-  ];
+  
 }
