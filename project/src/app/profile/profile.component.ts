@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Usuario } from '../usuario/usuario.model';
 
 @Component({
   selector: 'app-profile',
@@ -11,5 +12,14 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit() {
   }
+  
+  editarPerfil: boolean = false;
 
+  editar(){
+    this.editarPerfil = true;
+  }
+
+  concluir(){
+
+  }
 }

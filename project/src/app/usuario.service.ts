@@ -21,6 +21,7 @@ export class UsuarioService {
             .map((response: Response) => response.json())
             .catch((error: Response) => Observable.throw(error));
     }
+    
     getUsuarios() {
         return this.http.get(this.urlUsuarios)
             .map((response: Response) => {

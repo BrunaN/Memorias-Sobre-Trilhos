@@ -97,6 +97,7 @@ h2{
 
 .imagem img{
     width: 100%;
+    border-radius: 50%;
 }
 
 .outro input{

@@ -19,6 +19,14 @@
         <div class="form-password">
           <input [(ngModel)]="password" name="password" type="password" id="inputPassword" placeholder="Senha">
         </div>
+        <div>
+          <select [(ngModel)]="cidade" name="cidade">
+            <option value="" selected="selected" disabled="disabled"> Selecione seu estado</option>
+            <option *ngFor="let cidade of cidades" value= {{cidade.id}}>
+              {{cidade.nome}}
+            </option>
+          </select>
+        </div>
         <div class="form-cidade">
           <select [(ngModel)]="cidade" name="cidade">
             <option value="" selected="selected" disabled="disabled"> Selecione sua cidade</option>
@@ -28,7 +36,7 @@
           </select>
         </div>
         <div>
-          <button type="submit" class="submit" (click)="addUsuario($event)">Cadastrar</button>
+          <button type="submit" class="submit" (click)="addUsuario($event)" routerLink="/perfil">Cadastrar</button>
         </div>
     </form>
   </div>

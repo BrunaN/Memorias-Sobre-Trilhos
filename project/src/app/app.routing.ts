@@ -1,3 +1,4 @@
+import { ProfileComponent } from './profile/profile.component';
 import { RecoverPasswordComponent } from './recover-password/recover-password.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
@@ -10,6 +11,7 @@ const APP_ROUTES: Routes=[
     {path: "cadastro", component: CadastroComponent},
     {path: "login", component: LoginComponent},
 
-    {path: "redefinir-senha", component: RecoverPasswordComponent}
+    {path: "redefinir-senha", component: RecoverPasswordComponent},
+    {path: "perfil", component: ProfileComponent}
 ]
 export const routing=RouterModule.forRoot(APP_ROUTES);

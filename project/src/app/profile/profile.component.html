@@ -4,17 +4,28 @@
       <img src="" alt="">
     </div>
     <div class="informacoes">
-      <h2>
-        Bruna Neves
-      </h2>
-      <p>
-        brubsnev@gmail.com
-      </p>
-      <ul>
-        <li>
-          Quixadá-ce
-        </li>  
-      </ul>
+      <div *ngIf="editarPerfil == false">
+        <h2>
+          Bruna Neves
+        </h2>
+        <p>
+          brubsnev@gmail.com
+        </p>
+        <ul>
+          <li>
+            Quixadá-ce
+          </li>  
+        </ul>
+        <div class="editar">
+          <a (click)="editar()">Editar</a>
+        </div>
+      </div>
+      <!-- <input type="text" [(ngModel)]="usuario.nome">
+      <input type="text" [(ngModel)]="usuario.email">
+      <input type="text" [(ngModel)]="usuario.cidade">
+      <div class="concluir">
+        <a (click)="concluir()">Salvar</a>
+      </div> -->
     </div>
     <div class="pessoal">
       <ul>
