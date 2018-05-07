@@ -1,6 +1,5 @@
 .mapa{
     width: calc(100vw - 2px);
-    height: calc(100vh - 121px);
     box-sizing: border-box;
     padding: 30px;
     background-image: url("/assets/img/textura_1.png");
@@ -8,6 +7,7 @@
     background-color: #E9D4A9;
     background-size: cover;
 }
+
 .mapa .selecione{
     margin-left: 120px;
     margin-top: 30px;
@@ -48,12 +48,6 @@
     background-color: #b55480;
     background-size: cover;
     padding: 30px;
-    height: 100vh;
-}
-
-.sobre .content-sobre{
-    height: 516px;
-    margin-top: calc(50vh - 258px);
 }
 
 .sobre .logo{
@@ -84,7 +78,6 @@
     padding: 100px 30px;
     padding-top: 150px;
     background-size: cover;
-    height: calc(100vh - 260px);
 }
 
 h2{
