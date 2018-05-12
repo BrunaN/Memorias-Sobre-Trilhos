@@ -52,12 +52,13 @@ nav .links a:hover{
 .dropdown-estacoes{
     position: absolute;
     z-index: 100;
-    top: 80px;
+    top: 132px;
     background-image: url("/assets/img/textura_1.png");
     background-size: cover;
     background-color: #E9D4A9;
     box-sizing: border-box;
     width: 100%;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, .1);
 }
 
 .dropdown-display{
