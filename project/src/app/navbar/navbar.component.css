@@ -63,12 +63,22 @@ nav .links a:hover{
 .dropdown-estacoes .container .row h1{
     text-align: center;
 }
+
 .dropdown-estacoes .container .row div a{
     text-decoration: none;
     font-size: 18px;
     padding: 7px 10px;
     color: #333530;
 }
+
+.dropdown-estacoes #estacoes-close{
+    float: right;
+    cursor: pointer;
+    font-size: 30px;
+    padding: 30px;
+    padding-top: 20px;
+}
+
 .pesquisar{
     width: 346.03px;
     margin: auto;
