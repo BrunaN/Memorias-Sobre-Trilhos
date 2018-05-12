@@ -49,6 +49,17 @@ nav .links a:hover{
     background-color: rgba(0, 0, 0, .1);
 }
 
+.dropdown-estacoes{
+    position: absolute;
+    z-index: 100;
+    top: 80px;
+    background-image: url("/assets/img/textura_1.png");
+    background-size: cover;
+    background-color: #E9D4A9;
+    box-sizing: border-box;
+    width: 100%;
+}
+
 .pesquisar{
     width: 346.03px;
     margin: auto;
