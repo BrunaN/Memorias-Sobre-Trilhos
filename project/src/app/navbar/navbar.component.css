@@ -60,6 +60,9 @@ nav .links a:hover{
     width: 100%;
 }
 
+.dropdown-display{
+    display: none;
+}
 .dropdown-estacoes .container .row h1{
     text-align: center;
 }

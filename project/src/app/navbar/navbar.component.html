@@ -5,7 +5,7 @@
       </div>
     <div class="links">
       <div class="estacoes">
-        <a href=""> Estações <span><img src="" alt=""></span> </a>
+        <a href="" (click)="dropdownToggle($event)"> Estações <span><img src="" alt=""></span> </a>
       </div>
       <a href="" routerLink="/cadastro"> Cadastro </a>
       <a href="" routerLink="/login"> Login </a>
@@ -16,8 +16,8 @@
   </div>
 </header>
 
-<div class="dropdown-estacoes">
-  <span id="estacoes-close">x</span>
+<div class="dropdown-estacoes" [ngClass]="dropdown">
+  <span id="estacoes-close" (click)="dropdownToggle($event)">x</span>
   <div class="container">
     <div class="row">
       <h1>Visite as Estações</h1>
