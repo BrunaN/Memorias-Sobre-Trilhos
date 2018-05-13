@@ -1,0 +1,59 @@
+.station-content{
+    box-sizing: border-box;
+    padding: 30px;
+    background-image: url("/assets/img/textura_1.png");
+    background-repeat: no-repeat;
+    background-color: #E9D4A9;
+    background-size: cover;
+}
+
+.nav li a{
+    font-size: 18px;
+    padding: 7px 10px;
+    color: #b55480;
+}
+
+.tab-pane{
+    width: 100%;
+    margin: 0 5%;
+    box-sizing: border-box;
+}
+
+textarea, input{
+    display: block;
+    width: 90%;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    font-size: 18px;
+    padding: 7px 10px;
+    background-color: #ffff;
+    box-shadow: none;
+    box-sizing: border-box;
+    outline: none;
+    box-shadow: 1px 1px 2px #333530;
+    margin: 20px 0;
+    resize: none;
+}
+
+.botao{
+    display: block;
+    width: 90%;
+    box-sizing: border-box;
+}
+
+.botao button{
+    float: right;
+    border-radius: 8px;
+    text-align: center;
+    width: 150px;
+    border: none;
+    font-size: 18px;
+    padding: 10px 30px;
+    color: #E9D4A9;
+    background-color: #333530; 
+    cursor: pointer;
+    user-select: none;
+    box-shadow: 1px 1px 2px #333530;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
