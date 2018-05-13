@@ -7,26 +7,76 @@
     background-size: cover;
 }
 
+.station-content .container .infos .name{
+    padding: 25px 0;
+}
+
+.station-content .container .infos .name li{
+    font-size: 25px;
+    color:#333530;
+    margin: 0;
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.station-content .container .infos .name li:before{
+    content: '';
+    padding: 0;
+    display: inline-block;
+    height: 20px;
+    width: 17px;
+    margin-right: 6px;
+    background-image: url("/assets/img/marcador_1.png");
+    background-size: 100% 100%;
+}
+
+.nav li{
+    border: none;
+}
+
 .nav li a{
+    cursor: pointer;
     font-size: 18px;
     padding: 7px 10px;
     color: #b55480;
+    background-color: #E9D4A9;
+    border-bottom-color: rgba(0, 0, 0, .1);
+}
+
+.nav li a:hover{
+    background-color: rgba(0, 0, 0, .1);
+    border: 1px solid rgba(0, 0, 0, .1);
+}
+
+.nav .active{
+    border: 1px solid rgba(0, 0, 0, .1);
+    border-bottom-color: transparent;
+}
+
+.tab-content{
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgba(0, 0, 0, .1);
+    border-bottom-color: transparent;
+    border-top-color: transparent;
 }
 
 .tab-pane{
     width: 100%;
     margin: 0 5%;
     box-sizing: border-box;
+    overflow: auto;
 }
 
 textarea, input{
     display: block;
+    color:#333530;
     width: 90%;
     border-radius: 6px;
     border: 1px solid transparent;
     font-size: 18px;
     padding: 7px 10px;
-    background-color: #ffff;
+    background-color: transparent;
     box-shadow: none;
     box-sizing: border-box;
     outline: none;
