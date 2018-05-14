@@ -13,7 +13,7 @@ export class NavbarComponent implements OnInit {
   }
   
   dropdown = {
-    "dropdown-display": true
+    "dropdown-display": true,
   }
   
   dropdownToggle(e){

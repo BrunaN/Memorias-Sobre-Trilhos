@@ -90,6 +90,14 @@ nav .links a:hover{
     padding: 0 30px;
 }
 
+span{
+    font-size: 12px;
+}
+
+.menu{
+    transform: rotate(180deg);
+}
+
 .pesquisar{
     width: 346.03px;
     margin: auto;
