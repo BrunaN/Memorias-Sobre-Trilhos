@@ -79,23 +79,27 @@
     padding: 7px 10px;
     color: #b55480;
     background-color: #E9D4A9;
+    border-radius: 4px 4px 0 0;
     border-bottom-color: rgba(0, 0, 0, .1);
 }
 
 .nav li a:hover{
     background-color: rgba(0, 0, 0, .1);
+    border-radius: 4px 4px 0 0;
     border: 1px solid rgba(0, 0, 0, .1);
 }
 
 .nav .active{
     border: 1px solid rgba(0, 0, 0, .1);
     border-bottom-color: transparent;
+    border-radius: 4px 4px 0 0;
 }
 
 .tab-content{
     width: 100%;
     min-height: 210px;
     border: 1px solid rgba(0, 0, 0, .1);
+    border-radius: 4px 4px 0 0;
     border-top-color: transparent;
 }
 
@@ -114,11 +118,11 @@ textarea, input{
     border: 1px solid transparent;
     font-size: 18px;
     padding: 7px 10px;
-    background-color: transparent;
     box-shadow: none;
     box-sizing: border-box;
     outline: none;
-    box-shadow: 1px 1px 2px #333530;
+    background-color: #ffff;
+    opacity: 0.6;
     margin: 20px 0;
     resize: none;
 }
