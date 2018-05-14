@@ -1,10 +1,21 @@
 .station-content{
     box-sizing: border-box;
-    padding: 30px;
+    padding: 30px 0;
+    padding-top: 0;
     background-image: url("/assets/img/textura_1.png");
     background-repeat: no-repeat;
     background-color: #E9D4A9;
     background-size: cover;
+}
+
+.station-content .image{
+    width: 100%;
+    height: calc(100vh - 131px - 60px - 20px);
+}
+
+.station-content .image img{
+    width: 100%;
+    height: 100%;
 }
 
 .station-content .container .infos .name{
@@ -30,6 +41,29 @@
     background-size: 100% 100%;
 }
 
+.station-content .container .infos .users{
+    height: 85px;
+    padding: 17px 0;
+}
+
+.station-content .container .infos .users .qtd{
+    color:#333530;
+    box-sizing: border-box;
+    height: 50px;
+    font-size: 16px;
+    float: right;
+    line-height: 50px;
+    margin-right: 15px;
+}
+
+.station-content .container .infos .users .user-image{
+    border-radius: 50%;
+    background-color: #ccc;
+    display: inline-block;
+    margin-right:7px;
+    height: 50px;
+    width: 50px;
+}
 .station-content .container .estacao-menu{
     width: 95%;
     margin: auto;
