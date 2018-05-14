@@ -86,10 +86,10 @@ input, select{
     font-size: 18px;
     padding: 10px 30px;
     color: #E9D4A9;
-    background-color: #333530; 
+    background-color: #3E4238; 
     cursor: pointer;
     user-select: none;
-    box-shadow: 1px 1px 2px #333530;
+    box-shadow: 1px 1px 2px #3E4238;
     margin-bottom: 20px;
     box-sizing: border-box;
 }
