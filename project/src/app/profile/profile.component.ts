@@ -12,14 +12,14 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit() {
   }
-  
-  editarPerfil: boolean = false;
 
-  editar(){
+  editarPerfil = false;
+
+  editar() {
     this.editarPerfil = true;
   }
 
-  concluir(){
+  concluir() {
 
   }
 }

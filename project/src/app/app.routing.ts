@@ -4,6 +4,8 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { Routes, RouterModule } from '@angular/router';
+import { PostCardComponent } from './post-card/post-card.component';
+import { Component } from '@angular/core';
 
 const APP_ROUTES: Routes=[
     {path: "", redirectTo: "/home", pathMatch: "full"},

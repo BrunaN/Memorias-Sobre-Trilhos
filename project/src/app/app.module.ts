@@ -15,6 +15,7 @@ import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { StationContentComponent } from './station-content/station-content.component';
 import { RecoverPasswordComponent } from './recover-password/recover-password.component';
+import { PostCardComponent } from './post-card/post-card.component';
 
 @NgModule({
   declarations: [
@@ -27,14 +28,14 @@ import { RecoverPasswordComponent } from './recover-password/recover-password.co
     HomeComponent,
     LoginComponent,
     StationContentComponent,
-    RecoverPasswordComponent
+    RecoverPasswordComponent,
+    PostCardComponent
   ],
   imports: [
     BrowserModule,
     routing,
     FormsModule,
     HttpModule
-    
   ],
   providers: [UsuarioService],
   bootstrap: [AppComponent]

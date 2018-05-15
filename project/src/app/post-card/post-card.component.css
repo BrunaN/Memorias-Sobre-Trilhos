@@ -1,0 +1,219 @@
+
+   .blog-container {
+    padding: 50px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 4px 2px -2px;
+    font-family: "adelle-sans", sans-serif;
+    font-weight: 100;
+    margin: 48px auto;
+    width: 20rem;
+  }
+  @media screen and (min-width: 480px) {  
+    .blog-container {
+      width: 28rem;
+    }
+  }
+  @media screen and (min-width: 767px) {
+    .blog-container {
+      width: 40rem;
+    }
+  }
+  @media screen and (min-width: 959px) {
+    .blog-container {
+      width: 60rem;
+    }
+  }
+  
+  .blog-relato-type{
+    background-color: #ff4d4d;
+    width: 100%;
+    height: 0.5rem;
+  }
+  
+  .blog-memoria-type{
+    background-color: forestgreen;
+    width: 100%;
+    height: 0.5rem;
+  }
+  
+  
+  .blog-container a {
+    color: #4d4dff;
+    text-decoration: none;
+    -webkit-transition: .25s ease;
+    transition: .25s ease;
+  }
+  .blog-container a:hover {
+    border-color: #3b6117;
+    color: #3b6117;
+  }
+  
+  .blog-cover {
+    background: url("http://4.bp.blogspot.com/-hCZ3w-pris8/TfkJLcfXJ-I/AAAAAAAACBI/PMG0wC3seFU/s1600/jrpfts+046.jpg");
+    background-size: cover;
+    border-radius: 0px 0px 0 0;
+    height: 20rem;
+    box-shadow: inset rgba(0, 0, 0, 0.2) 0 64px 64px 16px;
+  }
+  
+  .blog-author,
+  .blog-author--no-cover {
+    margin: 0 auto;
+    padding-top: .125rem;
+    width: 80%;
+  }
+  
+  .blog-author h3::before,
+  .blog-author--no-cover h3::before {
+    background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2rMaOUtoZfPCV3EWWgyz4vsQXcfDY2BJjW4jDC9TQw9pEYvOSQA");
+    background-size: cover;
+    border-radius: 50%;
+    content: " ";
+    display: inline-block;
+    height: 32px;
+    margin-right: .5rem;
+    position: relative;
+    top: 8px;
+    width: 32px;
+  }
+  
+  .blog-author h3 {
+    color: #fff;
+    font-weight: 200;
+  }
+  
+  .blog-author--no-cover h3 {
+    color: #999999;
+    font-weight: 100;
+  }
+  
+  .blog-body {
+    margin: 0 auto;
+    width: 80%;
+  }
+  
+  .video-body {
+    height: 100%;
+    width: 100%;
+  }
+  
+  .blog-title h1 a {
+    color: #333;
+    font-weight: 100;
+  }
+  
+  .blog-summary p {
+    color: #4d4d4d;
+  }
+  
+  .blog-tags ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .blog-tags li + li {
+    margin-left: .5rem;
+  }
+  
+  .blog-tags a {
+    border: 1px solid #999999;
+    border-radius: 3px;
+    color: #999999;
+    font-size: .75rem;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    letter-spacing: 1px;
+    padding: 0 .5rem;
+    text-align: center;
+    text-transform: uppercase;
+    white-space: nowrap;
+    width: 5rem;
+  }
+  
+  .blog-footer {
+    border-top: 1px solid #e6e6e6;
+    margin: 0 auto;
+    padding-bottom: .125rem;
+    width: 80%;
+  }
+  
+  .blog-footer ul {
+    list-style: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: row;
+        -ms-flex: row wrap;
+            flex: row wrap;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    padding-left: 0;
+  }
+  
+  .blog-footer li:first-child {
+    margin-right: auto;
+  }
+  
+  .blog-footer li + li {
+    margin-left: .5rem;
+  }
+  
+  .blog-footer li {
+    color: #999999;
+    font-size: 1.2rem;
+    height: 1.5rem;
+    letter-spacing: 1px;
+    line-height: 1.5rem;
+    text-align: center;
+    text-transform: uppercase;
+    position: relative;
+    white-space: nowrap;
+    top: 1rem;
+  }
+  .blog-footer li a {
+    color: #4d4d4d;
+  }
+  
+  .comments {
+    margin-right: 1rem;
+  }
+  
+  .published-date {
+    margin-top: .8rem;
+    border: 1px solid #999999;
+    border-radius: 3px;
+    padding: 0 .5rem;
+  }
+  
+  .numero {
+
+    position: relative;
+    top: -0.3rem;
+    left: 0.5rem;
+  }
+  
+  .icon-star,
+  .icon-bubble {
+    fill: #999999;
+    height: 24px;
+    margin-right: .5rem;
+    -webkit-transition: .25s ease;
+    transition: .25s ease;
+    width: 24px;
+  }
+  .icon-star:hover,
+  .icon-bubble:hover {
+    fill: #3b6117;
+  }
+  
