@@ -1,0 +1,17 @@
+*{
+    margin:0;
+    padding: 0;
+}
+
+.result-page{
+    margin:0;
+    background-repeat: no-repeat;
+    background-image: url(/assets/img/textura_1.png);
+    background-color: #E9D4A9;
+    background-size: cover;
+    padding: 50px;
+    text-align: center;
+    margin: auto;
+    box-sizing: border-box;
+    min-height: calc(100vh - 121px - 260px);
+}
