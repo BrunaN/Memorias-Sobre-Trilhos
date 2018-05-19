@@ -17,6 +17,7 @@ import { LoginComponent } from './login/login.component';
 import { StationContentComponent } from './station-content/station-content.component';
 import { RecoverPasswordComponent } from './recover-password/recover-password.component';
 import { PostCardComponent } from './post-card/post-card.component';
+import { ResultPagesComponent } from './result-pages/result-pages.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { PostCardComponent } from './post-card/post-card.component';
     StationContentComponent,
     RecoverPasswordComponent,
     PostCardComponent,
-    SonhoAzulComponent
+    SonhoAzulComponent,
+    ResultPagesComponent
   ],
   imports: [
     BrowserModule,
