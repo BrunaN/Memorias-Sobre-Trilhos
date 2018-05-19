@@ -16,11 +16,12 @@ import { Cidade } from '../cadastro/cidade.model'
 
 export class CadastroComponent implements OnInit {
 
-  id : number;
-  nome : string = "";
-  email : string = "";
-  password : string = "";
-  cidade : string = "";
+  id: number;
+  nome: string = "";
+  email: string = "";
+  password: string = "";
+  estado: string = ""
+  cidade: string = "";
 
   estadoSelecionado: Estado = new Estado(0, "Acre");
 
@@ -40,10 +41,10 @@ export class CadastroComponent implements OnInit {
 
   addUsuario(event){
     event.preventDefault();
-    this.service.adicionar(new Usuario(this.id, this.nome, this.email, this.password, this.cidade))
+    this.service.adicionar(new Usuario(this.id, this.nome, this.email, this.password, this.estado, this.cidade))
     .subscribe(data => {
       console.log(data),
-        error => console.log(error)
+      error => console.log(error)
     });
   }
   
