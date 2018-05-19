@@ -1,3 +1,4 @@
+import { SonhoAzulComponent } from './sonho-azul/sonho-azul.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
@@ -17,6 +18,7 @@ import { StationContentComponent } from './station-content/station-content.compo
 import { RecoverPasswordComponent } from './recover-password/recover-password.component';
 import { PostCardComponent } from './post-card/post-card.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +31,8 @@ import { PostCardComponent } from './post-card/post-card.component';
     LoginComponent,
     StationContentComponent,
     RecoverPasswordComponent,
-    PostCardComponent
+    PostCardComponent,
+    SonhoAzulComponent
   ],
   imports: [
     BrowserModule,

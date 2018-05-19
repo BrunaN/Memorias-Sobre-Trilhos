@@ -1,3 +1,4 @@
+import { SonhoAzulComponent } from './sonho-azul/sonho-azul.component';
 import { ProfileComponent } from './profile/profile.component';
 import { RecoverPasswordComponent } from './recover-password/recover-password.component';
 import { LoginComponent } from './login/login.component';
@@ -14,6 +15,7 @@ const APP_ROUTES: Routes=[
     {path: "login", component: LoginComponent},
 
     {path: "redefinir-senha", component: RecoverPasswordComponent},
-    {path: "perfil", component: ProfileComponent}
+    {path: "perfil", component: ProfileComponent},
+    {path: "sonho-azul", component: SonhoAzulComponent}
 ]
 export const routing=RouterModule.forRoot(APP_ROUTES);
