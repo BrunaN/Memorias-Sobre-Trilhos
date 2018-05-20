@@ -8,27 +8,6 @@
     position: relative;
 }
 
-form{
-    margin-top: 20px;
-    display: inline-block;
-    position: relative;
-}
-
-input, select{
-    border-radius: 8px;
-    margin-bottom: 20px;
-    border: 1px solid transparent;
-    font-size: 18px;
-    padding: 7px 10px;
-    background-color: #ffff;
-    opacity: 0.6;
-    box-shadow: none;
-    box-sizing: border-box;
-    width: 360px;
-    outline: none;
-    box-shadow: 1px 1px 2px #333530;
-}
-
 .viewport{
     padding: 50px;
     background: url('/assets/img/textura_1.png');
@@ -39,6 +18,36 @@ input, select{
     background-size: cover;
     background-color: #E9D4A9;
     min-height: calc(100vh - 121px - 260px);
+}
+
+form{
+    margin-top: 20px;
+    display: inline-block;
+    position: relative;
+}
+
+.form-group{
+    margin-bottom: 20px;
+}
+
+input, select{
+    border-radius: 8px;
+    border: 1px solid transparent;
+    font-size: 18px;
+    padding: 7px 10px;
+    background-color: #ffff;
+    opacity: 0.6;
+    box-shadow: none;
+    box-sizing: border-box;
+    width: 360px;
+    height: 41px;
+    outline: none;
+    box-shadow: 1px 1px 2px #333530;
+    display: block;
+}
+
+select{
+    margin-bottom: 20px;
 }
 
 .submit{
@@ -56,4 +65,12 @@ input, select{
     box-shadow: 1px 1px 2px #3E4238;
     margin-bottom: 20px;
     box-sizing: border-box;
+}
+
+span{
+    text-align: right;
+}
+
+span ul li{
+    list-style-type: none;
 }

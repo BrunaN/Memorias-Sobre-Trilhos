@@ -23,8 +23,6 @@ export class CadastroComponent implements OnInit {
   estado: string = ""
   cidade: string = "";
 
-  input1Error : boolean = true;
-
   estadoSelecionado: Estado = new Estado(0, "Acre");
 
   estados: Estado[];
@@ -41,14 +39,6 @@ export class CadastroComponent implements OnInit {
   ngOnInit() {
   }
   
-  validar(){
-    if(this.nome == ""){
-      this.input1Error = true;
-    }else{
-      this.input1Error = false;
-    }
-  }
-
   addUsuario(event){
     event.preventDefault();
     this.service.adicionar(new Usuario(this.id, this.nome, this.email, this.password, this.estado, this.cidade))
