@@ -2,29 +2,35 @@
   <div class="container-fluid">
     <div class="form">
       <form #myForm="ngForm">
-        <div class="form-group form-nome" [ngClass]="{'has-error': !name.valid && (name.dirty || name.touched)}">
+        <div class="form-group" [ngClass]="{'has-error': !name.valid && (name.dirty || name.touched)}">
           <input [(ngModel)]="nome" class="form-control" name="nome" type="text" id="inputName" placeholder="Nome" #name="ngModel" required>
           <span class="help-block" *ngIf="name.errors && (name.dirty || name.touched)">
             <ul>
               <li *ngIf="name.errors.required">
-                O campo é requerido
+                Por favor, preencher o campo
               </li>
             </ul>
           </span>
         </div>
-        <div class="form-group form-email" [ngClass]="{'has-error': !emailvalidate.valid && (emailvalidate.dirty || emailvalidate.touched)}">
+        <div class="form-group" [ngClass]="{'has-error': !emailvalidate.valid && (emailvalidate.dirty || emailvalidate.touched)}">
           <input [(ngModel)]='email' class="form-control" name='email' type="email" id="inputEmail" placeholder="Email" email #emailvalidate="ngModel" required>
           <span class="help-block" *ngIf="emailvalidate.errors && (emailvalidate.dirty || emailvalidate.touched)">
             <ul>
               <li *ngIf="emailvalidate.errors.email">
-                O email é inválido
+                  Por favor, preencher o campo com um Email válido
               </li>
             </ul>
           </span>
         </div>
-        <div class="form-group form-password">
-          <input [(ngModel)]="password" class="form-control" name="password" type="password" id="inputPassword" placeholder="Senha" #senha="ngModel"required>
-          <div class="help-block with-errors"></div>
+        <div class="form-group" [ngClass]="{'has-error': !senhavalidate.valid && (senhavalidate.dirty || senhavalidate.touched)}">
+          <input [(ngModel)]="password" class="form-control" name="password" type="password" id="inputPassword" placeholder="Senha" #senhavalidate="ngModel"required password>
+          <span class="help-block" *ngIf="senhavalidate.errors && (senhavalidate.dirty || senhavalidate.touched)">
+            <ul>
+              <li *ngIf="senhavalidate.errors.required">
+                Por favor, preencher o campo
+              </li>
+            </ul>
+          </span>
         </div>
         <div>
           <select [(ngModel)]="estadoSelecionado.id" (change)="onSelect($event.target.value)" id="sel1" name="estado">
