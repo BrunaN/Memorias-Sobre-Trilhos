@@ -12,4 +12,6 @@ export class StationContentComponent implements OnInit {
   ngOnInit() {
   }
 
+  withLogin: boolean = false;
+
 }

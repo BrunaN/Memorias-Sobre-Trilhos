@@ -6,28 +6,33 @@
 
     <div class="content-infos">
         <div class="row infos">
-            <div class="col-md-8 name">
-              <li>Estação Fortaleza </li>
+            <div class="name">
+              <li>Fortaleza </li>
             </div>
-            <div class="col-md-4 users">
+            <!-- <div class="users">
               <div class="user-image">
-                <!-- <img src="" alt=""> -->
+                <img src="" alt="">
               </div>
               <div class="user-image">
-                <!-- <img src="" alt=""> -->
+                <img src="" alt="">
               </div>
               <div class="user-image">
-                <!-- <img src="" alt=""> -->
+                <img src="" alt="">
               </div>
               <div class="qtd">
                 <p>
                   + 40 pessoas
                 </p>
               </div>
+            </div> -->
+            <div class="withoutLogin">
+              <p>Para realizar uma postagem é necessário fazer login.</p>
+              <a href="" routerLink="/login">Realizar Login</a><br>
+              <span> <p>ainda não é cadastrado?</p> <a href="" routerLink="/cadastro">Realizar Cadastro</a></span>
             </div>
           </div>
-      
-          <div class="estacao-menu">
+        
+          <div class="estacao-menu" *ngIf="withLogin">
             <ul class="nav nav-tabs nav-justified">
               <li role="presentation" class="active">
                 <a href="#relato" aria-controls="relato" role="tab" data-toggle="tab">Relato</a>
