@@ -1,30 +1,35 @@
 <div class="viewport">
   <div class="container-fluid">
-    <div class="voltar" routerLinkActive="active">
-      <!-- <a routerLink="/header"><img class="volt" src="assets/images/voltar.png">Voltar</a> -->
-    </div>
     <div class="form">
-      <!-- <div class="form-facebook">
-        <button type="submit" class="botao-facebook" (click)="addUsuario($event)">
-          <img class="facebook" src="assets/images/facebook-icon.png"> Cadastre-se com Facebook </button>
-      </div>
-    </div> -->
-    <form class="form-horizontal">
-        <div class="form-nome">
-          <input [(ngModel)]="nome" name="nome" type="text" id="inputName" placeholder="Nome">
+      <form #myForm="ngForm">
+        <div class="form-group form-nome" [ngClass]="{'has-error': !name.valid && (name.dirty || name.touched)}">
+          <input [(ngModel)]="nome" class="form-control" name="nome" type="text" id="inputName" placeholder="Nome" #name="ngModel" required>
+          <span class="help-block" *ngIf="name.errors && (name.dirty || name.touched)">
+            <ul>
+              <li *ngIf="name.errors.required">
+                O campo é requerido
+              </li>
+            </ul>
+          </span>
         </div>
-        <div class="form-email">
-          <input [(ngModel)]='email' name='email' type="email"  id="inputEmail" placeholder="Email">
+        <div class="form-group form-email" [ngClass]="{'has-error': !emailvalidate.valid && (emailvalidate.dirty || emailvalidate.touched)}">
+          <input [(ngModel)]='email' class="form-control" name='email' type="email" id="inputEmail" placeholder="Email" email #emailvalidate="ngModel" required>
+          <span class="help-block" *ngIf="emailvalidate.errors && (emailvalidate.dirty || emailvalidate.touched)">
+            <ul>
+              <li *ngIf="emailvalidate.errors.email">
+                O email é inválido
+              </li>
+            </ul>
+          </span>
         </div>
-        <div class="form-password">
-          <input [(ngModel)]="password" name="password" type="password" id="inputPassword" placeholder="Senha">
+        <div class="form-group form-password">
+          <input [(ngModel)]="password" class="form-control" name="password" type="password" id="inputPassword" placeholder="Senha" #senha="ngModel"required>
+          <div class="help-block with-errors"></div>
         </div>
         <div>
-          <select [(ngModel)]="estadoSelecionado.id" 
-                  (change)="onSelect($event.target.value)" 
-                  id="sel1" name="estado">
+          <select [(ngModel)]="estadoSelecionado.id" (change)="onSelect($event.target.value)" id="sel1" name="estado">
             <option value="0" disabled="disabled"> Selecione seu estado</option>
-            <option *ngFor="let estado of estados" value = {{estado.id}}>
+            <option *ngFor="let estado of estados" value={{estado.id}}>
               {{estado.nome}}
             </option>
           </select>
@@ -32,13 +37,13 @@
         <div class="form-cidade">
           <select [(ngModel)]="cidade" name="cidade">
             <option value="" disabled="disabled"> Selecione sua cidade</option>
-            <option *ngFor="let cidade of cidades" value = {{cidade.id}}>
+            <option *ngFor="let cidade of cidades" value={{cidade.id}}>
               {{cidade.nome}}
             </option>
           </select>
         </div>
         <div>
-          <button type="submit" class="submit" (click)="addUsuario($event)">Cadastrar</button>
+          <button type="submit" class="submit" [disabled]="!myForm.valid" (click)="addUsuario($event)">Cadastrar</button>
         </div>
-    </form>
-  </div>
+      </form>
+    </div>

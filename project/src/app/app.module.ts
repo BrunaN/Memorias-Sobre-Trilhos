@@ -7,12 +7,12 @@ import { UsuarioService } from './usuario.service';
 import { routing } from './app.routing';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { UsuarioComponent } from './usuario/usuario.component';
-import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { StationContentComponent } from './station-content/station-content.component';
 import { RecoverPasswordComponent } from './recover-password/recover-password.component';

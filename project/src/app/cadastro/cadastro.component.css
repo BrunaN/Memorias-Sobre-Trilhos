@@ -3,51 +3,15 @@
     padding: 0;
 }
 
-.voltar a{
-    display: block;
-    text-align: left;
-    font-family:"Century Gothic";
-    text-decoration: none;
-    color:#30322B;
-    margin-left: 33%;
-}
-
-.volt{
-    max-height: 30px;
-    max-width: 20px; 
-    padding: 5px;  
-}
-
 .container-fluid{
     width:100%;
     position: relative;
 }
 
-.form-horizontal{
-    display: inline-block;
-    position: relative;
-}
-
-.botao-facebook{
-    background-color: #485992;
-    border: none;
-    color: white;
-    padding: 5px 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 12;
-    border-radius: 5px;
-    width: 250px;
-}
-
-.facebook{
-    max-height: 40px;
-    max-width: 30px;
-}
-
 form{
     margin-top: 20px;
+    display: inline-block;
+    position: relative;
 }
 
 input, select{
