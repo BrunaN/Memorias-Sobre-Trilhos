@@ -32,7 +32,7 @@
             </ul>
           </span>
         </div>
-        <div>
+        <div class="form-group">
           <select [(ngModel)]="estadoSelecionado.id" (change)="onSelect($event.target.value)" id="sel1" name="estado">
             <option value="0" disabled="disabled"> Selecione seu estado</option>
             <option *ngFor="let estado of estados" value={{estado.id}}>
@@ -40,7 +40,7 @@
             </option>
           </select>
         </div>
-        <div class="form-cidade">
+        <div class="form-group">
           <select [(ngModel)]="cidade" name="cidade">
             <option value="" disabled="disabled"> Selecione sua cidade</option>
             <option *ngFor="let cidade of cidades" value={{cidade.id}}>
