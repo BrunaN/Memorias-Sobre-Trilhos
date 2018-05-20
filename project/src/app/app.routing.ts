@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { Routes, RouterModule } from '@angular/router';
 import { PostCardComponent } from './post-card/post-card.component';
+import { StationContentComponent } from './station-content/station-content.component';
 import { Component } from '@angular/core';
 
 const APP_ROUTES: Routes=[
@@ -17,6 +18,7 @@ const APP_ROUTES: Routes=[
     {path: "redefinir-senha", component: RecoverPasswordComponent},
     {path: "perfil", component: ProfileComponent},
     {path: "sonho-azul", component: SonhoAzulComponent},
-    {path: "resultados", component: ResultPagesComponent}
+    {path: "resultados", component: ResultPagesComponent},
+    {path: "Estação", component: StationContentComponent}
 ]
 export const routing=RouterModule.forRoot(APP_ROUTES);

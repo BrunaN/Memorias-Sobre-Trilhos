@@ -6,11 +6,12 @@
     background-repeat: no-repeat;
     background-color: #E9D4A9;
     background-size: cover;
+    min-height: calc(100vh - 121px + 260px);
 }
 
 .station-content .image{
     width: 100%;
-    height: calc(100vh - 131px - 60px - 20px);
+    height: 500px;
 }
 
 .station-content .image img{
@@ -18,8 +19,27 @@
     height: 100%;
 }
 
+.station-content .container{
+    position: relative;
+    width: 78%;
+}
+
+.station-content .container .content-infos{
+    position: absolute;
+    top: calc(-230px + 131px);
+    background-image: url("/assets/img/textura_1.png");
+    background-repeat: no-repeat;
+    background-color: #E9D4A9;
+    background-size: cover;
+    padding: 50px;
+    padding-top: 0;
+    border: solid 1px rgba(0, 0, 0, .3);
+    border-radius: 4px;
+}
+
 .station-content .container .infos .name{
-    padding: 25px 0;
+    padding: 35px 0;
+    box-sizing: border-box;
 }
 
 .station-content .container .infos .name li{
@@ -43,7 +63,7 @@
 
 .station-content .container .infos .users{
     height: 85px;
-    padding: 17px 0;
+    padding: 20px 0;
 }
 
 .station-content .container .infos .users .qtd{
@@ -51,21 +71,20 @@
     box-sizing: border-box;
     height: 50px;
     font-size: 16px;
-    float: right;
-    line-height: 50px;
     margin-right: 15px;
+    padding-top: 16px;
 }
 
 .station-content .container .infos .users .user-image{
     border-radius: 50%;
     background-color: #ccc;
-    display: inline-block;
+    float: left;
     margin-right:7px;
     height: 50px;
     width: 50px;
 }
 .station-content .container .estacao-menu{
-    width: 95%;
+    width: 100%;
     margin: auto;
 }
 
@@ -148,4 +167,11 @@ textarea, input{
     box-shadow: 1px 1px 2px #3E4238;
     margin-bottom: 20px;
     box-sizing: border-box;
+}
+
+.content-posts{
+    margin-top: 308px;
+    padding: 50px;
+    text-align: center;
+    width: 100%;
 }
