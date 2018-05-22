@@ -1,3 +1,4 @@
+import { LoginService } from './../login.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,11 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StationContentComponent implements OnInit {
 
-  constructor() { }
+  constructor( protected loginService: LoginService) { }
 
   ngOnInit() {
   }
-
-  withLogin: boolean = false;
 
 }

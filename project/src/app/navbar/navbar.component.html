@@ -1,59 +1,90 @@
 <header>
     <nav>
-      <div class="logo">
-        <a href="" routerLink="/home"><img src="../../assets/img/logo_1.png" alt=""></a>
-      </div>
-    <div class="links">
-      <div class="estacoes">
-        <a href="" (click)="dropdownToggle($event)">Estações <span class="glyphicon glyphicon-menu-down"></span> </a>
-      </div>
-      <a href="" routerLink="/cadastro">Cadastro</a>
-      <a href="" routerLink="/login">Login</a>
+        <div class="logo">
+            <a href="" routerLink="/home">
+                <img src="../../assets/img/logo_1.png" alt="">
+            </a>
+        </div>
+        <div class="links">
+            <div class="estacoes">
+                <a href="" (click)="dropdownToggle($event)">Estações
+                    <span class="glyphicon glyphicon-menu-down"></span>
+                </a>
+            </div>
+            <div *ngIf="!this.loginService.userLogged()">
+                <a href="" routerLink="/cadastro">Cadastro</a>
+                <a href="" routerLink="/login">Login</a>
+            </div>
+            <div *ngIf="this.loginService.userLogged()">
+                hjucvrehufhrijviorej;
+            </div>
+        </div>
+    </nav>
+    <div class="pesquisar">
+        <input type="text" placeholder="Pesquise por cidade"><button id="pesquisa">buscar</button>
     </div>
-  </nav>
-  <div class="pesquisar">
-    <input type="text" placeholder="Pesquise por cidade"><button id="pesquisa">buscar</button>
-  </div>
 </header>
 
 <div class="dropdown-estacoes" [ngClass]="dropdown">
-  <span id="estacoes-close" (click)="dropdownToggle($event)">x</span>
-  <div class="container">
-    <div class="row">
-      <h1>Visite as Estações</h1>
-      <div class="col-md-2 col-md-offset-1 col-sm-3 col-xs-6">
-          <div><a href="">Fortaleza</a></div>
-      </div>
-      <div class="col-md-2 col-sm-3 col-xs-6">
-          <div><a href="">Pacatuba</a></div>
-      </div>
-      <div class="col-md-2 col-sm-3 col-xs-6">
-          <div><a href="">Baturité</a></div>
-      </div>
-      <div class="col-md-2 col-sm-3 col-xs-6">
-          <div><a href="">Caio Prado</a></div>
-      </div>
-      <div class="col-md-2 col-sm-3 col-xs-6">
-          <div><a href="">Quixadá</a></div>
-      </div>
-      <div class="col-md-2 col-md-offset-1 col-sm-3 col-xs-6">
-          <div><a href="">Quixaramobim</a></div>
-      </div>
-      <div class="col-md-2 col-sm-3 col-xs-6">
-          <div><a href="">Senador Pompeu</a></div>
-      </div>
-      <div class="col-md-2 col-sm-3 col-xs-6">
-          <div><a href="">Piquet Carneiro</a></div>
-      </div>
-      <div class="col-md-2 col-sm-3 col-xs-6">
-          <div><a href="">Acopiara</a></div>
-      </div>
-      <div class="col-md-2 col-sm-3 col-xs-6">
-          <div><a href="">Iguatu</a></div>
-      </div>   
-      <div class="col-md-2 col-md-offset-1 col-sm-3 col-xs-6">
-          <div><a href="">Baixio</a></div>
-      </div>   
+    <span id="estacoes-close" (click)="dropdownToggle($event)">x</span>
+    <div class="container">
+        <div class="row">
+            <h1>Visite as Estações</h1>
+            <div class="col-md-2 col-md-offset-1 col-sm-3 col-xs-6">
+                <div>
+                    <a href="">Fortaleza</a>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-3 col-xs-6">
+                <div>
+                    <a href="">Pacatuba</a>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-3 col-xs-6">
+                <div>
+                    <a href="">Baturité</a>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-3 col-xs-6">
+                <div>
+                    <a href="">Caio Prado</a>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-3 col-xs-6">
+                <div>
+                    <a href="">Quixadá</a>
+                </div>
+            </div>
+            <div class="col-md-2 col-md-offset-1 col-sm-3 col-xs-6">
+                <div>
+                    <a href="">Quixaramobim</a>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-3 col-xs-6">
+                <div>
+                    <a href="">Senador Pompeu</a>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-3 col-xs-6">
+                <div>
+                    <a href="">Piquet Carneiro</a>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-3 col-xs-6">
+                <div>
+                    <a href="">Acopiara</a>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-3 col-xs-6">
+                <div>
+                    <a href="">Iguatu</a>
+                </div>
+            </div>
+            <div class="col-md-2 col-md-offset-1 col-sm-3 col-xs-6">
+                <div>
+                    <a href="">Baixio</a>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 </div>

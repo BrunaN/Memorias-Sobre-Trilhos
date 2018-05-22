@@ -25,7 +25,7 @@
                 </p>
               </div>
             </div> -->
-        <div class="withoutLogin">
+        <div class="withoutLogin" *ngIf="!this.loginService.userLogged()">
           <p>Para realizar uma postagem é necessário fazer login.</p>
           <a href="" routerLink="/login">Realizar Login</a>
           <br>
@@ -36,7 +36,7 @@
         </div>
       </div>
 
-      <div class="estacao-menu" *ngIf="withLogin">
+      <div class="estacao-menu" *ngIf="this.loginService.userLogged()">
         <ul class="nav nav-tabs nav-justified">
           <li role="presentation" class="active">
             <a href="#relato" aria-controls="relato" role="tab" data-toggle="tab">Relato</a>

@@ -100,6 +100,7 @@ span{
 
 .pesquisar{
     width: 346.03px;
+    display: block;
     margin: auto;
     /* padding abaixo por conta da sobra da barra */
     padding-bottom: 10px;

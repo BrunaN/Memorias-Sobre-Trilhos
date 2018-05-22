@@ -1,14 +1,14 @@
 <div class="row login">
   <form action="">
-    <input type="text" placeholder="Email">
+    <input [ngModel]="email" type="text" placeholder="Email" name="emailInput">
     <div>
-      <input class="senha" type="text" placeholder="Senha">
+      <input [ngModel]="password" class="senha" type="text" placeholder="Senha" name="passwordInput">
       <div class="redefinir">
         <a routerLink="/redefinir-senha">Esqueceu sua senha?</a>
       </div>
     </div>
     <div>
-      <button type="submit">
+      <button type="submit" (click)="login()">
         Entrar
       </button>
     </div>

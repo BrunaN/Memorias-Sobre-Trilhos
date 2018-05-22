@@ -3,7 +3,8 @@
     <div class="form">
       <form #myForm="ngForm">
         <div class="form-group" [ngClass]="{'has-error': !name.valid && (name.dirty || name.touched)}">
-          <input [(ngModel)]="nome" class="form-control" name="nome" type="text" id="inputName" placeholder="Nome" #name="ngModel" required>
+          <input [(ngModel)]="nome" class="form-control" name="nome" type="text" id="inputName" placeholder="Nome" #name="ngModel"
+            required>
           <span class="help-block" *ngIf="name.errors && (name.dirty || name.touched)">
             <ul>
               <li *ngIf="name.errors.required">
@@ -13,17 +14,19 @@
           </span>
         </div>
         <div class="form-group" [ngClass]="{'has-error': !emailvalidate.valid && (emailvalidate.dirty || emailvalidate.touched)}">
-          <input [(ngModel)]='email' class="form-control" name='email' type="email" id="inputEmail" placeholder="Email" email #emailvalidate="ngModel" required>
+          <input [(ngModel)]='email' class="form-control" name='email' type="email" id="inputEmail" placeholder="Email" email #emailvalidate="ngModel"
+            required>
           <span class="help-block" *ngIf="emailvalidate.errors && (emailvalidate.dirty || emailvalidate.touched)">
             <ul>
               <li *ngIf="emailvalidate.errors.email">
-                  Por favor, preencher o campo com um Email válido
+                Por favor, preencher o campo com um Email válido
               </li>
             </ul>
           </span>
         </div>
         <div class="form-group" [ngClass]="{'has-error': !senhavalidate.valid && (senhavalidate.dirty || senhavalidate.touched)}">
-          <input [(ngModel)]="password" class="form-control" name="password" type="password" id="inputPassword" placeholder="Senha" #senhavalidate="ngModel"required password>
+          <input [(ngModel)]="password" class="form-control" name="password" type="password" id="inputPassword" placeholder="Senha"
+            #senhavalidate="ngModel" required password>
           <span class="help-block" *ngIf="senhavalidate.errors && (senhavalidate.dirty || senhavalidate.touched)">
             <ul>
               <li *ngIf="senhavalidate.errors.required">
@@ -53,3 +56,5 @@
         </div>
       </form>
     </div>
+  </div>
+</div>
