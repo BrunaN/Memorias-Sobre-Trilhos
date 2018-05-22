@@ -8,7 +8,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class PostCardComponent implements OnInit {
   
-  user = 'Jhonny Sousa';
 
   constructor(private route: ActivatedRoute,
     private router: Router) { }
