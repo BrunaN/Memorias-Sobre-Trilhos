@@ -8,6 +8,7 @@ import { Usuario } from './usuario/usuario.model';
 
 @Injectable()
 export class LoginService {
+
     constructor( private http : Http){ };
 
     urlUsuarios: string = "";
@@ -22,7 +23,7 @@ export class LoginService {
     };
 
     userLogged(){
-        return false;
+        return this.user;
     };
 
     logout(){
