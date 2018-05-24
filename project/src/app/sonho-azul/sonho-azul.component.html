@@ -1,198 +1,63 @@
-<div class="content">
-  <div class="image">
-    <img src="../../assets/img/sonho-azul2.jpg" alt="">
+<div class="asabranca-content">
+  <div class="slider-asabranca">
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        
+      <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <img src="assets/img/sonho.jpg" alt="...">
+          <div class="carousel-caption">
+          </div>
+        </div>
+        <div class="item">
+          <img src="assets/img/expresso.jpg" alt="...">
+          <div class="carousel-caption">
+          </div>
+        </div>
+        <div class="item">
+          <img src="assets/img/trem.jpg" alt="...">
+          <div class="carousel-caption">
+          </div>
+        </div>
+        <a class="volta left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+          <!-- <img src="assets/img/seta-left.png" aria-hidden="true"> -->
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="avanca right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+          <!-- <img src="assets/img/seta-right.png" aria-hidden="true"> -->
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+
   </div>
   <div class="container">
-    <div class="row infos">
-      <div class="col-md-9 name">
-        <li>Expresso Asa Branca / Sonho Azul </li>
-      </div>
-      <div class="col-md-3 users">
-        <div class="user-image">
-          <!-- <img src="" alt=""> -->
+
+    <div class="content-infos">
+      <div class="row infos">
+        <div class="name">
+          <li>Expresso Asa Branca</li>
         </div>
-        <div class="user-image">
-          <!-- <img src="" alt=""> -->
-        </div>
-        <div class="user-image">
-          <!-- <img src="" alt=""> -->
-        </div>
-        <div class="qtd">
-          <p>
-            + 40 pessoas
-          </p>
+
+      <div class="asabranca-texto">
+        <div>
+          O Expresso Asa Branca, trem de passageiros que fazia o percurso Fortaleza a Recife, iniciou as 
+          atividade em julho de 1965. 
+          Suas características marcantes de conforto e sofisticação fez ele se destacar dos demais e 
+          permanecer nas memórias dos passageiros.
+          A viagem durava cerca de 23 horas e ocorria duas vezes por semana. O trem fez sua última viagem 
+          em novembro de 1988 ( Diário do Nordeste, 2015), apesar do curto período que fez o transporte de 
+          passageiros, contribui muito com a economia da região. 
         </div>
       </div>
     </div>
 
-    <!-- <div class="menu-filtro">
-      <a href="" (click)="aparecer($event)">
-        <img src="../../assets/img/menu_filtro.png" alt=""> </a>
-    </div>
-    <div class="dropdown-filtro" [ngClass]="dropdown_filtro">
-      <div class="conteudo">
-        <ul>
-          <li>
-            <a href="">Relatos</a>
-          </li>
-          <li>
-            <a href="">Imagens</a>
-          </li>
-          <li>
-            <a href="">Vídeos</a>
-          </li>
-        </ul>
-      </div>
-    </div> -->
-
-    <div class="sonho-azul-content">
-      <article>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-          aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-          sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-          aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-          sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-          aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-          sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-
-      </article>
-      <br>
-      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-          <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-          <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-          <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-        </ol>
-
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner" role="listbox">
-          <div class="item active">
-            <img src="assets/img/sonho.jpg" alt="...">
-            <div class="carousel-caption">
-            </div>
-          </div>
-          <div class="item">
-            <img src="assets/img/expresso.jpg" alt="...">
-            <div class="carousel-caption">
-            </div>
-          </div>
-          <div class="item">
-            <img src="assets/img/trem.jpg" alt="...">
-            <div class="carousel-caption">
-            </div>
-          </div>
-          <!-- Controls -->
-          <a class="volta left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-            <img src="assets/img/seta-left.png" aria-hidden="true">
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="avanca right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-            <img src="assets/img/seta-right.png" aria-hidden="true">
-            <span class="sr-only">Next</span>
-          </a>
-        </div>
-      </div>
-      <!-- <div class="trilhos">
-        <img src="assets/img/trilhos2.png" alt="...">
-      </div> -->
-      <div class="trilhos">
-        <img src="assets/img/trilhos.png" alt="...">
-      </div>
-      <div class="alerta-login">
-        <span> Para fazer uma postagem, é necessário estar logado.</span>
-        <div class="fazer-login">
-          <a routerLink="/login"> Realizar login </a>
-        </div>
-        <div class="fazer-cadastro">
-          Ainda não tem cadastro?
-          <a routerLink="/cadastro">Realizar cadastro. </a>
-        </div>
-      </div>
-      <div class="posts">
-        <div class="blog-container">
-          <div class="blog-memoria-type">
-          </div>
-          <div class="blog-header">
-            <div class="user-image ">
-              <!-- <img src=""> -->
-            </div>
-            <div class="blog-author--no-cover">
-              <h3> {{user}} Lucas |</h3>
-            </div>
-            <div class="horario-post">
-              <h5> {{horario}} 15min</h5>
-            </div>
-            <div class="opcoes">
-              <a href="" (click)="aparecerOpcoes($event)">
-                <img src="assets/img/opcoes.png">
-              </a>
-            </div>
-            <div class="dropdown-opcoes" [ngClass]="dropdown_opcoes">
-              <div class="conteudo-opcoes">
-                <ul>
-                  <li>
-                    <a href="">...</a>
-                  </li>
-                  <li>
-                    <a href="">...</a>
-                  </li>
-                  <li>
-                    <a href="">...</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="blog-body ">
-          <iframe src="https://www.youtube.com/watch?v=r3vgGc7KRcA" width="560" height="315" frameborder="0" allowfullscreen></iframe>
-          <div class="blog-title">
-            <h1>
-              <a href="#">Meu vídeo indo pra Sobral</a>
-            </h1>
-          </div>
-          <div class="blog-summary">
-            <p>Uma pequena descrição do vídeo</p>
-          </div>
-          <div class="blog-tags">
-            <ul>
-              <li>
-                <a href="#">video</a>
-              </li>
-              <li>
-                <a href="#">sobral</a>
-              </li>
-              <li>
-                <a href="#">amo-viajar-trem</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="blog-footer">
-          <ul>
-            <li class="published-date">1 mês atrás</li>
-            <li class="comments">
-              <a href="#">
-                <i class="material-icons">comment</i>
-                <span class="numero">4 - Comentar</span>
-              </a>
-            </li>
-            <li class="shares">
-              <a href="#">
-                <i class="material-icons">sentiment_very_satisfied</i>
-                <span class="numero">1 - Gostei</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
+    <div class="content-posts">
+      <app-post-card></app-post-card>
     </div>
   </div>
+</div>
