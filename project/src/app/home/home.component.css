@@ -69,7 +69,7 @@
     padding-bottom: 30px;
 }
 
-.outro{
+.asa-branca{
     background-image: url("/assets/img/textura_3.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -79,7 +79,13 @@
     padding-top: 150px;
     background-size: cover;
 }
-
+.asa-branca h2{
+    margin: auto;
+    text-align: center;
+    color: rgb(48, 29, 0);
+    padding: 35px;
+    padding-top: 45px;
+}
 h2{
     margin: auto;
     text-align: center;
@@ -101,7 +107,7 @@ h2{
     border-radius: 50%;
 }
 
-.outro input{
+.asa-branca input{
     border-radius: 8px;
     display: block;
     margin: auto;
