@@ -27,7 +27,7 @@ export class UsuarioService {
             .map((response: Response) => {
                 this.usuarios = [];
                 for (let usuario of response.json()) {
-                    this.usuarios.push(new Usuario(usuario.id, usuario.nomeUsuario, usuario.email, usuario.password, usuario.estado, usuario.cidade))
+                    this.usuarios.push(new Usuario(usuario._id, usuario.nomeUsuario, usuario.email, usuario.password))
                 }
                 return this.usuarios;
             })

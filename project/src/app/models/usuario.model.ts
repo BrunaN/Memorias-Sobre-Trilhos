@@ -1,16 +1,16 @@
 export class Usuario{
-    id : string;
-    nome : string;
+    _id: string
+    name : string;
     email : string;
-    senha : string;
-    estado: string;
-    cidade: string;
-    constructor(id, nome, email, senha, estado, cidade){
-        this.id = id;
-        this.nome = nome;
+    password : string;
+    // estado: string;
+    // cidade: string;
+    constructor(_id, name, email, password){
+        this._id = _id;
+        this.name = name;
         this.email = email;
-        this.senha = senha;
-        this.estado = estado;
-        this.cidade = cidade;
+        this.password = password;
+        // this.estado = estado;
+        // this.cidade = cidade;
     }
 }

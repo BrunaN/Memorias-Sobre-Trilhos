@@ -1,3 +1,4 @@
+import { LoginService } from './../services/login.service';
 import { DataService } from '../services/data.service';
 import { UsuarioService } from '../services/usuario.service';
 import { Component, OnInit } from '@angular/core';
@@ -16,36 +17,38 @@ import { Cidade } from '../models/cidade.model'
 
 export class CadastroComponent implements OnInit {
 
-  id: number;
+  _id: string;
   nome: string = "";
   email: string = "";
   password: string = "";
-  estado: string = ""
-  cidade: string = "";
+  // estado: string = ""
+  // cidade: string = "";
 
   estadoSelecionado: Estado = new Estado(0, "Acre");
 
   estados: Estado[];
   cidades: Cidade[];
 
-  constructor(private service : UsuarioService, private data : DataService) { 
+  constructor(private service: UsuarioService, private data: DataService, private loginService: LoginService){ 
     this.estados = this.data.getEstados();
+  }
+
+  ngOnInit() {
   }
 
   onSelect(id){
     this.cidades = this.data.getCidades().filter((item)=>item.estadoId==id);
   }
 
-  ngOnInit() {
-  }
-  
   addUsuario(event){
     event.preventDefault();
-    this.service.adicionar(new Usuario(this.id, this.nome, this.email, this.password, this.estado, this.cidade))
+    this.service.adicionar(new Usuario(this._id, this.nome, this.email, this.password))
     .subscribe(data => {
-      console.log(data),
+      this.loginService.userLogged;
+      //colocar pra retornar pra página onde o usuário tava antes
+      },
       error => console.log(error)
-    });
+    );
   }
   
 }
