@@ -1,11 +1,11 @@
-import { DataService } from './../data.service';
-import { UsuarioService } from './../usuario.service';
+import { DataService } from '../services/data.service';
+import { UsuarioService } from '../services/usuario.service';
 import { Component, OnInit } from '@angular/core';
 import { NgModel } from '@angular/forms';
 
-import { Estado } from './estado.model';
-import { Usuario } from '../usuario/usuario.model';
-import { Cidade } from '../cadastro/cidade.model'
+import { Estado } from '../models/estado.model';
+import { Usuario } from '../models/usuario.model';
+import { Cidade } from '../models/cidade.model'
 
 @Component({
   selector: 'app-cadastro',

@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
-import { Usuario } from './usuario/usuario.model';
+import { Usuario } from '../models/usuario.model';
 
 @Injectable()
 export class LoginService {

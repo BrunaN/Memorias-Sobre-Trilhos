@@ -4,13 +4,13 @@ import { Observable } from 'rxjs';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
-import { Cidade } from './cadastro/cidade.model';
-import { Usuario } from './usuario/usuario.model';
+import { Cidade } from '../models/cidade.model';
+import { Usuario } from '../models/usuario.model';
 
 @Injectable()
 export class UsuarioService {
 
-    urlUsuarios: string = "http://rest.learncode.academy/api/lucas/usuarios"
+    urlUsuarios: string = 'http://localhost:3000/api/users';
 
     constructor(private http: Http) { }
     usuarios: Usuario[] = [];
