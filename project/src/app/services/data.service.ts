@@ -1,5 +1,5 @@
-import { Estado } from './cadastro/estado.model';
-import { Cidade } from './cadastro/cidade.model';
+import { Estado } from '../models/estado.model';
+import { Cidade } from '../models/cidade.model';
 import { Injectable } from '@angular/core';
 
 
