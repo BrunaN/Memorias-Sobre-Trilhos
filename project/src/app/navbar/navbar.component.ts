@@ -10,8 +10,6 @@ export class NavbarComponent implements OnInit {
 
   constructor(protected loginService: LoginService) { }
 
-  withLogin: boolean = false;
-
   ngOnInit() {
   
   }
