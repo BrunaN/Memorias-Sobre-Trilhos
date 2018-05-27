@@ -10,7 +10,7 @@ import { Usuario } from '../models/usuario.model';
 @Injectable()
 export class PostService {
 
-    url: string = "";
+    url: string = 'http://localhost:3000/api/users';
 
     constructor( private http : Http){ };
 
