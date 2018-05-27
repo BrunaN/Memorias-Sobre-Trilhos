@@ -100,8 +100,6 @@
 
 .comentarios .comentario-input button{
   width: 10%;
-  border: none;
-  background-color: none;
   border-radius: 0 12px 12px 0;
   display: inline-block;
   border: 1px solid transparent;
