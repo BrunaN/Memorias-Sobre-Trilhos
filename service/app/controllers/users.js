@@ -39,3 +39,17 @@ module.exports.insertUser = function(req, res){
         }
     )
 }
+
+module.exports.returnUser = function(req, res){
+    let criterio = {'email': req.body.email, 'password': req.body.password};
+    let promise = User.find(criterio);
+    promise.then(
+        function(user){
+            res.json(user);
+        }
+    ).catch(
+        function(error){
+            res.status(404).send("Não existe");
+        }
+    )
+}
