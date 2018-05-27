@@ -43,12 +43,12 @@ export class CadastroComponent implements OnInit {
     event.preventDefault();
     let usuario = new Usuario(this._id, this.nome, this.email, this.password)
     this.service.adicionar(usuario)
-    .subscribe(data =>{
-      this.loginService.local(usuario);
-      //colocar pra retornar pra página onde o usuário tava antes
-      },
-      error => console.log(error)
-    );
+            .subscribe(data =>{
+              this.loginService.local(usuario);
+              //colocar pra retornar pra página onde o usuário tava antes
+              },
+              error => console.log(error)
+            );
   }
   
 }
