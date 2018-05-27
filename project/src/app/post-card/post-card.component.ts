@@ -9,8 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class PostCardComponent implements OnInit {
   
 
-  constructor(private route: ActivatedRoute,
-    private router: Router) { }
+  constructor() { }
 
   ngOnInit() {
   }
