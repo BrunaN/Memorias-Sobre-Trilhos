@@ -18,6 +18,7 @@ import { StationContentComponent } from './station-content/station-content.compo
 import { RecoverPasswordComponent } from './recover-password/recover-password.component';
 import { PostCardComponent } from './post-card/post-card.component';
 import { ResultPagesComponent } from './result-pages/result-pages.component';
+import { PostService } from './services/post.service';
 
 
 @NgModule({
@@ -41,7 +42,7 @@ import { ResultPagesComponent } from './result-pages/result-pages.component';
     FormsModule,
     HttpModule
   ],
-  providers: [UsuarioService, LoginService],
+  providers: [UsuarioService, LoginService, PostService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
