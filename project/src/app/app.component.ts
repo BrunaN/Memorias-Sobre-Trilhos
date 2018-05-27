@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd, NavigationStart } from '@angular/router';
 import { Location, PopStateEvent } from "@angular/common";
+import { LoginService } from './services/login.service';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,7 @@ export class AppComponent implements OnInit {
   private lastPoppedUrl: string;
   private yScrollStack: number[] = [];
 
-  constructor(private router: Router, private location: Location) { }
+  constructor(private router: Router, private location: Location, protected loginService: LoginService) { }
 
   ngOnInit() {
       this.location.subscribe((ev:PopStateEvent) => {
@@ -30,5 +31,6 @@ export class AppComponent implements OnInit {
                   window.scrollTo(0, 0);
           }
       });
+      this.loginService.initial();
   }
 }
