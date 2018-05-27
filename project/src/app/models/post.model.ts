@@ -6,11 +6,13 @@ export class Post {
     user: Usuario;
     station: Station;
     content: string;
+    description: string;
     comments: Comment [];
-    constructor(user, station, content, comments){
+    constructor(user, station, content, description, comments){
         this.user = user;
         this.station = station;
         this.content = content;
+        this.description = description;
         this.comments = comments;
     }
 }
