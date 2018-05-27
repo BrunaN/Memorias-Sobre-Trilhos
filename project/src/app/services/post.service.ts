@@ -12,6 +12,8 @@ import { Usuario } from '../models/usuario.model';
 export class PostService {
 
     url: string = 'http://localhost:3000/api/posts';
+    urlPostsFromStation: string = 'http://localhost:3000/api/stations/';
+    
 
     constructor( private http : Http, protected loginService : LoginService){ };
 
@@ -31,8 +33,8 @@ export class PostService {
                         .catch((error: Response) => Observable.throw(error));
     };
 
-    getPosts(){
-        return this.http.get(this.url)
+    getPosts(station){
+        return this.http.get(this.urlPostsFromStation + station._id + "/posts")
                         .map((response: Response) => {
                             this.posts = [];
                             for(let post of response.json()){

@@ -35,20 +35,23 @@ export class StationContentComponent implements OnInit {
       this._id = params['id'];
       estacaoService.getEstacao(this._id)
                 .subscribe(data => {
-                  this.station = data},
+                  this.station = data
+                  this.posts = []
+                  this.postService.getPosts(this.station)
+                                .subscribe(data => {
+                                  this.posts = data;},
+                                  error => {
+                                  console.log(error);
+                                });
+                },
                   error => {
                   this.router.navigate(['/home']);
                 });
     });
+    
   }
 
   ngOnInit() {
-    this.postService.getPosts()
-                  .subscribe(data => {
-                    this.posts = data;},
-                    error => {
-                    console.log(error);
-                  });
   }
 
   insert(event){

@@ -8,15 +8,7 @@ module.exports = function(){
         photo: {
             type: String,
             require: true
-        },
-        users: [{
-            type: mongoose.Schema.ObjectId,
-            ref: 'User'
-        }],
-        posts: [{
-            type: mongoose.Schema.ObjectId,
-            ref: 'Post'
-        }]
+        }
     });
     return mongoose.model('Station', schema);
 }();
