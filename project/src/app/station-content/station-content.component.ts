@@ -1,5 +1,6 @@
+import { Station } from './../models/station.model';
 import { LoginService } from '../services/login.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-station-content',
@@ -8,7 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StationContentComponent implements OnInit {
 
-  constructor( protected loginService: LoginService) { }
+  @Input() station: Station;
+
+  constructor(protected loginService: LoginService) { }
 
   ngOnInit() {
   }
