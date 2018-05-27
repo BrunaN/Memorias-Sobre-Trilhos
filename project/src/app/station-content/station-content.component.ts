@@ -17,7 +17,7 @@ export class StationContentComponent implements OnInit {
   @Input() station: Station;
 
   _id: string;
-  user: Usuario;
+  user: Usuario = this.loginService.user;
   content: string = "";
   description: string = "";
   comments: Comment;
@@ -29,7 +29,7 @@ export class StationContentComponent implements OnInit {
 
   insert(event){
     event.preventDefault();
-    this.postService.insertPost(new Post(this._id, this.user, this.station, this.content, this.description, this.comments))
+    this.postService.insertPost(new Post(this._id, this.user._id, this.station, this.content, this.description, this.comments))
   }
 
 }
