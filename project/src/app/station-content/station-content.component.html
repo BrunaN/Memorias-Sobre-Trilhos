@@ -53,7 +53,7 @@
 
           <div role="tabpanel" class="tab-pane active" id="relato">
             <div class="input">
-              <textarea name="" id="" rows="3" placeholder="Descreva um relato sobre a sua experiência na Estação de Fortaleza"></textarea>
+              <textarea [(ngModel)]="descriptionInput" name="relato" id="relato" rows="3" placeholder="Descreva um relato sobre a sua experiência na Estação de Fortaleza"></textarea>
             </div>
             <div class="botao">
               <button type="submit">
@@ -64,7 +64,7 @@
 
           <div role="tabpanel" class="tab-pane" id="foto">
             <div class="input">
-              <input type="text" placeholder="Adicione uma legenda para a sua foto">
+              <input [(ngModel)]="descriptionInput" name="description" id="description" type="text" placeholder="Adicione uma legenda para a sua foto">
             </div>
             <div class="botao">
               <button type="submit">
@@ -76,7 +76,7 @@
           <div role="tabpanel" class="tab-pane" id="video">
             <div class="input">
               <input type="text" placeholder="Adicione o link do vídeo">
-              <input type="text" placeholder="Adicione uma legenda para o vídeo">
+              <input [(ngModel)]="descriptionInput" name="description" id="description" type="text" placeholder="Adicione uma legenda para o vídeo">
             </div>
             <div class="botao">
               <button type="submit">

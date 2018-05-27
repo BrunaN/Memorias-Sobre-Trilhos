@@ -3,7 +3,6 @@ import { DataService } from '../services/data.service';
 import { UsuarioService } from '../services/usuario.service';
 import { Component, OnInit } from '@angular/core';
 import { NgModel } from '@angular/forms';
-
 import { Estado } from '../models/estado.model';
 import { Usuario } from '../models/usuario.model';
 import { Cidade } from '../models/cidade.model'
