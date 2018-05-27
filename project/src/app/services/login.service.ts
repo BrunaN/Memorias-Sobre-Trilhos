@@ -9,10 +9,10 @@ import { Usuario } from '../models/usuario.model';
 @Injectable()
 export class LoginService{
 
-    urlUsuarios: string = "";
+    url: string = 'http://localhost:3000/api/users/login';
     user: Usuario;
 
-    constructor( private http : Http){ console.log("oi")};
+    constructor( private http : Http){};
 
     ngOnInit() {
         
@@ -32,7 +32,7 @@ export class LoginService{
     }
 
     login(email, password){
-        return this.http.post(this.urlUsuarios, {email: email, password: password})
+        return this.http.post(this.url, {'email': email, 'password': password})
             .map((response: Response) => response.json())
             .catch((error: Response) => Observable.throw(error));
     };
