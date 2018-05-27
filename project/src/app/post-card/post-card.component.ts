@@ -9,6 +9,19 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class PostCardComponent implements OnInit {
   
+  comentario = {
+    "comentar-display": true
+  }
+
+  comentar(e){
+    e.preventDefault()
+    if(this.comentario["comentar-display"] == true){
+      this.comentario['comentar-display']=false;
+    }else{
+      this.comentario['comentar-display']=true;
+    }
+  }
+  
   @Input() post: Post;
 
   constructor(private postService: PostService) { }

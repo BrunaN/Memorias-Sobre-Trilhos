@@ -1,39 +1,36 @@
-<div class="post-container">
-  <div class="post-user">
-    <div class="user-image">
-      <img src="../../assets/img/capa_fortaleza.png" alt="">
-    </div>
-    <h3 class="user-name">
-      <a href="">{{post.user.name}}</a>
-    </h3>
-  </div>
-
-  <div class="post-content">
-    <div class="content">
-      {{post.content}}
-    </div>
-    <div class="description">
-      {{post.description}}
-    </div>
-  </div>
-
-  <div class="post-footer">
-    <div class="time">
-      22 horas atrás
-    </div>
-    <div class="interaction">
-      <div class="comentario">
-        <a href="">Comentar</a>
-        <div class="comentarios">
-          {{post.comments}}
-        </div>
+<div class="post">
+  <div class="post-container">
+    <div class="post-user">
+      <div class="user-image">
+        <img src="../../assets/img/capa_fortaleza.png" alt="">
       </div>
-      <div class="gostar">
-        <div class="gostei">
-          
-        </div>
-        <a href="">Gostar</a>
+      <h3 class="user-name">
+        <a href="">{{post.user.name}}</a>
+      </h3>
+    </div>
+
+    <div class="post-content">
+      <div class="content">
+        {{post.content}}
+      </div>
+      <div class="description">
+        {{post.description}}
       </div>
     </div>
+
+    <div class="post-footer">
+      <div class="time">
+        22 horas atrás
+      </div>
+      <div class="interaction">
+        <a href="#" (click) = "comentar($event)">Comentar</a>
+        <a href="#">Gostar</a>
+      </div>
+      <div class="gostei"></div>
+    </div>
+  </div>
+  <div class="comentarios" [ngClass]="comentario">
+    {{post.comments}}
+    <input type="text">
   </div>
 </div>
