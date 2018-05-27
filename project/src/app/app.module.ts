@@ -1,4 +1,5 @@
 import { LoginService } from './services/login.service';
+import { EstacaoService } from './services/estacao.service';
 import { SonhoAzulComponent } from './sonho-azul/sonho-azul.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
@@ -42,7 +43,7 @@ import { PostService } from './services/post.service';
     FormsModule,
     HttpModule
   ],
-  providers: [UsuarioService, LoginService, PostService],
+  providers: [UsuarioService, LoginService, PostService, EstacaoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

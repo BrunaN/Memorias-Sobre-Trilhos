@@ -20,7 +20,10 @@ module.exports.getStations = function(req, res){
 
 module.exports.getStationById = function(req, res){
     let id = req.params.id;
-    let promise = Station.findById(id);
+    let criterio = {'id': id};
+    let promise = Station.findOne(criterio)
+                          .populate('user')
+                          .populate('post');
     promise.then(
         function(station){
             res.json(station);

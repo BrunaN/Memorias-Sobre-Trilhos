@@ -9,14 +9,14 @@ module.exports = function(){
             type: String,
             require: true
         },
-        users: {
+        users: [{
             type: mongoose.Schema.ObjectId,
             ref: 'User'
-        },
-        posts: {
+        }],
+        posts: [{
             type: mongoose.Schema.ObjectId,
             ref: 'Post'
-        }
+        }]
     });
     return mongoose.model('Station', schema);
 }();

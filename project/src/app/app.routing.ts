@@ -19,6 +19,6 @@ const APP_ROUTES: Routes=[
     {path: "perfil", component: ProfileComponent},
     {path: "sonho-azul", component: SonhoAzulComponent},
     {path: "resultados", component: ResultPagesComponent},
-    {path: "Estação", component: StationContentComponent}
+    {path: "estacao/:id", component: StationContentComponent}
 ]
 export const routing=RouterModule.forRoot(APP_ROUTES);
