@@ -2,10 +2,12 @@ import { Usuario } from "./usuario.model";
 import { Post } from "./post.model";
 
 export class Station{
-    name: String;
+    _id: string;
+    name: string;
     users: Usuario [];
     posts: Post [];
-    constructor(name, users, posts){
+    constructor(_id, name, users, posts){
+        this._id = _id;
         this.name = name;
         this.users = users;
         this.posts = posts;
