@@ -1,4 +1,4 @@
-//Para executar basta fazer ./mongo < estacoes.js
+//Para executar basta fazer mongo < estacoes.js ou no Linux: ./mongo < estacoes.js
 
 use memoriasobretrilhos;
 db.stations.drop();

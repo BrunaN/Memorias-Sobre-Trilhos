@@ -8,7 +8,7 @@ module.exports.getPosts = function(req, res){
     let promise = Post.find()
                     .populate('user')
                     .populate('station')
-                    .populate('comment');
+                    .populate('comment').exec();
     promise.then(
         function(posts){
             res.json(posts);
@@ -35,7 +35,7 @@ module.exports.getPostById = function(req, res){
 }
 
 module.exports.insertPost = function(req, res){
-    let promise = Post.create(req.body);
+    let promise = Post.create(req.body)
     promise.then(
         function(post){
             res.status(201).json(post);

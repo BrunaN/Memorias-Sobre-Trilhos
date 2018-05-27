@@ -21,7 +21,7 @@ module.exports = function(){
         comments: {
             type: mongoose.Schema.ObjectId,
             ref: 'Comment'
-        },
+        }
         // data: {
 
         // },

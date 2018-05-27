@@ -55,7 +55,7 @@
 
           <div role="tabpanel" class="tab-pane active" id="relato">
             <div class="input">
-              <textarea [(ngModel)]="description" name="relato" id="relato" rows="3" placeholder="Descreva um relato sobre a sua experiência na Estação de Fortaleza"></textarea>
+              <textarea [(ngModel)]="description" name="description" id="relato" rows="3" placeholder="Descreva um relato sobre a sua experiência na Estação de Fortaleza"></textarea>
             </div>
             <div class="botao">
               <button type="submit" (click)="insert($event)">
@@ -66,8 +66,8 @@
 
           <div role="tabpanel" class="tab-pane" id="foto">
             <div class="input">
-              <input [(ngModel)]="content" type="file" name="contentInput" id="">
-              <input [(ngModel)]="description" name="descriptionInput" id="description" type="text" placeholder="Adicione uma legenda para a sua foto">
+              <input [(ngModel)]="content" type="file" name="content" id="">
+              <input [(ngModel)]="description" name="description" id="description" type="text" placeholder="Adicione uma legenda para a sua foto">
             </div>
             <div class="botao">
               <button type="submit" (click)="insert($event)">
@@ -79,7 +79,7 @@
           <div role="tabpanel" class="tab-pane" id="video">
             <div class="input">
               <input type="text" placeholder="Adicione o link do vídeo">
-              <input [(ngModel)]="description" name="descriptionInput" id="description" type="text" placeholder="Adicione uma legenda para o vídeo">
+              <input [(ngModel)]="description" name="description" id="description" type="text" placeholder="Adicione uma legenda para o vídeo">
             </div>
             <div class="botao">
               <button type="submit" (click)="insert($event)">
@@ -91,8 +91,10 @@
       </div>
     </div>
 
-    <div class="content-posts">
-      <app-post-card></app-post-card>
+    <div class="content-posts" *ngFor="let post of posts">
+      <app-post-card [post] = post >
+        
+      </app-post-card>
     </div>
   </div>
 </div>

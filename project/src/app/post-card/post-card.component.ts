@@ -27,6 +27,7 @@ export class PostCardComponent implements OnInit {
   constructor(private postService: PostService) { }
 
   ngOnInit() {
+    console.log(this.post)
   }
 } 
 

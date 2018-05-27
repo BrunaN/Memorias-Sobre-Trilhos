@@ -1,3 +1,4 @@
+import { LoginService } from './login.service';
 import { Post } from './../models/post.model';
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
@@ -10,26 +11,33 @@ import { Usuario } from '../models/usuario.model';
 @Injectable()
 export class PostService {
 
-    url: string = 'http://localhost:3000/api/users';
+    url: string = 'http://localhost:3000/api/posts';
 
-    constructor( private http : Http){ };
+    constructor( private http : Http, protected loginService : LoginService){ };
 
     posts: Post [] = [];
 
     insertPost(post: Post){
         return this.http.post(this.url, post)
-                        .map((rasponse: Response) => {
+                        .map((response: Response) => {
+                            let res = response.json();
+                            let user = this.loginService.user;
+                            console.log(user);
+                            let post = new Post(res._id, user, res.station, res.content, res.description, res.comments);
+                            console.log(post.user);
                             this.posts.push(post);
+                            return post;
                         })
                         .catch((error: Response) => Observable.throw(error));
     };
 
-    getPost(){
+    getPosts(){
         return this.http.get(this.url)
                         .map((response: Response) => {
                             this.posts = [];
                             for(let post of response.json()){
-                                this.posts.push(new Post(post._id, post.user, post.station, post.content, post.description, post.comments))
+                                let user = new Usuario(post.user._id, post.user.name, post.user.email, post.user.password)
+                                this.posts.push(new Post(post._id, user, post.station, post.content, post.description, post.comments))
                             }
                             return this.posts
                         })

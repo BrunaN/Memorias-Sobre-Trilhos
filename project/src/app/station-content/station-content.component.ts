@@ -22,27 +22,44 @@ export class StationContentComponent implements OnInit {
   @Input() station: Station;
 
   _id: string;
+  _idPost: string;
   user: Usuario = this.loginService.user;
   content: string = "";
   description: string = "";
   comments: Comment;
 
+  posts: Post [] = [];
+
   constructor(protected loginService: LoginService, private postService: PostService, private route: ActivatedRoute, private estacaoService: EstacaoService, private router: Router ) {
     this.route.params.subscribe(params => {
       this._id = params['id'];
-      estacaoService.getEstacao(this._id).subscribe(
-        data => {this.station = data},
-        error => {
-          this.router.navigate(['/home']);
-        });
+      estacaoService.getEstacao(this._id)
+                .subscribe(data => {
+                  this.station = data},
+                  error => {
+                  this.router.navigate(['/home']);
+                });
     });
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.postService.getPosts()
+                  .subscribe(data => {
+                    this.posts = data;},
+                    error => {
+                    console.log(error);
+                  });
+  }
 
   insert(event){
     event.preventDefault();
-    this.postService.insertPost(new Post(this._id, this.user._id, this.station, this.content, this.description, this.comments))
+    let post = new Post(this._idPost, this.user._id, this.station._id, this.content, this.description, this.comments);
+    this.postService.insertPost(post)
+                .subscribe(data => {
+                  console.log(data)},
+                  error => {
+                  console.log(error);
+                });
   }
 
 }
