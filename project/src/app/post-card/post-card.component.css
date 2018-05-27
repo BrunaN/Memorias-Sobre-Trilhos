@@ -75,10 +75,18 @@
   display: none;
 }
 
-.comentarios input{
+.comentarios .comentario-input{
   width: 80%;
-  border-radius: 12px;
   display: block;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.comentarios .comentario-input input{
+  width: 90%;
+  border-radius: 12px 0 0 12px;
+  display: inline-block;
   border: 1px solid transparent;
   font-size: 16px;
   padding: 6px 9px;
@@ -88,7 +96,21 @@
   box-sizing: border-box;
   outline: none;
   box-shadow: 1px 1px 2px #333530;
-  margin: auto;
-  margin-top: 10px;
-  margin-bottom: 10px;
+}
+
+.comentarios .comentario-input button{
+  width: 10%;
+  border: none;
+  background-color: none;
+  border-radius: 0 12px 12px 0;
+  display: inline-block;
+  border: 1px solid transparent;
+  font-size: 16px;
+  padding: 6px 9px;
+  background-color: #ffff;
+  opacity: 0.6;
+  box-shadow: none;
+  box-sizing: border-box;
+  outline: none;
+  box-shadow: 1px 1px 2px #333530;
 }
