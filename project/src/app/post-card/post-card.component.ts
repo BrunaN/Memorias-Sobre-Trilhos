@@ -21,8 +21,10 @@ export class PostCardComponent implements OnInit {
       this.comentario['comentar-display']=true;
     }
   }
-  
+
   @Input() post: Post;
+
+  repoUrl = 'https://facebook.com/';
 
   constructor(private postService: PostService) { }
 
