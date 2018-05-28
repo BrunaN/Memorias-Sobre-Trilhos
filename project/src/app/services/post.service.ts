@@ -1,5 +1,6 @@
 import { LoginService } from './login.service';
 import { Post } from './../models/post.model';
+import { Station } from './../models/station.model';
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs';
@@ -13,7 +14,7 @@ export class PostService {
 
     url: string = 'http://localhost:3000/api/posts';
     urlPostsFromStation: string = 'http://localhost:3000/api/stations/';
-    
+
 
     constructor( private http : Http, protected loginService : LoginService){ };
 
@@ -31,7 +32,7 @@ export class PostService {
                         .catch((error: Response) => Observable.throw(error));
     };
 
-    getPosts(station){
+    getPosts(station: Station){
         return this.http.get(this.urlPostsFromStation + station._id + "/posts")
                         .map((response: Response) => {
                             this.posts = [];
