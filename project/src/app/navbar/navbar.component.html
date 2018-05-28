@@ -16,7 +16,8 @@
                 <a href="" routerLink="/login">Login</a>
             </div>
             <div *ngIf="this.loginService.userLogged()">
-                hjucvrehufhrijviorej;
+                <a href="">{{user.name}}</a>
+                <a href="#" (click)="logout($event)">Sair</a>
             </div>
         </div>
     </nav>

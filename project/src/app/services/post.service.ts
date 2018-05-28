@@ -24,9 +24,7 @@ export class PostService {
                         .map((response: Response) => {
                             let res = response.json();
                             let user = this.loginService.user;
-                            console.log(user);
                             let post = new Post(res._id, user, res.station, res.content, res.description, res.comments);
-                            console.log(post.user);
                             this.posts.push(post);
                             return post;
                         })

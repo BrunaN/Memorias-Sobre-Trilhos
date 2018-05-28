@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
   email: string = "";
   password: string = "";
 
-  user: Usuario;
+  user: string;
 
   constructor( private loginService: LoginService) { }
 
@@ -22,9 +22,9 @@ export class LoginComponent implements OnInit {
     event.preventDefault();
     this.loginService.login(this.email, this.password)
                   .subscribe(data =>{
-                    this.user = data
-                    console.log("usuario= ", this.user);
-                    this.loginService.local(this.user);
+                    console.log(data);
+                    // this.user = data
+                    // this.loginService.local(this.user);
                     //colocar pra retornar pra página onde o usuário tava antes
                     },
                     error => console.log(error)

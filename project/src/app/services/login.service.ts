@@ -21,8 +21,8 @@ export class LoginService{
     initial(){
         let text = window.localStorage.getItem("user");
         if(text){
-            this.user = JSON.parse(text);
-            console.log(this.user);
+            let res = JSON.parse(text);
+            this.user = new Usuario(res._id, res.name, res.email, res.password);
         }
     }
 
@@ -33,7 +33,10 @@ export class LoginService{
 
     login(email, password){
         return this.http.post(this.url, {'email': email, 'password': password})
-            .map((response: Response) => response.json())
+            .map((response: Response) => {
+                let res = response.json();
+                this.user = new Usuario(res._id, res.name, res.email, res.password);
+            })
             .catch((error: Response) => Observable.throw(error));
     };
 
