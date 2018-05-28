@@ -41,7 +41,7 @@ export class CadastroComponent implements OnInit {
 
   addUsuario(event){
     event.preventDefault();
-    let usuario = new Usuario(this._id, this.name, this.email, this.password)
+    let usuario = new Usuario(this._id, this.nome, this.email, this.password)
     this.service.adicionar(usuario)
             .subscribe(data =>{
               console.log(data)
