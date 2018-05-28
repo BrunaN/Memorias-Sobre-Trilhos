@@ -11,6 +11,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { CeiboShare } from 'ng2-social-share';
 
 import { AppComponent } from './app.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
@@ -35,7 +36,8 @@ import { PostService } from './services/post.service';
     RecoverPasswordComponent,
     PostCardComponent,
     SonhoAzulComponent,
-    ResultPagesComponent
+    ResultPagesComponent,
+    CeiboShare
   ],
   imports: [
     BrowserModule,
