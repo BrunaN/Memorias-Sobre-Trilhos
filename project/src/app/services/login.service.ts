@@ -35,7 +35,9 @@ export class LoginService{
         return this.http.post(this.url, {'email': email, 'password': password})
             .map((response: Response) => {
                 let res = response.json();
+                console.log(res);
                 this.user = new Usuario(res._id, res.name, res.email, res.password);
+                return this.user
             })
             .catch((error: Response) => Observable.throw(error));
     };
