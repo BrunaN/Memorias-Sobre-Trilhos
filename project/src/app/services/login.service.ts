@@ -46,6 +46,7 @@ export class LoginService{
 
     logout(){
         this.user = undefined;
+        window.localStorage.removeItem('user');
     };
 
 }
