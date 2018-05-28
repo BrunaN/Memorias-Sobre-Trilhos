@@ -23,8 +23,11 @@
         22 horas atrás
       </div>
       <div class="interaction">
-        <a href="#" (click) = "comentar($event)">Comentar</a>
+        <a href="#" (click)="comentar($event)">Comentar</a>
         <a href="#">Gostar</a>
+        <div class="compartilhar">
+          <a href="#" ceiboShare [facebook]="{u: repoUrl}">Compartilhar</a>
+        </div>
       </div>
       <div class="gostei"></div>
     </div>
@@ -32,7 +35,8 @@
   <div class="comentarios" [ngClass]="comentario">
     {{post.comments}}
     <div class="comentario-input">
-      <input type="text"><button type="submit">Ok</button>
+      <input type="text">
+      <button type="submit">Ok</button>
     </div>
   </div>
 </div>
