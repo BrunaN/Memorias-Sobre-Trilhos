@@ -18,7 +18,12 @@ export class UsuarioService {
     adicionar(usuario: Usuario) {
         this.usuarios.push(usuario);
         return this.http.post(this.urlUsuarios, usuario)
-            .map((response: Response) => response.json())
+            .map((response: Response) => {
+                let res = response.json();
+                console.log(res);
+                let user = new Usuario(res._id, res.name, res.email, res.password);
+                return user
+            })
             .catch((error: Response) => Observable.throw(error));
     }
     
