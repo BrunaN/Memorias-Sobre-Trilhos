@@ -13,7 +13,7 @@ import { Comment } from '../models/comment.model';
   styleUrls: ['./post-card.component.css']
 })
 export class PostCardComponent implements OnInit {
-  
+
   @Input() post: Post;
   comments: Comment [] = [];
 
@@ -21,6 +21,8 @@ export class PostCardComponent implements OnInit {
 
   user: Usuario = this.loginService.user;
   text: string = "";
+
+  request: boolean = false;
 
   constructor(private postService: PostService, private commentService: CommentService, protected loginService: LoginService) { }
 
@@ -37,7 +39,7 @@ export class PostCardComponent implements OnInit {
                       console.log(error);
                     });
   }
-  
+
   comentario = {
     "comentar-display": true
   }
@@ -55,16 +57,14 @@ export class PostCardComponent implements OnInit {
   }
 
   comentar(e){
-    e.preventDefault()
+    e.preventDefault();
 
-    this.get();
-
-    if(this.comentario["comentar-display"] == true){
-      this.comentario['comentar-display']=false;
-    }else{
-      this.comentario['comentar-display']=true;
+    if(!this.request){
+      this.get();
+      this.request = true;
     }
-  }
-  
-} 
 
+    this.comentario["comentar-display"] = !this.comentario["comentar-display"];
+  }
+
+}
