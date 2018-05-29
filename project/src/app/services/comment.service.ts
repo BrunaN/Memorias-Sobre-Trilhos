@@ -37,7 +37,7 @@ export class CommentService {
                             this.comments = [];
                             for(let comment of response.json()){
                                 let user = new Usuario(post.user._id, post.user.name, post.user.email, post.user.password)
-                                this.comments.push(new Comment(comment._id, user, comment.post, comment.text))
+                                this.comments.push(new Comment(comment._id, user, comment.post, comment.text));
                             }
                             return this.comments
                         })

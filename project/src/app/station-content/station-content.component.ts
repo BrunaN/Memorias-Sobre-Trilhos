@@ -19,7 +19,7 @@ import { Router, ActivatedRoute, Params, RouterModule } from '@angular/router';
 
 export class StationContentComponent implements OnInit {
 
-  @Input() station: Station;
+  station : Station = new Station("","","","","","");
 
   _id: string;
   _idPost: string;
@@ -54,14 +54,15 @@ export class StationContentComponent implements OnInit {
   ngOnInit() {
   }
 
-  up_date(){}
-
   insert(event){
     event.preventDefault();
     let post = new Post(this._idPost, this.user._id, this.station._id, this.content, this.description, this.comments);
     this.postService.insertPost(post)
                 .subscribe(data => {
-                  console.log(data)},
+                  console.log(data);
+                  this.content = "";
+                  this.description = "";
+                },
                   error => {
                   console.log(error);
                 });

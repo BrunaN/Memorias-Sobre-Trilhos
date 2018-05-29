@@ -33,7 +33,7 @@
     </div>
   </div>
   <div class="comentarios" [ngClass]="comentario">
-    <div class="comentario-list" *ngFor = 'let comments of comment'>
+    <div class="comentario-list" *ngFor = "let comment of comments">
       <app-comment [comment] = comment></app-comment>
     </div>
     <div class="comentario-input">
