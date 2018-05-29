@@ -57,18 +57,21 @@ export class PostCardComponent implements OnInit {
                         console.log(data);
                         this.comments = data;
                         console.log(this.comments);
+                        this.request = true;
                       },
                         error => {
                         console.log(error);
+                        this.request = true;
                       });
   }
 
   comentar(e){
     e.preventDefault();
 
+    console.log(this.request);
+
     if(!this.request){
       this.get();
-      this.request = true;
     }
 
     this.comentario["comentar-display"] = !this.comentario["comentar-display"];
