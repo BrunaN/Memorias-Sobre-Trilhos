@@ -24,6 +24,14 @@ export class PostCardComponent implements OnInit {
 
   request: boolean = false;
 
+  comentario = {
+    "comentar-display": true
+  };
+
+  postBorder = {
+    "comentar-border": false
+  };
+
   constructor(private postService: PostService, private commentService: CommentService, protected loginService: LoginService) { }
 
   ngOnInit() {
@@ -40,10 +48,6 @@ export class PostCardComponent implements OnInit {
                       error => {
                       console.log(error);
                     });
-  }
-
-  comentario = {
-    "comentar-display": true
   }
 
   get(){
@@ -71,6 +75,12 @@ export class PostCardComponent implements OnInit {
     }
 
     this.comentario["comentar-display"] = !this.comentario["comentar-display"];
+
+    if(this.postBorder["comentar-border"] == false && this.comentario["comentar-display"] == false){
+      this.postBorder["comentar-border"] = true;  
+    }else{
+      this.postBorder["comentar-border"] = false
+    }
   }
 
 }

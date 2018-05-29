@@ -1,5 +1,5 @@
 <div class="post">
-  <div class="post-container">
+  <div class="post-container" [ngClass]="postBorder">
     <div class="post-user">
       <div class="user-image">
         <img src="../../assets/img/capa_fortaleza.png" alt="">
@@ -23,8 +23,8 @@
         {{ post.date | timeAgo }}
       </div>
       <div class="interaction">
-        <a href="#" (click)="comentar($event)">Comentar</a>
         <a href="#">Gostar</a>
+        <a href="#" (click)="comentar($event)">Comentar</a>
         <div class="compartilhar">
           <a href="" ceiboShare [facebook]="{u: repoUrl}">Compartilhar</a>
         </div>

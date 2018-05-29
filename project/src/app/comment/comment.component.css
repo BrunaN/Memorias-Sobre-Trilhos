@@ -1,0 +1,22 @@
+.comment-content{
+    border-bottom: solid 1px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+}
+
+.comment-content .user{
+    height: 60px;
+    box-sizing: border-box;
+}
+
+.comment-content .user .user-image{
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: aqua;
+    border-radius: 50%;
+}
+
+.comment-content .user .user-name{
+    display: inline-block;
+    line-height: 40px;
+}
