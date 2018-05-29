@@ -48,7 +48,7 @@ module.exports.insertComment = function(req, res){
 module.exports.getCommentsFromPost = function(req, res){
     let id = req.params.id;
     let criterio = {'post': id};
-    let promise = Post.find(criterio)
+    let promise = Comment.find(criterio)
                     .populate('user' , '-password').exec();
     promise.then(
         function(comments){
