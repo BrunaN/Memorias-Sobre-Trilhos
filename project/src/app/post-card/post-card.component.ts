@@ -34,7 +34,7 @@ export class PostCardComponent implements OnInit {
     let _id: string;
     this.commentService.insertComment(new Comment(_id, this.user, this.post._id, this.text))
                     .subscribe(data => {
-                      console.log(data)
+                      console.log(data);
                       this.text = "";
                     },
                       error => {
