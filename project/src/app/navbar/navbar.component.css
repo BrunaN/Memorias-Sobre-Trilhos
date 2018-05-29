@@ -51,8 +51,8 @@ nav .links a:hover{
 
 .dropdown-estacoes{
     position: absolute;
-    z-index: 100;
-    top: 132px;
+    z-index: 90;
+    top: 131px;
     background-image: url("/assets/img/textura_1.png");
     background-size: cover;
     background-color: #E9D4A9;

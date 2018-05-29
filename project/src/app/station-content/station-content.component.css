@@ -24,7 +24,7 @@
     background-color: #f9f5ed;
     padding: 35px 50px 25px 50px;
     margin-bottom: 25px;
-    border: solid 1px rgba(0, 0, 0, .3);
+    border: solid 1px rgba(0, 0, 0, 0.1);
     position: relative;
     z-index: 10;
     border-radius: 4px;
