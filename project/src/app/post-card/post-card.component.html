@@ -20,7 +20,7 @@
 
     <div class="post-footer">
       <div class="time">
-        22 horas atrás
+        {{ post.date | timeAgo }}
       </div>
       <div class="interaction">
         <a href="#" (click)="comentar($event)">Comentar</a>
@@ -33,7 +33,7 @@
     </div>
   </div>
   <div class="comentarios" [ngClass]="comentario">
-    <div class="comentario-list" *ngFor = "let comment of comments">
+    <div class="comentario-list" *ngFor = "let comment of comments | sortgrid : '+date'">
       <app-comment [comment] = comment></app-comment>
     </div>
     <div class="comentario-input">

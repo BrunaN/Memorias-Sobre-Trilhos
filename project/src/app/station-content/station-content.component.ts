@@ -48,7 +48,7 @@ export class StationContentComponent implements OnInit {
                   this.router.navigate(['/home']);
                 });
     });
-    
+
   }
 
   ngOnInit() {
@@ -56,7 +56,7 @@ export class StationContentComponent implements OnInit {
 
   insert(event){
     event.preventDefault();
-    let post = new Post(this._idPost, this.user._id, this.station._id, this.content, this.description, this.comments);
+    let post = new Post(this._idPost, this.user._id, this.station._id, this.content, this.description, new Date());
     this.postService.insertPost(post)
                 .subscribe(data => {
                   console.log(data);

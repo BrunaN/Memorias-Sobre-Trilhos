@@ -1,4 +1,5 @@
 import { CommentService } from './services/comment.service';
+import { SortGridPipe } from './diretivas/SortGridPipe.directive';
 import { LoginService } from './services/login.service';
 import { EstacaoService } from './services/estacao.service';
 import { SonhoAzulComponent } from './sonho-azul/sonho-azul.component';
@@ -23,6 +24,7 @@ import { PostCardComponent } from './post-card/post-card.component';
 import { ResultPagesComponent } from './result-pages/result-pages.component';
 import { PostService } from './services/post.service';
 import { CommentComponent } from './comment/comment.component';
+import {TimeAgoPipe} from './diretivas/time-ago-pipe';
 
 
 @NgModule({
@@ -40,7 +42,9 @@ import { CommentComponent } from './comment/comment.component';
     SonhoAzulComponent,
     ResultPagesComponent,
     CeiboShare,
-    CommentComponent
+    CommentComponent,
+    SortGridPipe,
+    TimeAgoPipe
   ],
   imports: [
     BrowserModule,
