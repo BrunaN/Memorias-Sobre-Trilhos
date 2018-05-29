@@ -35,8 +35,8 @@ export class StationContentComponent implements OnInit {
       this._id = params['id'];
       estacaoService.getEstacao(this._id)
                 .subscribe(data => {
-                  this.station = data
-                  this.posts = []
+                  this.station = data;
+                  this.posts = [];
                   this.postService.getPosts(this.station)
                                 .subscribe(data => {
                                   this.posts = data;},
@@ -53,6 +53,8 @@ export class StationContentComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  up_date(){}
 
   insert(event){
     event.preventDefault();

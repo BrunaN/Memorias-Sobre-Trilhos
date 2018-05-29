@@ -4,7 +4,7 @@ import { Post } from "./post.model";
 export class Comment{
     _id: string;
     user: Usuario;
-    post: Post;
+    post: string;
     text: string;
     constructor(_id, user, post, text){
         this._id = _id;

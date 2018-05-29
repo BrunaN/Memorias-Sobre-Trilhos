@@ -1,6 +1,11 @@
+import { Usuario } from './../models/usuario.model';
+import { CommentService } from './../services/comment.service';
 import { PostService } from './../services/post.service';
 import { Post } from './../models/post.model';
+import { NgModel } from '@angular/forms';
 import { Component, OnInit, Input } from '@angular/core';
+import { LoginService } from '../services/login.service';
+import { Comment } from '../models/comment.model';
 
 @Component({
   selector: 'app-post-card',
@@ -9,12 +14,49 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class PostCardComponent implements OnInit {
   
+  @Input() post: Post;
+  comments: Comment [] = [];
+
+  user: Usuario = this.loginService.user;
+  text: string = "";
+
+  constructor(private postService: PostService, private commentService: CommentService, protected loginService: LoginService) { }
+
+  ngOnInit() {
+  }
+
+  insert(e){
+    e.preventDefault();
+    let _id: string;
+    this.commentService.insertComment(new Comment(_id, this.user, this.post._id, this.text))
+                    .subscribe(data => {
+                      console.log(data)},
+                      error => {
+                      console.log(error);
+                    });
+  }
+  
   comentario = {
     "comentar-display": true
   }
 
+  get(){
+    this.comments = [];
+    this.commentService.getComments(this.post)
+                      .subscribe(data => {
+                        console.log(data);
+                        this.comments = data;
+                      },
+                        error => {
+                        console.log(error);
+                      });
+  }
+
   comentar(e){
     e.preventDefault()
+
+    this.get();
+
     if(this.comentario["comentar-display"] == true){
       this.comentario['comentar-display']=false;
     }else{
@@ -22,12 +64,5 @@ export class PostCardComponent implements OnInit {
     }
   }
   
-  @Input() post: Post;
-
-  constructor(private postService: PostService) { }
-
-  ngOnInit() {
-    console.log(this.post)
-  }
 } 
 

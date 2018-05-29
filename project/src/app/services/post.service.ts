@@ -7,6 +7,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
 import { Usuario } from '../models/usuario.model';
+import { Station } from '../models/station.model';
 
 @Injectable()
 export class PostService {
@@ -24,19 +25,21 @@ export class PostService {
                         .map((response: Response) => {
                             let res = response.json();
                             let user = this.loginService.user;
-                            let post = new Post(res._id, user, res.station, res.content, res.description, res.comments);
+                            console.log(user);
+                            let post = new Post(res._id, user._id, res.station, res.content, res.description, res.comments);
                             this.posts.push(post);
                             return post;
                         })
                         .catch((error: Response) => Observable.throw(error));
     };
 
-    getPosts(station){
+    getPosts(station: Station){
         return this.http.get(this.urlPostsFromStation + station._id + "/posts")
                         .map((response: Response) => {
+                            console.log(response);
                             this.posts = [];
                             for(let post of response.json()){
-                                let user = new Usuario(post.user._id, post.user.name, post.user.email, post.user.password)
+                                let user = new Usuario(post.user._id, post.user.name, post.user.email, post.user.password);
                                 this.posts.push(new Post(post._id, user, post.station, post.content, post.description, post.comments))
                             }
                             return this.posts

@@ -13,7 +13,7 @@ module.exports = function(){
         text: {
             type: String,
             require: true
-        },
+        }
         // usersLikes: {
         //     type: mongoose.Schema.ObjectId,
         //     ref: 'User'

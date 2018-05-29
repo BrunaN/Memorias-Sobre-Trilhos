@@ -17,10 +17,6 @@ module.exports = function(){
         description: {
             type: String,
             require: true
-        },
-        comments: {
-            type: mongoose.Schema.ObjectId,
-            ref: 'Comment'
         }
         // data: {
 

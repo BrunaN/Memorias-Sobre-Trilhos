@@ -4,17 +4,15 @@ import { Comment } from './comment.model';
 
 export class Post {
     _id: string;
-    user: Usuario;
-    station: Station;
+    user;
+    station;
     content: string;
     description: string;
-    comments: Comment [];
     constructor(_id, user, station, content, description, comments){
         this._id = _id
         this.user = user;
         this.station = station;
         this.content = content;
         this.description = description;
-        this.comments = comments;
     }
 }

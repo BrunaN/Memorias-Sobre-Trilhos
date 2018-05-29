@@ -44,3 +44,19 @@ module.exports.insertComment = function(req, res){
         }
     );
 }
+
+module.exports.getCommentsFromPost = function(req, res){
+    let id = req.params.id;
+    let criterio = {'post': id};
+    let promise = Post.find(criterio)
+                    .populate('user' , '-password').exec();
+    promise.then(
+        function(comments){
+            res.json(comments);
+        }
+    ).catch(
+        function(error){
+            res.status(500).send(error);
+        }
+    );
+}

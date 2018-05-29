@@ -1,3 +1,4 @@
+import { CommentService } from './services/comment.service';
 import { LoginService } from './services/login.service';
 import { EstacaoService } from './services/estacao.service';
 import { SonhoAzulComponent } from './sonho-azul/sonho-azul.component';
@@ -21,6 +22,7 @@ import { RecoverPasswordComponent } from './recover-password/recover-password.co
 import { PostCardComponent } from './post-card/post-card.component';
 import { ResultPagesComponent } from './result-pages/result-pages.component';
 import { PostService } from './services/post.service';
+import { CommentComponent } from './comment/comment.component';
 
 
 @NgModule({
@@ -37,7 +39,8 @@ import { PostService } from './services/post.service';
     PostCardComponent,
     SonhoAzulComponent,
     ResultPagesComponent,
-    CeiboShare
+    CeiboShare,
+    CommentComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +48,7 @@ import { PostService } from './services/post.service';
     FormsModule,
     HttpModule
   ],
-  providers: [UsuarioService, LoginService, PostService, EstacaoService],
+  providers: [UsuarioService, LoginService, PostService, EstacaoService, CommentService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

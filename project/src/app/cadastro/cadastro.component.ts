@@ -45,7 +45,7 @@ export class CadastroComponent implements OnInit {
     this.service.adicionar(usuario)
             .subscribe(data =>{
               console.log(data)
-              this.loginService.local(usuario);
+              // this.loginService.local(usuario);
               //colocar pra retornar pra página onde o usuário tava antes
               },
               error => console.log(error)
