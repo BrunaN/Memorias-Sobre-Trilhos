@@ -6,10 +6,12 @@ export class Comment{
     user: Usuario;
     post: string;
     text: string;
-    constructor(_id, user, post, text){
+    date;
+    constructor(_id, user, post, text, date){
         this._id = _id;
         this.user = user;
         this.post = post;
         this.text = text;
+        this.date = date;
     }
 }

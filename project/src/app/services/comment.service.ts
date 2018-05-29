@@ -12,10 +12,10 @@ import { Usuario } from '../models/usuario.model';
 @Injectable()
 export class CommentService {
 
-    url: string = 'http://localhost:3000/api/comments'; 
+    url: string = 'http://localhost:3000/api/comments';
 
     comments: Comment [] = [];
-    
+
     constructor( private http : Http, protected loginService: LoginService){ };
 
     insertComment(comment: Comment){
@@ -23,7 +23,7 @@ export class CommentService {
                         .map((response: Response) => {
                             let res = response.json();
                             let user = this.loginService.user;
-                            let comment = new Comment(res._id, user, res.post, res.text);
+                            let comment = new Comment(res._id, user, res.post, res.text, res.date);
                             this.comments.push(comment);
                             return comment;
                         })
@@ -37,7 +37,7 @@ export class CommentService {
                             this.comments = [];
                             for(let comment of response.json()){
                                 let user = new Usuario(post.user._id, post.user.name, post.user.email, post.user.password)
-                                this.comments.push(new Comment(comment._id, user, comment.post, comment.text));
+                                this.comments.push(new Comment(comment._id, user, comment.post, comment.text, res.date));
                             }
                             return this.comments
                         })

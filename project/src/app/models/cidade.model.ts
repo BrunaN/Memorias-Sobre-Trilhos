@@ -9,4 +9,3 @@ export class Cidade {
         this.estadoId = estadoId;
      }
   }
-
