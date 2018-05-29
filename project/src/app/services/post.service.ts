@@ -1,20 +1,19 @@
 import { LoginService } from './login.service';
 import { Post } from './../models/post.model';
+import { Station } from './../models/station.model';
+import { Usuario } from '../models/usuario.model';
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
-import { Usuario } from '../models/usuario.model';
-import { Station } from '../models/station.model';
-
 @Injectable()
 export class PostService {
 
     url: string = 'http://localhost:3000/api/posts';
     urlPostsFromStation: string = 'http://localhost:3000/api/stations/';
-    
+
 
     constructor( private http : Http, protected loginService : LoginService){ };
 

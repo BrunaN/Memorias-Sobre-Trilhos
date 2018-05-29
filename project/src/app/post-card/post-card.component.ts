@@ -17,6 +17,8 @@ export class PostCardComponent implements OnInit {
   @Input() post: Post;
   comments: Comment [] = [];
 
+  repoUrl = 'https://facebook.com/';
+
   user: Usuario = this.loginService.user;
   text: string = "";
 
