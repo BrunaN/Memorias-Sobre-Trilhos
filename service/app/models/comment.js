@@ -13,6 +13,10 @@ module.exports = function(){
         text: {
             type: String,
             require: true
+        },
+        date: {
+            type: Date,
+            require: true
         }
         // usersLikes: {
         //     type: mongoose.Schema.ObjectId,

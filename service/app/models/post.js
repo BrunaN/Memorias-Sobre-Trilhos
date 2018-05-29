@@ -17,10 +17,11 @@ module.exports = function(){
         description: {
             type: String,
             require: true
+        },
+        date: {
+            type: Date,
+            require: true
         }
-        // data: {
-
-        // },
         // usersLikes: {
         //     type: mongoose.Schema.ObjectId,
         //     ref: 'User'
