@@ -25,7 +25,7 @@ export class PostService {
                             let res = response.json();
                             let user = this.loginService.user;
                             console.log(user);
-                            let post = new Post(res._id, user._id, res.station, res.content, res.description, res.date);
+                            let post = new Post(res._id, user, res.station, res.content, res.description, res.date);
                             this.posts.push(post);
                             return post;
                         })

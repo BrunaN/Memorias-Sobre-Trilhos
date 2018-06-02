@@ -19,7 +19,7 @@ module.exports = function(){
             require: true
         }
         // usersLikes: {
-        //     type: mongoose.Schema.ObjectId,
+        //     type: [mongoose.Schema.ObjectId],
         //     ref: 'User'
         // }
     });
