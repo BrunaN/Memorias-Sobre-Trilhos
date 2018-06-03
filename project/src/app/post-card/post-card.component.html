@@ -23,7 +23,7 @@
         {{ post.date | timeAgo }}
       </div>
       <div class="interaction">
-        <a href="#">{{post.likes.length}}</a>
+        <a href="#" (click)="usersLikes($event)">{{post.likes.length}}</a>
         <a href="#" (click)="like($event)">Gostar</a>
         <a href="#" (click)="comentar($event)">Comentar</a>
         <div class="compartilhar">

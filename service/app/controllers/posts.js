@@ -98,7 +98,7 @@ module.exports.updatePost = function(req, res){
         _id: id,
     })
 
-    let promise = Post.findByIdAndUpdate(id, post);
+    let promise = Post.findByIdAndUpdate(id, post).populate('user' , '-password');
     promise.then(
         function(post){
             res.status(200);

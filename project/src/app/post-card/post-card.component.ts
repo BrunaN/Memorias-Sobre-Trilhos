@@ -96,4 +96,15 @@ export class PostCardComponent implements OnInit {
                 });
   }
 
+  usersLikes(e){
+    e.preventDefault();
+    this.postService.getUsersLikes(this.post)
+                .subscribe(data => {
+                  console.log(data);
+                },
+                  error => {
+                  console.log(error);
+                });
+  }
+
 }

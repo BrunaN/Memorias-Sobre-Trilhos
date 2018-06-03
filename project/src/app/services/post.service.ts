@@ -50,12 +50,12 @@ export class PostService {
         return this.http.get(this.url + "/" + post._id + "/likes")
                         .map((response: Response) => {
                             console.log(response);
-                            this.likes = [];
-                            for(let post of response.json()){
-                                let user = new Usuario(post.user._id, post.user.name, post.user.email, post.user.password);
-                                this.likes.push(user);
-                            }
-                            return this.likes
+                            // this.likes = [];
+                            // for(let post of response.json()){
+                            //     let user = new Usuario(post.user._id, post.user.name, post.user.email, post.user.password);
+                            //     this.likes.push(user);
+                            // }
+                            // return this.likes
                         })
                         .catch((error: Response) => Observable.throw(error));
     }
