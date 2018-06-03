@@ -14,10 +14,10 @@ export class PostService {
     url: string = 'http://localhost:3000/api/posts';
     urlPostsFromStation: string = 'http://localhost:3000/api/stations/';
 
-
     constructor( private http : Http, protected loginService : LoginService){ };
 
     posts: Post [] = [];
+    likes: Usuario [] = [];
 
     insertPost(post: Post){
         return this.http.post(this.url, post)
@@ -25,7 +25,7 @@ export class PostService {
                             let res = response.json();
                             let user = this.loginService.user;
                             console.log(user);
-                            let post = new Post(res._id, user, res.station, res.content, res.description, res.date);
+                            let post = new Post(res._id, user, res.station, res.content, res.description, res.date, res.likes);
                             this.posts.push(post);
                             return post;
                         })
@@ -39,9 +39,32 @@ export class PostService {
                             this.posts = [];
                             for(let post of response.json()){
                                 let user = new Usuario(post.user._id, post.user.name, post.user.email, post.user.password);
-                                this.posts.push(new Post(post._id, user, post.station, post.content, post.description, post.date))
+                                this.posts.push(new Post(post._id, user, post.station, post.content, post.description, post.date, post.likes))
                             }
                             return this.posts
+                        })
+                        .catch((error: Response) => Observable.throw(error));
+    }
+
+    getUsersLikes(post: Post){
+        return this.http.get(this.url + "/" + post._id + "/likes")
+                        .map((response: Response) => {
+                            console.log(response);
+                            this.likes = [];
+                            for(let post of response.json()){
+                                let user = new Usuario(post.user._id, post.user.name, post.user.email, post.user.password);
+                                this.likes.push(user);
+                            }
+                            return this.likes
+                        })
+                        .catch((error: Response) => Observable.throw(error));
+    }
+
+    updatePost(post: Post){
+        console.log(post);
+        return this.http.put((this.url + "/" + post._id), post)
+                        .map((response: Response) => {
+                            console.log(response);
                         })
                         .catch((error: Response) => Observable.throw(error));
     }

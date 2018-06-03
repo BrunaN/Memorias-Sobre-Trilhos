@@ -27,6 +27,7 @@ export class StationContentComponent implements OnInit {
   content: string = "";
   description: string = "";
   comments: Comment;
+  likes;
 
   posts: Post [] = [];
 
@@ -56,7 +57,7 @@ export class StationContentComponent implements OnInit {
 
   insert(event){
     event.preventDefault();
-    let post = new Post(this._idPost, this.user._id, this.station._id, this.content, this.description, new Date());
+    let post = new Post(this._idPost, this.user._id, this.station._id, this.content, this.description, new Date(), this.likes);
     this.postService.insertPost(post)
                 .subscribe(data => {
                   console.log(data);

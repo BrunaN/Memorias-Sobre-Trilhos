@@ -23,7 +23,8 @@
         {{ post.date | timeAgo }}
       </div>
       <div class="interaction">
-        <a href="#">Gostar</a>
+        <a href="#">{{post.likes.length}}</a>
+        <a href="#" (click)="like($event)">Gostar</a>
         <a href="#" (click)="comentar($event)">Comentar</a>
         <div class="compartilhar">
           <a href="" ceiboShare [facebook]="{u: repoUrl}">Compartilhar</a>

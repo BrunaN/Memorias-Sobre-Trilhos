@@ -21,11 +21,11 @@ module.exports = function(){
         date: {
             type: Date,
             require: true
+        },
+        likes: {
+            type: [mongoose.Schema.ObjectId],
+            ref: 'User'
         }
-        // usersLikes: {
-        //     type: [mongoose.Schema.ObjectId],
-        //     ref: 'User'
-        // }
     })
     return mongoose.model('Post', schema);
 }();
