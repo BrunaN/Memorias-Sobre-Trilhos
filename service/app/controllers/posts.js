@@ -56,7 +56,8 @@ module.exports.getPostsFromStation = function(req, res){
     let promise = Post.find(criterio)
                     .populate('user' , '-password')
                     .populate('station')
-                    .populate('comment').exec();
+                    .populate('comment')
+                    .populate('likes').exec();
     promise.then(
         function(post){
             res.json(post);
@@ -72,7 +73,7 @@ module.exports.getPostsFromStation = function(req, res){
 module.exports.getLikes = function(req, res){
     let id = req.params.id;
 
-    let promise = Post.findById(id);
+    let promise = Post.findById(id).exec();
     promise.then(
         function(post){
             res.status(200).json(post.likes);
@@ -87,8 +88,6 @@ module.exports.getLikes = function(req, res){
 module.exports.updatePost = function(req, res){
     let id = req.params.id;
 
-    console.log(req.body);
-
     let post = new Post({
         user: req.body.user,
         station: req.body.station,
@@ -98,7 +97,7 @@ module.exports.updatePost = function(req, res){
         _id: id,
     })
 
-    let promise = Post.findByIdAndUpdate(id, post).populate('user' , '-password');
+    let promise = Post.findByIdAndUpdate(id, post);
     promise.then(
         function(post){
             res.status(200);
