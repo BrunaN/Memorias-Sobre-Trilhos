@@ -23,7 +23,8 @@
         {{ post.date | timeAgo }}
       </div>
       <div class="interaction">
-        <a href="#">Gostar</a>
+        <a href="#" (click)="usersLikes($event)" *ngIf="post.likes.length > 0">{{post.likes.length}}</a>
+        <a href="#" (click)="like($event)">Gostar</a>
         <a href="#" (click)="comentar($event)">Comentar</a>
         <div class="compartilhar">
           <a href="" ceiboShare [facebook]="{u: repoUrl}">Compartilhar</a>
@@ -33,7 +34,7 @@
     </div>
   </div>
   <div class="comentarios" [ngClass]="comentario">
-    <div class="comentario-list" *ngFor = "let comment of comments | sortgrid : '+date'">
+    <div class="comentario-list" *ngFor = "let comment of comments | sortgrid : '-date'">
       <app-comment [comment] = comment></app-comment>
     </div>
     <div class="comentario-input">

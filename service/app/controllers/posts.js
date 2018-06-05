@@ -56,7 +56,8 @@ module.exports.getPostsFromStation = function(req, res){
     let promise = Post.find(criterio)
                     .populate('user' , '-password')
                     .populate('station')
-                    .populate('comment').exec();
+                    .populate('comment')
+                    .populate('likes').exec();
     promise.then(
         function(post){
             res.json(post);
@@ -66,4 +67,44 @@ module.exports.getPostsFromStation = function(req, res){
             res.status(500).send("Não contém posts");
         }
     );
+}
+
+
+module.exports.getLikes = function(req, res){
+    let id = req.params.id;
+
+    let promise = Post.findById(id).exec();
+    promise.then(
+        function(post){
+            res.status(200).json(post.likes);
+        }
+    ).catch(
+        function(erro){
+            res.status(500).send(error);
+        }
+    )
+}
+
+module.exports.updatePost = function(req, res){
+    let id = req.params.id;
+
+    let post = new Post({
+        user: req.body.user,
+        station: req.body.station,
+        description: req.body.description,
+        date: req.body.date,
+        likes: req.body.likes,
+        _id: id,
+    })
+
+    let promise = Post.findByIdAndUpdate(id, post);
+    promise.then(
+        function(post){
+            res.status(200);
+        }
+    ).catch(
+        function(error){
+            res.status(500).send(error);
+        }
+    )
 }

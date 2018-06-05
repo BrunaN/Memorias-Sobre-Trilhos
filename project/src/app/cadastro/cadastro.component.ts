@@ -5,13 +5,15 @@ import { Component, OnInit } from '@angular/core';
 import { NgModel } from '@angular/forms';
 import { Estado } from '../models/estado.model';
 import { Usuario } from '../models/usuario.model';
-import { Cidade } from '../models/cidade.model'
+import { Cidade } from '../models/cidade.model';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-cadastro',
   templateUrl: './cadastro.component.html',
   styleUrls: ['./cadastro.component.css'],
-  providers: [DataService]
+  providers: [DataService, 
+              RouterModule]
 })
 
 export class CadastroComponent implements OnInit {
@@ -28,7 +30,7 @@ export class CadastroComponent implements OnInit {
   estados: Estado[];
   cidades: Cidade[];
 
-  constructor(private service: UsuarioService, private data: DataService, private loginService: LoginService){ 
+  constructor(private service: UsuarioService, private data: DataService, private loginService: LoginService, private router: Router){ 
     this.estados = this.data.getEstados();
   }
 
@@ -45,10 +47,8 @@ export class CadastroComponent implements OnInit {
     this.service.adicionar(usuario)
             .subscribe(data =>{
               console.log(data);
-              // this.nome = "";
-              // this.email = "";
-              // this.password = "";
               this.loginService.local(data);
+              this.router.navigate(['/home']);
               //colocar pra retornar pra página onde o usuário tava antes
               },
               error => console.log(error)
