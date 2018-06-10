@@ -25,6 +25,7 @@ import { ResultPagesComponent } from './result-pages/result-pages.component';
 import { PostService } from './services/post.service';
 import { CommentComponent } from './comment/comment.component';
 import {TimeAgoPipe} from './diretivas/time-ago-pipe';
+import { StationsMapComponent } from './stations-map/stations-map.component';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import {TimeAgoPipe} from './diretivas/time-ago-pipe';
     CeiboShare,
     CommentComponent,
     SortGridPipe,
-    TimeAgoPipe
+    TimeAgoPipe,
+    StationsMapComponent
   ],
   imports: [
     BrowserModule,
