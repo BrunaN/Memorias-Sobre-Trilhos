@@ -38,7 +38,13 @@ module.exports.getPostById = function(req, res){
 }
 
 module.exports.insertPost = function(req, res){
-    let promise = Post.create(req.body)
+    let post = req.body;
+    if(req.file){
+      post.content = req.file.filename;
+    }
+
+    let promise = Post.create(post);
+
     promise.then(
         function(post){
             res.status(201).json(post);
@@ -52,7 +58,7 @@ module.exports.insertPost = function(req, res){
 
 module.exports.getPostsFromStation = function(req, res){
     let id = req.params.id;
-    let criterio = {'station': id}
+    let criterio = {'station': id};
     let promise = Post.find(criterio)
                     .populate('user' , '-password')
                     .populate('station')

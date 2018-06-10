@@ -28,7 +28,12 @@ module.exports.getUserById = function(req, res){
 }
 
 module.exports.insertUser = function(req, res){
-    let promise = User.create(req.body)
+    let user = req.body;
+    if(req.file){
+      user.avatar = req.file.filename;
+    }
+
+    let promise = User.create(user)
     promise.then(
         function(user){
             res.status(201).json(user);

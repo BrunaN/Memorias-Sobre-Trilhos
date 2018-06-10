@@ -12,6 +12,9 @@ module.exports = function(){
         password: {
             type: String,
             required: true
+        },
+        avatar: {
+            type: String
         }
         // state: {
         //     type: mongoose.Schema.ObjectId,

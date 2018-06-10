@@ -6,7 +6,6 @@ let stationsRouter = require('../app/routes/stations');
 let postsRouter = require('../app/routes/posts');
 let commentsRouter = require('../app/routes/comments');
 
-
 let allowCrossDomain = function(req, res, next) {
     res.header('Access-Control-Allow-Origin', "*");
     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');

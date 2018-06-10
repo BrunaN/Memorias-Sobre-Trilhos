@@ -4,15 +4,16 @@ module.exports = function(){
     let schema = mongoose.Schema({
         user: {
             type: mongoose.Schema.ObjectId,
-            ref: 'User'
+            ref: 'User',
+            require: true
         },
         station: {
             type: mongoose.Schema.ObjectId,
-            ref: 'Station'
+            ref: 'Station',
+            require: true
         },
         content: {
-            type: String,
-            require: true
+            type: String
         },
         description: {
             type: String,
