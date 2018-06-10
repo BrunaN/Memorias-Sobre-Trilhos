@@ -1,0 +1,22 @@
+.marcadores {
+    fill: #b55480;
+}
+
+.cidades {
+    margin-left: 10%;
+}
+
+.cidades a {
+   cursor: pointer; 
+   fill: #3e4238;
+   font-size: 18px;
+}
+
+.cidades a:hover{
+    fill: #b55480;
+    text-decoration: none;
+}
+
+.mapa {
+    fill:#3e4238;
+}

@@ -31,6 +31,12 @@ export class StationContentComponent implements OnInit {
 
   posts: Post [] = [];
 
+  fileToUpload = File = null;
+
+  handleFileInput(files: FileList) {
+    this.fileToUpload = files.item(0);
+  };
+
   constructor(protected loginService: LoginService, private postService: PostService, private route: ActivatedRoute, private estacaoService: EstacaoService, private router: Router ) {
     this.route.params.subscribe(params => {
       this._id = params['id'];
@@ -55,8 +61,17 @@ export class StationContentComponent implements OnInit {
   ngOnInit() {
   }
 
+  uploadFileToActivity(){
+    this.estacaoService.postFile(this.fileToUpload).subscribe(data => {
+      // do something, if upload success
+      }, error => {
+        console.log(error);
+      });
+  }
+
   insert(event){
     event.preventDefault();
+    this.uploadFileToActivity();
     let post = new Post(this._idPost, this.user._id, this.station._id, this.content, this.description, new Date(), this.likes);
     this.postService.insertPost(post)
                 .subscribe(data => {

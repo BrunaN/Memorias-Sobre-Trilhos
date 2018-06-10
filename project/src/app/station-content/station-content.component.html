@@ -65,7 +65,9 @@
 
           <div role="tabpanel" class="tab-pane" id="foto">
             <div class="input">
-              <input [(ngModel)]="content" type="file" name="content" id="">
+              <input [(ngModel)]="content" type="file" name="content" id="file"
+              (change)="handleFileInput($event.target.files)">
+
               <input [(ngModel)]="description" name="description" id="description" type="text" placeholder="Adicione uma legenda para a sua foto">
             </div>
             <div class="botao">
