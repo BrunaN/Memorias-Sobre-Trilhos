@@ -4,7 +4,7 @@ export class Post {
     _id: string;
     user;
     station;
-    content: string;
+    content;
     description: string;
     date;
     likes: Usuario [];

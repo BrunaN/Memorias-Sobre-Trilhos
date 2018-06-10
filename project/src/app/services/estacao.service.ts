@@ -24,13 +24,4 @@ export class EstacaoService {
                         .catch((error: Response) => Observable.throw(error));
     }
 
-    postFile(fileToUpload: File){
-        const endpoint = 'your-destination-url';
-        const formData: FormData = new FormData();
-        formData.append('fileKey', fileToUpload, fileToUpload.name);
-        return this.http.post(endpoint, formData)
-          .map((response: Response) => console.log(response))
-          .catch((error: Response) => Observable.throw(error));
-    }
-
 }
