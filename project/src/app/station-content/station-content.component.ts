@@ -29,14 +29,15 @@ export class StationContentComponent implements OnInit {
   likes;
   video;
 
-  content = File = null;
+  content = null;
 
   videoInput: string = "";
 
   posts: Post [] = [];
 
   handleFileInput(event) {
-    this.content = <File>event.target.files[0];
+    if(event.target.files.length)
+      this.content = <File>event.target.files[0];
   };
 
   constructor(protected loginService: LoginService, private postService: PostService, private route: ActivatedRoute, private estacaoService: EstacaoService, private router: Router, private _sanitizationService: DomSanitizer) {
@@ -76,5 +77,4 @@ export class StationContentComponent implements OnInit {
                   console.log(error);
                 });
   }
-
 }

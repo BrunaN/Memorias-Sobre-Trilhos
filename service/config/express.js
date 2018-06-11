@@ -20,6 +20,9 @@ module.exports = function(){
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended: false}));
 
+    console.log(__dirname);
+
+    app.use('/uploads', express.static(__dirname + '/../uploads'));
     app.use(allowCrossDomain);
 
     usersRouter(app);
