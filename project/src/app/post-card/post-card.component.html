@@ -14,7 +14,7 @@
         {{post.content}}
       </div>
       <div class="video" *ngIf="post.video">
-        <iframe [src]="safeUrl()" frameborder="0" scrolling="no" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <iframe [src]="safeUrl()" frameborder="0" scrolling="no" autoplay="0" allowfullscreen></iframe>
       </div>
       <div class="description">
         {{post.description}}

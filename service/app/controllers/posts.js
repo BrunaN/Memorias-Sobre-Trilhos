@@ -75,6 +75,24 @@ module.exports.getPostsFromStation = function(req, res){
     );
 }
 
+module.exports.getPostsFromUser = function(req, res){
+    let id = req.params.id;
+    let criterio = {'user': id};
+    let promise = Post.find(criterio)
+                    .populate('station')
+                    .populate('comment')
+                    .populate('likes').exec();
+    promise.then(
+        function(post){
+            res.json(post);
+        }
+    ).catch(
+        function(error){
+            res.status(500).send("Não contém posts");
+        }
+    );
+}
+
 
 module.exports.getLikes = function(req, res){
     let id = req.params.id;

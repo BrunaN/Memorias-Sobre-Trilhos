@@ -13,6 +13,7 @@ export class PostService {
 
     url: string = 'http://localhost:3000/api/posts';
     urlPostsFromStation: string = 'http://localhost:3000/api/stations/';
+    urlPostsFromUser: string = 'http://localhost:3000/api/user/';
 
     constructor( private http : Http, protected loginService : LoginService){ };
 
@@ -39,6 +40,19 @@ export class PostService {
                             this.posts = [];
                             for(let post of response.json()){
                                 let user = new Usuario(post.user._id, post.user.name, post.user.email, post.user.password);
+                                this.posts.push(new Post(post._id, user, post.station, post.content, post.video, post.description, post.date, post.likes))
+                            }
+                            return this.posts
+                        })
+                        .catch((error: Response) => Observable.throw(error));
+    }
+
+    getPostsFromUser(user: Usuario){
+        return this.http.get(this.urlPostsFromUser + user._id + "/posts")
+                        .map((response: Response) => {
+                            console.log(response);
+                            this.posts = [];
+                            for(let post of response.json()){
                                 this.posts.push(new Post(post._id, user, post.station, post.content, post.video, post.description, post.date, post.likes))
                             }
                             return this.posts
