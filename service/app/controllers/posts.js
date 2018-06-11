@@ -38,9 +38,13 @@ module.exports.getPostById = function(req, res){
 }
 
 module.exports.insertPost = function(req, res){
+
     let post = req.body;
     if(req.file){
       post.content = req.file.filename;
+      /*let type = req.file.mimetype.split("/");
+      type = type[type.length - 1];
+      post.content += "." + type;*/
     }
 
     let promise = Post.create(post);

@@ -21,11 +21,23 @@ export class PostService {
     likes: Usuario [] = [];
 
     insertPost(post: Post){
-        return this.http.post(this.url, post)
+        let formData = new FormData();
+        if (post.content) {
+          formData.append('content', post.content);
+        }
+
+        for ( let key in post ) {
+          if(key != 'content' && post[key]){
+            console.log(key, post[key]);
+            formData.append(key, post[key]);
+          }
+        }
+
+
+        return this.http.post(this.url, formData)
                         .map((response: Response) => {
                             let res = response.json();
                             let user = this.loginService.user;
-                            console.log(user);
                             let post = new Post(res._id, user, res.station, res.content, res.video, res.description, res.date, res.likes);
                             this.posts.push(post);
                             return post;
