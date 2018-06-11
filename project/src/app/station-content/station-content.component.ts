@@ -8,7 +8,7 @@ import { EstacaoService } from '../services/estacao.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { Post } from '../models/post.model';
 import { Router, ActivatedRoute, Params, RouterModule } from '@angular/router';
-
+import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-station-content',
@@ -27,8 +27,11 @@ export class StationContentComponent implements OnInit {
   description: string = "";
   comments: Comment;
   likes;
+  video;
 
   content = File = null;
+
+  videoInput: string = "";
 
   posts: Post [] = [];
 
@@ -36,7 +39,7 @@ export class StationContentComponent implements OnInit {
     this.content = <File>event.target.files[0];
   };
 
-  constructor(protected loginService: LoginService, private postService: PostService, private route: ActivatedRoute, private estacaoService: EstacaoService, private router: Router ) {
+  constructor(protected loginService: LoginService, private postService: PostService, private route: ActivatedRoute, private estacaoService: EstacaoService, private router: Router, private _sanitizationService: DomSanitizer) {
     this.route.params.subscribe(params => {
       this._id = params['id'];
       estacaoService.getEstacao(this._id)
@@ -62,7 +65,7 @@ export class StationContentComponent implements OnInit {
 
   insert(event){
     event.preventDefault();
-    let post = new Post(this._idPost, this.user._id, this.station._id, this.content, this.description, new Date(), this.likes);
+    let post = new Post(this._idPost, this.user._id, this.station._id, this.content, this.videoInput, this.description, new Date(), this.likes);
     this.postService.insertPost(post)
                 .subscribe(data => {
                   console.log(data);

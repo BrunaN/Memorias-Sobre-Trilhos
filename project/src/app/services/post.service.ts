@@ -25,7 +25,7 @@ export class PostService {
                             let res = response.json();
                             let user = this.loginService.user;
                             console.log(user);
-                            let post = new Post(res._id, user, res.station, res.content, res.description, res.date, res.likes);
+                            let post = new Post(res._id, user, res.station, res.content, res.video, res.description, res.date, res.likes);
                             this.posts.push(post);
                             return post;
                         })
@@ -39,7 +39,7 @@ export class PostService {
                             this.posts = [];
                             for(let post of response.json()){
                                 let user = new Usuario(post.user._id, post.user.name, post.user.email, post.user.password);
-                                this.posts.push(new Post(post._id, user, post.station, post.content, post.description, post.date, post.likes))
+                                this.posts.push(new Post(post._id, user, post.station, post.content, post.video, post.description, post.date, post.likes))
                             }
                             return this.posts
                         })

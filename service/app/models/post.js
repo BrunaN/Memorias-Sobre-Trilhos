@@ -15,6 +15,9 @@ module.exports = function(){
         content: {
             type: String
         },
+        video:{
+            type: String
+        },
         description: {
             type: String,
             require: true

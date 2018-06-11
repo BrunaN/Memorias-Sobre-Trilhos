@@ -6,6 +6,7 @@ import { NgModel } from '@angular/forms';
 import { Component, OnInit, Input } from '@angular/core';
 import { LoginService } from '../services/login.service';
 import { Comment } from '../models/comment.model';
+import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-post-card',
@@ -32,8 +33,12 @@ export class PostCardComponent implements OnInit {
     "comentar-border": false
   };
 
-  constructor(private postService: PostService, private commentService: CommentService, protected loginService: LoginService) { }
+  constructor(private postService: PostService, private commentService: CommentService, protected loginService: LoginService,  private sanitizer: DomSanitizer) { }
 
+  safeUrl(){
+    return this.sanitizer.bypassSecurityTrustResourceUrl(this.post.video);
+  }
+  
   ngOnInit() {
   }
 

@@ -79,7 +79,7 @@
 
           <div role="tabpanel" class="tab-pane" id="video">
             <div class="input">
-              <input type="text" placeholder="Adicione o link do vídeo">
+              <input [(ngModel)]="videoInput" type="text" placeholder="Adicione o link do vídeo" name="video">
               <input [(ngModel)]="description" name="description" id="description" type="text" placeholder="Adicione uma legenda para o vídeo">
             </div>
             <div class="botao">
