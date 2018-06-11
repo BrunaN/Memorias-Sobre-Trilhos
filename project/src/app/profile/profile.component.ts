@@ -12,6 +12,9 @@ import { Component, OnInit, Input } from '@angular/core';
 
 export class ProfileComponent implements OnInit {
 
+    user: Usuario = this.loginService.user;
+    posts: Post [] = [];
+
     constructor(protected loginService: LoginService, private postService: PostService) { 
         this.posts = [];
 
@@ -22,9 +25,6 @@ export class ProfileComponent implements OnInit {
                 console.log(error);
             });
     }
-
-    user: Usuario = this.loginService.user;
-    posts: Post[] = [];
 
     ngOnInit() {
         this.user = this.loginService.user;

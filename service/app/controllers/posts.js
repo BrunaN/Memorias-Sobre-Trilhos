@@ -1,5 +1,4 @@
 let Post = require('../models/post');
-
 let Station = require('../models/station');
 let User = require('../models/user');
 let Comment = require('../models/comment');

@@ -15,7 +15,7 @@
         <ul>
           <li>
             Quixadá-ce
-          </li>  
+          </li>
         </ul>
         <div class="editar">
           <a (click)="editar()">Editar</a>
@@ -25,25 +25,29 @@
     <div class="pessoal">
       <ul>
         <!-- <li><a href="">minhas memórias</a></li> -->
-        <li><a href="">estações</a></li>
+        <li>
+          <a href="">estações</a>
+        </li>
       </ul>
     </div>
   </div>
-  
   <div class="col-md-5 conteudo">
     <h2>Olá {{this.loginService.user.name}}</h2>
-    <div class="posts" *ngFor = "let post of posts">
+    <div class="posts" *ngFor="let post of posts">
       <app-post-card [post] = post>
-        
+
       </app-post-card>
     </div>
-    <div class="conteudo-vazio" *ngIf = "posts == 0">
-      <p>
-        Você ainda não escreveu nenhum relato
-      </p>
-      <button>
-        Escrever
-      </button>
+    <div *ngIf="posts.length == 0">
+      <div class="conteudo-vazio">
+        <p>
+          Você ainda não escreveu nenhum relato
+        </p>
+        <button>
+          Escrever
+        </button>
+      </div>
     </div>
+
   </div>
 </div>
