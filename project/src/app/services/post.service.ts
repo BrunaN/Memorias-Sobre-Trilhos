@@ -87,7 +87,6 @@ export class PostService {
     }
 
     updatePost(post: Post){
-        console.log(post);
         return this.http.put((this.url + "/" + post._id), post)
                         .map((response: Response) => {
                             console.log(response);

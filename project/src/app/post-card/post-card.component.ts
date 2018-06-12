@@ -23,7 +23,6 @@ export class PostCardComponent implements OnInit {
   text: string = "";
   URL_IMG: string = "http://localhost:3000/uploads/";
 
-
   request: boolean = false;
 
   comentario = {
@@ -96,7 +95,6 @@ export class PostCardComponent implements OnInit {
   like(e){
     e.preventDefault();
     this.post.likes.push(this.user);
-
     this.postService.updatePost(this.post)
                 .subscribe(data => {
                   console.log(data);

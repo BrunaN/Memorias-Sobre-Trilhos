@@ -115,7 +115,7 @@ module.exports.getLikes = function(req, res){
 module.exports.updatePost = function(req, res){
     let id = req.params.id;
 
-    let post = new Post({
+    let post_updated = new Post({
         user: req.body.user,
         station: req.body.station,
         description: req.body.description,
@@ -124,10 +124,19 @@ module.exports.updatePost = function(req, res){
         _id: id,
     })
 
-    let promise = Post.findByIdAndUpdate(id, post);
+    let promise = Post.findById(id);
     promise.then(
         function(post){
-            res.status(200);
+            let promise2 = Post.findByIdAndUpdate(post._id, post_updated);
+            promise2.then(
+                function(post){
+                    res.status(200).json("Post updated");
+                }
+            ).catch(
+                function(error){
+                    res.status(500).send(error);
+                }        
+            )
         }
     ).catch(
         function(error){
