@@ -94,10 +94,10 @@ export class PostCardComponent implements OnInit {
 
   like(e){
     e.preventDefault();
-    this.post.likes.push(this.user);
-    this.postService.updatePost(this.post)
+    this.postService.likePost(this.post, this.user)
                 .subscribe(data => {
                   console.log(data);
+                  this.post = data;
                 },
                   error => {
                   console.log(error);

@@ -10,4 +10,5 @@ module.exports = function(app){
     app.get('/api/user/:id/posts', controller.getPostsFromUser);
     app.get('/api/posts/:id/likes', controller.getLikes);
     app.put('/api/posts/:id', controller.updatePost);
+    app.put('/api/posts/:id/like', controller.likePost);
 }

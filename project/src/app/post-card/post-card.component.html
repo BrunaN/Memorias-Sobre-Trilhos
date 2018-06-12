@@ -10,7 +10,7 @@
     </div>
 
     <div class="post-content">
-      <div class="content">
+      <div class="content" *ngIf="post.content">
         <img [src]="urlImg() | safe: 'resourceUrl'" alt="">
       </div>
       <div class="video" *ngIf="post.video">

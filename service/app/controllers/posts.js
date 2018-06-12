@@ -39,6 +39,7 @@ module.exports.getPostById = function(req, res){
 module.exports.insertPost = function(req, res){
 
     let post = req.body;
+
     if(req.file){
       post.content = req.file.filename;
       console.log(req.file);
@@ -115,19 +116,19 @@ module.exports.getLikes = function(req, res){
 module.exports.updatePost = function(req, res){
     let id = req.params.id;
 
-    let post_updated = new Post({
+    let post_updated = {
         user: req.body.user,
         station: req.body.station,
         description: req.body.description,
         date: req.body.date,
         likes: req.body.likes,
         _id: id,
-    })
+    };
 
     let promise = Post.findById(id);
     promise.then(
         function(post){
-            let promise2 = Post.findByIdAndUpdate(post._id, post_updated);
+            let promise2 = Post.findByIdAndUpdate(post._id, req.body);
             promise2.then(
                 function(post){
                     res.status(200).json("Post updated");
@@ -141,6 +142,45 @@ module.exports.updatePost = function(req, res){
     ).catch(
         function(error){
             res.status(500).send(error);
+        }
+    )
+}
+
+
+module.exports.likePost = function(req, res){
+    let id = req.params.id;
+
+    let promise = Post.findById(id);
+    promise.then(
+        function(post){
+            let i;
+            for(i=0; i < post.likes.length; i++){
+                if(post.likes[i] == req.body.user){
+                    break;
+                }
+            }
+            if(i == post.likes.length){
+                post.likes.push(req.body.user);
+            }else{
+                post.likes.splice(i, 1)
+            }
+
+            let promise2 = Post.findByIdAndUpdate(id, post)
+                                .populate('user', '-password')
+                                .populate('station');
+            promise2.then(
+                function(new_post){
+                    res.status(200).json(new_post);
+                }
+            ).catch(
+                function(error){
+                    res.status(500);
+                }
+            )
+        }
+    ).catch(
+        function(error){
+            res.status(404).send("Post not found");
         }
     )
 }
