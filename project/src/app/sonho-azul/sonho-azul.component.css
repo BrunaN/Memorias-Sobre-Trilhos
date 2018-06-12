@@ -61,9 +61,22 @@
     width: 22px;
     margin-right: 6px;
 }
-
 .asabranca-texto{
+    padding: 50px;
+}
+.asabranca-texto p{
+    line-height: 35px;
     text-align: justify;
+    font-size: 20px;
+    
+}
+.asabranca-texto img{
+    margin-left: 20px;
+    margin-bottom: 40px;
+    float: right;
+    max-height: 450px;
+    max-width: 600px;
+
 }
 .content-posts{
     padding: 50px;
