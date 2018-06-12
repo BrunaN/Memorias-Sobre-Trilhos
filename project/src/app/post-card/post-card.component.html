@@ -11,11 +11,10 @@
 
     <div class="post-content">
       <div class="content">
-        <img src="../../../../service/uploads/{{post.content}}" alt="">
-        
+        <img [src]="urlImg() | safe: 'resourceUrl'" alt="">
       </div>
       <div class="video" *ngIf="post.video">
-        <iframe [src]="safeUrl()" frameborder="0" scrolling="no" autoplay="0" allowfullscreen></iframe>
+        <iframe [src]="safeUrl(this.post.video)" frameborder="0" scrolling="no" autoplay="0" allowfullscreen></iframe>
       </div>
       <div class="description">
         {{post.description}}

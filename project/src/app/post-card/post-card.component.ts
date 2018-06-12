@@ -14,7 +14,6 @@ import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
   styleUrls: ['./post-card.component.css']
 })
 export class PostCardComponent implements OnInit {
-
   @Input() post: Post;
   comments: Comment [] = [];
 
@@ -22,6 +21,8 @@ export class PostCardComponent implements OnInit {
 
   user: Usuario = this.loginService.user;
   text: string = "";
+  URL_IMG: string = "http://localhost:3000/uploads/";
+
 
   request: boolean = false;
 
@@ -35,10 +36,14 @@ export class PostCardComponent implements OnInit {
 
   constructor(private postService: PostService, private commentService: CommentService, protected loginService: LoginService,  private sanitizer: DomSanitizer) { }
 
-  safeUrl(){
-    return this.sanitizer.bypassSecurityTrustResourceUrl(this.post.video);
+  safeUrl(url){
+    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
   }
-  
+
+  urlImg(){
+    return this.URL_IMG+this.post.content;
+  }
+
   ngOnInit() {
   }
 
@@ -82,7 +87,7 @@ export class PostCardComponent implements OnInit {
     this.comentario["comentar-display"] = !this.comentario["comentar-display"];
 
     if(this.postBorder["comentar-border"] == false && this.comentario["comentar-display"] == false){
-      this.postBorder["comentar-border"] = true;  
+      this.postBorder["comentar-border"] = true;
     }else{
       this.postBorder["comentar-border"] = false
     }
@@ -91,7 +96,7 @@ export class PostCardComponent implements OnInit {
   like(e){
     e.preventDefault();
     this.post.likes.push(this.user);
-    
+
     this.postService.updatePost(this.post)
                 .subscribe(data => {
                   console.log(data);

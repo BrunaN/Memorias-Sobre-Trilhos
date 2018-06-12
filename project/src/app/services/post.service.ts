@@ -52,7 +52,7 @@ export class PostService {
                             this.posts = [];
                             for(let post of response.json()){
                                 let user = new Usuario(post.user._id, post.user.name, post.user.email, post.user.password);
-                                this.posts.push(new Post(post._id, user, post.station, post.content, post.video, post.description, post.date, post.likes))
+                                this.posts.push(new Post(post._id, user, station, post.content, post.video, post.description, post.date, post.likes))
                             }
                             return this.posts
                         })

@@ -41,6 +41,7 @@ module.exports.insertPost = function(req, res){
     let post = req.body;
     if(req.file){
       post.content = req.file.filename;
+      console.log(req.file);
       /*let type = req.file.mimetype.split("/");
       type = type[type.length - 1];
       post.content += "." + type;*/
@@ -64,7 +65,6 @@ module.exports.getPostsFromStation = function(req, res){
     let criterio = {'station': id};
     let promise = Post.find(criterio)
                     .populate('user' , '-password')
-                    .populate('station')
                     .populate('comment')
                     .populate('likes').exec();
     promise.then(

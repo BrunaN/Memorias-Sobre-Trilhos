@@ -29,7 +29,7 @@ export class StationContentComponent implements OnInit {
   likes;
   video;
 
-  content = null;
+  content: File;
 
   videoInput: string = "";
 
@@ -37,8 +37,8 @@ export class StationContentComponent implements OnInit {
 
   handleFileInput(event) {
     if(event.target.files.length)
-      this.content = <File>event.target.files[0];
-  };
+      this.content = event.target.files[0];
+  }
 
   constructor(protected loginService: LoginService, private postService: PostService, private route: ActivatedRoute, private estacaoService: EstacaoService, private router: Router, private _sanitizationService: DomSanitizer) {
     this.route.params.subscribe(params => {
@@ -46,6 +46,7 @@ export class StationContentComponent implements OnInit {
       estacaoService.getEstacao(this._id)
                 .subscribe(data => {
                   this.station = data;
+                  console.log(this.station);
                   this.posts = [];
                   this.postService.getPosts(this.station)
                                 .subscribe(data => {
@@ -70,7 +71,7 @@ export class StationContentComponent implements OnInit {
     this.postService.insertPost(post)
                 .subscribe(data => {
                   console.log(data);
-                  this.content = "";
+                  this.content = undefined;
                   this.description = "";
                 },
                   error => {
