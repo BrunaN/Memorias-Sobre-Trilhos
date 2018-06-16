@@ -33,7 +33,6 @@ export class PostService {
           }
         }
 
-
         return this.http.post(this.url, formData)
                         .map((response: Response) => {
                             let res = response.json();
@@ -51,7 +50,7 @@ export class PostService {
                             console.log(response);
                             this.posts = [];
                             for(let post of response.json()){
-                                let user = new Usuario(post.user._id, post.user.name, post.user.email, post.user.password);
+                                let user = new Usuario(post.user._id, post.user.name, post.user.email, post.user.password, post.user.avatar);
                                 this.posts.push(new Post(post._id, user, station, post.content, post.video, post.description, post.date, post.likes))
                             }
                             return this.posts

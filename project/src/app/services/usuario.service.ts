@@ -1,3 +1,4 @@
+import { Usuario } from './../models/usuario.model';
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs';
@@ -5,7 +6,6 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
 import { Cidade } from '../models/cidade.model';
-import { Usuario } from '../models/usuario.model';
 
 @Injectable()
 export class UsuarioService {
@@ -21,7 +21,7 @@ export class UsuarioService {
             .map((response: Response) => {
                 let res = response.json();
                 console.log(res);
-                let user = new Usuario(res._id, res.name, res.email, res.password);
+                let user = new Usuario(res._id, res.name, res.email, res.password, res.avatar);
                 return user
             })
             .catch((error: Response) => Observable.throw(error));
@@ -32,10 +32,32 @@ export class UsuarioService {
             .map((response: Response) => {
                 this.usuarios = [];
                 for (let usuario of response.json()) {
-                    this.usuarios.push(new Usuario(usuario._id, usuario.nomeUsuario, usuario.email, usuario.password))
+                    this.usuarios.push(new Usuario(usuario._id, usuario.nomeUsuario, usuario.email, usuario.password, usuario.avatar))
                 }
                 return this.usuarios;
             })
             .catch((error: Response) => Observable.throw(error));
+    }
+
+    update(usuario: Usuario){
+        let formData = new FormData();
+        if (usuario.avatar) {
+          formData.append('avatar', usuario.avatar);
+        }
+
+        for ( let key in usuario ) {
+          if(key != 'avatar' && usuario[key]){
+            console.log(key, usuario[key]);
+            formData.append(key, usuario[key]);
+          }
+        }
+        console.log(formData)
+        return this.http.put((this.urlUsuarios + "/" + usuario._id), formData)
+                        .map((response: Response) => {
+                            let res = response.json();
+                            let post = new Usuario(res._id, res.name, res.email, res.password, res.avatar);
+                            return post;
+                        })
+                        .catch((error: Response) => Observable.throw(error));
     }
 }

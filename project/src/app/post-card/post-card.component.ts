@@ -43,6 +43,10 @@ export class PostCardComponent implements OnInit {
     return this.URL_IMG+this.post.content;
   }
 
+  urlImgAvatar(){
+    return this.URL_IMG+this.post.user.avatar;
+  }
+
   ngOnInit() {
   }
 

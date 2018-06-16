@@ -38,6 +38,7 @@ export class StationContentComponent implements OnInit {
   handleFileInput(event) {
     if(event.target.files.length)
       this.content = event.target.files[0];
+      console.log(this.content);
   }
 
   constructor(protected loginService: LoginService, private postService: PostService, private route: ActivatedRoute, private estacaoService: EstacaoService, private router: Router, private _sanitizationService: DomSanitizer) {

@@ -7,5 +7,6 @@ module.exports = function(app){
     app.get('/api/users/:id', controller.getUserById);
     app.post('/api/users', upload.single('avatar'), controller.insertUser);
     app.post('/api/users/login', controller.returnUser);
+    app.put('/api/users/:id', upload.single('avatar'), controller.updateUser)
     // app.get('/api/users', controller.getUsersFromStation);
 }

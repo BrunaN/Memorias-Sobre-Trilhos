@@ -1,13 +1,51 @@
 <div class="row profile">
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" id="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">x</span>
+          </button>
+          <h1 class="modal-title" id="myModalLabel">Editar perfil</h1>
+        </div>
+        <div class="modal-body">
+          <form action="">
+            <div>
+              <input type="file" name="avatar" id="file" (change)="handleFileInput($event)">
+            </div>
+            <div>
+              <!-- <label for="titulo">Nome:</label> -->
+              <br>
+              <input [(ngModel)]="nome" type="text" name:"nome">
+            </div>
+            <div>
+              <label for="titulo">Estado:</label>
+              <br>
+              <input type="text">
+            </div>
+            <div>
+              <label for="titulo">Cidade:</label>
+              <br>
+              <input type="text">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" data-dismiss="modal">Cancelar</button>
+          <button type="button" data-dismiss="modal" (click)="atualizarUsuario($event)">Salvar</button>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="col-md-3 col-md-offset-2 perfil">
-    <div class="img">
-      <img src="" alt="">
-      <!-- <div class="image">
-        <input type="file" name="" id="">
-      </div> -->
+    <div class="img" *ngIf="!user.avatar">
+      <img src="../../assets/img/avatar.png" alt="">
+    </div>
+    <div class="img" *ngIf="user.avatar">
+        <img [src]="urlImg() | safe: 'resourceUrl'" alt="">
     </div>
     <div class="informacoes">
-      <div *ngIf="editarPerfil == false">
+      <div>
         <h2>
           {{this.loginService.user.name}}
         </h2>
@@ -19,14 +57,13 @@
             Quixadá-ce
           </li>
         </ul>
-        <div class="editar">
-          <a (click)="editar()">Editar</a>
-        </div>
       </div>
     </div>
     <div class="pessoal">
       <ul>
-        <!-- <li><a href="">minhas memórias</a></li> -->
+        <li>
+          <a href="" data-toggle="modal" data-target="#myModal">editar perfil</a>
+        </li>
         <li>
           <a href="">estações</a>
         </li>
@@ -36,7 +73,7 @@
   <div class="col-md-5 conteudo">
     <h2>Olá {{this.loginService.user.name}}</h2>
     <div class="posts" *ngFor="let post of posts">
-      <app-post-card [post] = post>
+      <app-post-card [post]=post>
 
       </app-post-card>
     </div>

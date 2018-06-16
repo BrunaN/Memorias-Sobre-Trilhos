@@ -22,7 +22,7 @@ export class LoginService{
         let text = window.localStorage.getItem("user");
         if(text){
             let res = JSON.parse(text);
-            this.user = new Usuario(res._id, res.name, res.email, res.password);
+            this.user = new Usuario(res._id, res.name, res.email, res.password, res.avatar);
         }
     }
 
@@ -35,7 +35,7 @@ export class LoginService{
         return this.http.post(this.url, {'email': email, 'password': password})
             .map((response: Response) => {
                 let res = response.json();
-                let user = new Usuario(res._id, res.name, res.email, res.password);
+                let user = new Usuario(res._id, res.name, res.email, res.password, res.avatar);
                 this.local(user);
                 return user;
             })

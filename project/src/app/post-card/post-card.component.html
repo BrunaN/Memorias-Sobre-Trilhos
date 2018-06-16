@@ -1,8 +1,11 @@
 <div class="post">
   <div class="post-container" [ngClass]="postBorder">
     <div class="post-user">
-      <div class="user-image">
-        <img src="../../assets/img/bola_2.png" alt="">
+      <div class="user-image" *ngIf="!post.user.avatar">
+        <img src="../../assets/img/avatar.png" alt="">
+      </div>
+      <div class="user-image" *ngIf="post.user.avatar">
+        <img [src]="urlImgAvatar() | safe: 'resourceUrl'" alt="">
       </div>
       <h3 class="user-name">
         <a href="">{{post.user.name}}</a>

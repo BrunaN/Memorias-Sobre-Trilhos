@@ -58,3 +58,26 @@ module.exports.returnUser = function(req, res){
         }
     )
 }
+
+module.exports.updateUser = function(req, res){
+    let id = req.params.id;
+
+    let user = req.body;
+    if(req.file){
+      user.avatar = req.file.filename;
+    };
+
+    console.log(user.avatar);
+
+    let promise = User.findByIdAndUpdate(id, user);
+    promise.then(
+        function(user){
+            res.json(user);
+            console.log(user);
+        }
+    ).catch(
+        function(error){
+            res.status(404).send("Não existe");
+        }
+    )
+}

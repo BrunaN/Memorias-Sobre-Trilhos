@@ -22,6 +22,7 @@ export class CadastroComponent implements OnInit {
   nome: string = "";
   email: string = "";
   password: string = "";
+  avatar;
   // estado: string = ""
   // cidade: string = "";
 
@@ -43,7 +44,7 @@ export class CadastroComponent implements OnInit {
 
   addUsuario(event){
     event.preventDefault();
-    let usuario = new Usuario(this._id, this.nome, this.email, this.password)
+    let usuario = new Usuario(this._id, this.nome, this.email, this.password, this.avatar);
     this.service.adicionar(usuario)
             .subscribe(data =>{
               console.log(data);
