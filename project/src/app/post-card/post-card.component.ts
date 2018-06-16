@@ -1,3 +1,4 @@
+import { UsuarioService } from './../services/usuario.service';
 import { Usuario } from './../models/usuario.model';
 import { CommentService } from './../services/comment.service';
 import { PostService } from './../services/post.service';
@@ -7,6 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { LoginService } from '../services/login.service';
 import { Comment } from '../models/comment.model';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-post-card',
@@ -33,7 +35,7 @@ export class PostCardComponent implements OnInit {
     "comentar-border": false
   };
 
-  constructor(private postService: PostService, private commentService: CommentService, protected loginService: LoginService,  private sanitizer: DomSanitizer) { }
+  constructor(private postService: PostService, private commentService: CommentService, protected loginService: LoginService,  private sanitizer: DomSanitizer, private usuarioService: UsuarioService, private router: Router) { }
 
   safeUrl(url){
     return this.sanitizer.bypassSecurityTrustResourceUrl(url);
@@ -117,6 +119,17 @@ export class PostCardComponent implements OnInit {
                   error => {
                   console.log(error);
                 });
+  }
+
+  userProfile(){
+    this.usuarioService.getUsuario(this.post.user)
+                      .subscribe(data => {
+                        
+                        console.log(data);
+                      },
+                        error => {
+                        console.log(error);
+                      });
   }
 
 }

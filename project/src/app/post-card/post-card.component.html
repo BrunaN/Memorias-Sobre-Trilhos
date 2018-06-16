@@ -8,7 +8,7 @@
         <img [src]="urlImgAvatar() | safe: 'resourceUrl'" alt="">
       </div>
       <h3 class="user-name">
-        <a href="">{{post.user.name}}</a>
+        <a href="" (click)="userProfile()">{{post.user.name}}</a>
       </h3>
     </div>
 
@@ -40,11 +40,14 @@
     </div>
   </div>
   <div class="comentarios" [ngClass]="comentario">
-    <div class="comentario-list" *ngFor = "let comment of comments | sortgrid : '-date'">
-      <app-comment [comment] = comment></app-comment>
+    <div class="comentario-list" *ngFor="let comment of comments | sortgrid : '-date'">
+      <app-comment [comment]=comment></app-comment>
     </div>
-    <div class="comentario-input">
-      <input  [(ngModel)]="text" name="text" type="text"><button type="submit" (click)="insert($event)">Ok</button>
+    <div *ngIf="this.loginService.userLogged()">
+      <div class="comentario-input">
+        <input [(ngModel)]="text" name="text" type="text"><button type="submit" (click)="insert($event)">Ok</button>
+      </div>
     </div>
+
   </div>
 </div>

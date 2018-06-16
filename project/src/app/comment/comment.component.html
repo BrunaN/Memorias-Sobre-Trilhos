@@ -1,7 +1,10 @@
 <div class="comment">
   <div class="comment-content">
-    <div class="user-image">
-      <!-- <img src="" alt=""> -->
+    <div class="user-image" *ngIf="!comment.user.avatar">
+        <img src="../../assets/img/avatar.png" alt="">
+    </div>
+    <div class="user-image" *ngIf="comment.user.avatar">
+      <img [src]="urlImg() | safe: 'resourceUrl'" alt="">
     </div>
 
     <div class="content">

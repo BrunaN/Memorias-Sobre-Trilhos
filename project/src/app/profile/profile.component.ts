@@ -6,6 +6,7 @@ import { LoginService } from '../services/login.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { NgModel } from '@angular/forms';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
     selector: 'app-profile',
@@ -30,7 +31,7 @@ export class ProfileComponent implements OnInit {
         }
     }
 
-    constructor(protected loginService: LoginService, private postService: PostService, private sanitizer: DomSanitizer, private usuarioService: UsuarioService) {
+    constructor(protected loginService: LoginService, private postService: PostService, private sanitizer: DomSanitizer, private usuarioService: UsuarioService, private router: Router) {
         this.posts = [];
 
         this.postService.getPostsFromUser(this.user)
@@ -39,6 +40,7 @@ export class ProfileComponent implements OnInit {
             }, error => {
                 console.log(error);
             });
+
     }
 
     safeUrl(url) {
