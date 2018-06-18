@@ -84,8 +84,7 @@ module.exports.getPostsFromUser = function(req, res){
     let criterio = {'user': id};
     let promise = Post.find(criterio)
                     .populate('station')
-                    .populate('comment')
-                    .populate('likes').exec();
+                    .populate('comment').exec();
     promise.then(
         function(post){
             res.json(post);
@@ -155,7 +154,7 @@ module.exports.likePost = function(req, res){
         function(post){
             let i;
             for(i=0; i < post.likes.length; i++){
-                if(post.likes[i] == req.body.user){
+                if(post.likes[i] == req.body.user._id){
                     break;
                 }
             }
@@ -165,9 +164,7 @@ module.exports.likePost = function(req, res){
                 post.likes.splice(i, 1)
             }
 
-            let promise2 = Post.findByIdAndUpdate(id, post)
-                                .populate('user', '-password')
-                                .populate('station');
+            let promise2 = Post.findByIdAndUpdate(id, post);
             promise2.then(
                 function(new_post){
                     res.status(200).json(new_post);

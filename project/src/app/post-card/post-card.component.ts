@@ -102,8 +102,8 @@ export class PostCardComponent implements OnInit {
     e.preventDefault();
     this.postService.likePost(this.post, this.user)
                 .subscribe(data => {
-                  console.log(data);
                   this.post = data;
+                  console.log(this.post)
                 },
                   error => {
                   console.log(error);

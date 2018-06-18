@@ -8,7 +8,7 @@ export class Post {
     video: string;
     description: string;
     date;
-    likes: Usuario [];
+    likes;
     constructor(_id, user, station, content, video, description, date, likes){
         this._id = _id
         this.user = user;

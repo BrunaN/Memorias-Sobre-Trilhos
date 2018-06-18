@@ -1,158 +1,158 @@
-.mapa {
-    width: calc(100vw - 2px);
-    box-sizing: border-box;
-    padding: 30px;
-    background-image: url("/assets/img/textura_1.png");
-    background-repeat: no-repeat;
-    background-color: #E9D4A9;
-    background-size: cover;
-    padding-bottom: 200px;
-  }
+.mapa {  
+  box-sizing: border-box;
+  width:  calc(100vw - 2px);
+  padding: 30px;  
+  padding-bottom: 200px;
+  background-image: url("/assets/img/textura_1.png");
+  background-repeat: no-repeat;
+  background-color: #E9D4A9;
+  background-size: cover;
+}
   
-  .mapa .selecione {
-    margin-left: 120px;
-    margin-top: 30px;
-    width: 350px;
-    height: 80px;
-    text-align: left;
-    box-sizing: border-box;
-  }
+.mapa .selecione {
+  margin-left: 120px;
+  margin-top: 30px;
+  width: 350px;
+  height: 80px;
+  text-align: left;
+  box-sizing: border-box;
+}
   
-  .mapa .selecione>h1 {
-    display: inline;
-    padding: 0;
-    padding-left: 5px;
-    font-size: 30px;
-  }
+.mapa .selecione>h1 {
+  display: inline;
+  padding: 0;
+  padding-left: 5px;
+  font-size: 30px;
+}
   
-  .mapa .selecione>img {
-    height: 25px;
-    margin-bottom: 20px;
-  }
-  
-  .mapa .content-mapa {
-    width: 100%;
-    text-align: center;
-  }
-  
-  .mapa .content-mapa>img {
-    width: 450px;
-    box-sizing: border-box;
-    margin-bottom: 100px;
-  }
-  
-  .sobre {
-    background-image: url("/assets/img/textura_2.png");
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    box-sizing: border-box;
-    background-color: #b55480;
-    background-size: cover;
-    padding: 30px;
-  }
-  
-  .sobre .logo {
-    width: 700px;
-    box-sizing: border-box;
-    margin: auto;
-    padding-top: 20px;
-    padding-bottom: 30px;
-  }
-  
-  .sobre .logo img {
-    width: 100%;
-  }
-  
-  .botao {
-    width: 200px;
-    margin: auto;
-    padding-top: 75px;
-    padding-bottom: 10px;
-  }
-  
-  .asa-branca {
-    background-image: url("/assets/img/textura_3.png");
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    box-sizing: border-box;
-    background-color: #CED186;
-    padding: 100px 30px;
-    background-size: cover;
-  }
-  .asa-branca .botao {
-    width: 200px;
-    margin: auto;
-    padding-top: 45px;
-  }
-  .asa-branca h2 {
-    margin: auto;
-    text-align: center;
-    color: rgb(48, 29, 0);
-    padding: 35px;
-    padding-top: 45px;
-  }
-  
-  h2 {
-    margin: auto;
-    text-align: center;
-    color: #E9D4A9;
-    padding: 30px;
-    padding-top: 10px;
-  }
-  
-  .imagem {
-    margin: auto;
-    height: 210px;
-    width: 210px;
-    background-color: #E9D4A9;
-    border-radius: 50%;
-  }
-  
-  .imagem img {
-    width: 100%;
-    border-radius: 50%;
-  }
-  
-  .imagem-sonho {
-    margin: auto;
-    margin-top: 20px;
-    height: 350px;
-    width: 350px;
-    background-color: #E9D4A9;
-    border-radius: 50%;
-  }
-  
-  .imagem-sonho img {
-  
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-  }
-  
-  .descricao h4 {
-    /* text-align: center; */
-    line-height: 30px;
-  }
-  
-  .descricao {
-    /* background: #fff; */
-    border-radius: 10px;
-    padding: 20px;
-  }
-  
-  .asa-branca input {
-    border-radius: 8px;
-    display: block;
-    margin: auto;
-    border: 1px solid transparent;
-    font-size: 18px;
-    padding: 7px 10px;
-    background-color: #ffff;
-    opacity: 0.6;
-    box-shadow: none;
-    box-sizing: border-box;
-    width: 300px;
-    outline: none;
-    margin-top: 30px;
-    margin-bottom: 30px;
-  }
+.mapa .selecione>img {
+  height: 25px;
+  margin-bottom: 20px;
+}
+
+.mapa .content-mapa {
+  width: 100%;
+  text-align: center;
+}
+
+.mapa .content-mapa>img {
+  width: 450px;
+  box-sizing: border-box;
+  margin-bottom: 100px;
+}
+
+.sobre {
+  background-image: url("/assets/img/textura_2.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  box-sizing: border-box;
+  background-color: #b55480;
+  background-size: cover;
+  padding: 30px;
+}
+
+.sobre .logo {
+  width: 700px;
+  box-sizing: border-box;
+  margin: auto;
+  padding-top: 20px;
+  padding-bottom: 30px;
+}
+
+.sobre .logo img {
+  width: 100%;
+}
+
+.botao {
+  width: 200px;
+  margin: auto;
+  padding-top: 75px;
+  padding-bottom: 10px;
+}
+
+.asa-branca {
+  background-image: url("/assets/img/textura_3.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  box-sizing: border-box;
+  background-color: #CED186;
+  padding: 100px 30px;
+  background-size: cover;
+}
+.asa-branca .botao {
+  width: 200px;
+  margin: auto;
+  padding-top: 45px;
+}
+.asa-branca h2 {
+  margin: auto;
+  text-align: center;
+  color: rgb(48, 29, 0);
+  padding: 35px;
+  padding-top: 45px;
+}
+
+h2 {
+  margin: auto;
+  text-align: center;
+  color: #E9D4A9;
+  padding: 30px;
+  padding-top: 10px;
+}
+
+.imagem {
+  margin: auto;
+  height: 210px;
+  width: 210px;
+  background-color: #E9D4A9;
+  border-radius: 50%;
+}
+
+.imagem img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+.imagem-sonho {
+  margin: auto;
+  margin-top: 20px;
+  height: 350px;
+  width: 350px;
+  background-color: #E9D4A9;
+  border-radius: 50%;
+}
+
+.imagem-sonho img {
+
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.descricao h4 {
+  /* text-align: center; */
+  line-height: 30px;
+}
+
+.descricao {
+  /* background: #fff; */
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.asa-branca input {
+  border-radius: 8px;
+  display: block;
+  margin: auto;
+  border: 1px solid transparent;
+  font-size: 18px;
+  padding: 7px 10px;
+  background-color: #ffff;
+  opacity: 0.6;
+  box-shadow: none;
+  box-sizing: border-box;
+  width: 300px;
+  outline: none;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}

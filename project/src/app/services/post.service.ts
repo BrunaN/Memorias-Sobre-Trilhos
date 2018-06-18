@@ -94,10 +94,11 @@ export class PostService {
     }
 
     likePost(post: Post, user: Usuario){
-        return this.http.put((this.url + "/" + post._id + "/like"), {user: user._id})
+        return this.http.put((this.url + "/" + post._id + "/like"), {user: user})
                         .map((response: Response) => {
                             let res = response.json();
                             let post = new Post(res._id, res.user, res.station, res.content, res.video, res.description, res.date, res.likes);
+                            console.log(post);
                             return post;
                         })
                         .catch((error: Response) => Observable.throw(error));
