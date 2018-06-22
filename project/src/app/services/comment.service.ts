@@ -36,7 +36,7 @@ export class CommentService {
                             console.log(response.json())
                             this.comments = [];
                             for(let comment of response.json()){
-                                let user = new Usuario(post.user._id, post.user.name, post.user.email, post.user.password, post.user.avatar);
+                                let user = new Usuario(comment.user._id, comment.user.name, comment.user.email, comment.user.password, comment.user.avatar, comment.user.estado, comment.user.cidade);
                                 this.comments.push(new Comment(comment._id, user, comment.post, comment.text, comment.date));
                             }
                             return this.comments

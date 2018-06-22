@@ -21,18 +21,18 @@ export class UsuarioService {
             .map((response: Response) => {
                 let res = response.json();
                 console.log(res);
-                let user = new Usuario(res._id, res.name, res.email, res.password, res.avatar);
+                let user = new Usuario(res._id, res.name, res.email, res.password, res.avatar, res.estado, res.cidade);
                 return user
             })
             .catch((error: Response) => Observable.throw(error));
     }
-    
+
     getUsuarios() {
         return this.http.get(this.urlUsuarios)
             .map((response: Response) => {
                 this.usuarios = [];
                 for (let usuario of response.json()) {
-                    this.usuarios.push(new Usuario(usuario._id, usuario.nomeUsuario, usuario.email, usuario.password, usuario.avatar))
+                    this.usuarios.push(new Usuario(usuario._id, usuario.nomeUsuario, usuario.email, usuario.password, usuario.avatar, usuario.estado, usuario.cidade))
                 }
                 return this.usuarios;
             })
@@ -43,7 +43,7 @@ export class UsuarioService {
         return this.http.get(this.urlUsuarios + "/" + usuario._id)
             .map((response: Response) => {
                 let res = response.json();
-                let usuario = new Usuario(res._id, res.name, res.email, res.password, res.avatar);
+                let usuario = new Usuario(res._id, res.name, res.email, res.password, res.avatar, res.estado, res.cidade);
                 return usuario;
             })
             .catch((error: Response) => Observable.throw(error));
@@ -65,7 +65,7 @@ export class UsuarioService {
         return this.http.put((this.urlUsuarios + "/" + usuario._id), formData)
                         .map((response: Response) => {
                             let res = response.json();
-                            let post = new Usuario(res._id, res.name, res.email, res.password, res.avatar);
+                            let post = new Usuario(res._id, res.name, res.email, res.password, res.avatar, res.estado, res.cidade);
                             return post;
                         })
                         .catch((error: Response) => Observable.throw(error));

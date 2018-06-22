@@ -15,17 +15,15 @@ module.exports = function(){
         },
         avatar: {
             type: String
+        },
+        estado: {
+          type: String,
+          required: true
+        },
+        cidade: {
+          type: String,
+          required: true
         }
-        // state: {
-        //     type: mongoose.Schema.ObjectId,
-        //     ref:'',
-        //     required: true
-        // },
-        // city: {
-        //     type: mongoose.Schema.ObjectId,
-        //     ref: '',
-        //     required: true
-        // },
         // posts: {
         //     type: mongoose.Schema.ObjectId,
         //     ref: ''

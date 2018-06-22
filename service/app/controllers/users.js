@@ -29,6 +29,7 @@ module.exports.getUserById = function(req, res){
 
 module.exports.insertUser = function(req, res){
     let user = req.body;
+    console.log(user);
     if(req.file){
       user.avatar = req.file.filename;
     }

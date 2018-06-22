@@ -36,15 +36,15 @@
           </span>
         </div>
         <div class="form-group">
-          <select [(ngModel)]="estadoSelecionado.id" (change)="onSelect($event.target.value)" id="sel1" name="estado">
-            <option value="0" disabled="disabled"> Selecione seu estado</option>
+          <select [(ngModel)]="estado" (change)="onSelect($event.target.value)" id="sel1" name="estado" required>
+            <option value="-1" disabled="disabled"> Selecione seu estado</option>
             <option *ngFor="let estado of estados" value={{estado.id}}>
               {{estado.nome}}
             </option>
           </select>
         </div>
         <div class="form-group">
-          <select [(ngModel)]="cidade" name="cidade">
+          <select [(ngModel)]="cidade" name="cidade" required>
             <option value="" disabled="disabled"> Selecione sua cidade</option>
             <option *ngFor="let cidade of cidades" value={{cidade.id}}>
               {{cidade.nome}}

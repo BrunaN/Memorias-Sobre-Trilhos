@@ -12,7 +12,7 @@ import { Router, RouterModule } from '@angular/router';
   selector: 'app-cadastro',
   templateUrl: './cadastro.component.html',
   styleUrls: ['./cadastro.component.css'],
-  providers: [DataService, 
+  providers: [DataService,
               RouterModule]
 })
 
@@ -22,29 +22,43 @@ export class CadastroComponent implements OnInit {
   nome: string = "";
   email: string = "";
   password: string = "";
+  cidade: number = -1;
+  estado: number = -1;
   avatar;
-  // estado: string = ""
-  // cidade: string = "";
 
-  estadoSelecionado: Estado = new Estado(0, "Acre");
+  estados: Estado[] = [];
+  cidades: Cidade[] = [];
+  listaCidades: any = [];
 
-  estados: Estado[];
-  cidades: Cidade[];
-
-  constructor(private service: UsuarioService, private data: DataService, private loginService: LoginService, private router: Router){ 
-    this.estados = this.data.getEstados();
+  constructor(private service: UsuarioService, private dataService: DataService, private loginService: LoginService, private router: Router){
+    this.dataService.getData()
+      .subscribe(data => {
+        for(let i = 0, s = data.estados.length; i < s; i++){
+          this.estados.push(new Estado(i, data.estados[i].nome));
+          this.listaCidades[i] = [];
+          for(let j = 0, s2 = data.estados[i].cidades.length; j < s2; j++){
+            this.listaCidades[i].push(new Cidade(j, data.estados[i].cidades[j], i));
+          }
+        }
+      },error => {
+        console.log(error);
+      });
   }
 
   ngOnInit() {
   }
 
-  onSelect(id){
-    this.cidades = this.data.getCidades().filter((item)=>item.estadoId==id);
+  onSelect(idEstado){
+    if(idEstado < 0) return;
+    this.cidades = this.listaCidades[idEstado];
+    this.cidade = this.cidades[0].id;
   }
 
   addUsuario(event){
     event.preventDefault();
-    let usuario = new Usuario(this._id, this.nome, this.email, this.password, this.avatar);
+    let nomeEstado = this.estados[this.estado].nome;
+    let nomeCidade = this.listaCidades[this.estado][this.cidade].nome;
+    let usuario = new Usuario(this._id, this.nome, this.email, this.password, this.avatar, nomeEstado, nomeCidade);
     this.service.adicionar(usuario)
             .subscribe(data =>{
               console.log(data);
@@ -55,5 +69,5 @@ export class CadastroComponent implements OnInit {
               error => console.log(error)
             );
   }
-  
+
 }

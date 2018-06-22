@@ -23,6 +23,7 @@ module.exports = function(){
     console.log(__dirname);
 
     app.use('/uploads', express.static(__dirname + '/../uploads'));
+    app.use('/public', express.static(__dirname + '/../public'));
     app.use(allowCrossDomain);
 
     usersRouter(app);
