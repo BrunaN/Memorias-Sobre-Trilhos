@@ -173,11 +173,9 @@ textarea, input{
     box-sizing: border-box;
 }
 
-.botao button{
-    float: right;
+.botao button, label{
     border-radius: 8px;
     text-align: center;
-    width: 150px;
     border: none;
     font-size: 18px;
     padding: 10px 30px;
@@ -185,9 +183,26 @@ textarea, input{
     background-color: #3E4238; 
     cursor: pointer;
     user-select: none;
+    box-sizing: border-box;
+}
+
+.botao button{
+    float: right;
+    width: 150px;
     box-shadow: 1px 1px 2px #3E4238;
     margin-bottom: 20px;
-    box-sizing: border-box;
+}
+
+label{
+    width: 300px;
+    margin: 20px 0;
+    display: block;
+    color: #b55480;
+    background-color: #f6eedd; 
+}
+
+input[type='file'] {
+    display: none
 }
 
 .content-posts{

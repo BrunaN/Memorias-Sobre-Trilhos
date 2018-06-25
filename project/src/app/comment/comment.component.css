@@ -26,10 +26,9 @@
 }
 
 .comment-content .container{
-    width: 500px;
+    width: 515px;
     box-sizing: border-box;
     height: 45px;
-    padding-left: 6px;
     float: right;
 }
 
