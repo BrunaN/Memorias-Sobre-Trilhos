@@ -66,8 +66,7 @@ module.exports.getPostsFromStation = function(req, res){
     let criterio = {'station': id};
     let promise = Post.find(criterio)
                     .populate('user' , '-password')
-                    .populate('comment')
-                    .populate('likes').exec();
+                    .populate('comment').exec();
     promise.then(
         function(post){
             res.json(post);
@@ -135,7 +134,7 @@ module.exports.updatePost = function(req, res){
             ).catch(
                 function(error){
                     res.status(500).send(error);
-                }        
+                }
             )
         }
     ).catch(
@@ -147,37 +146,48 @@ module.exports.updatePost = function(req, res){
 
 
 module.exports.likePost = function(req, res){
-    let id = req.params.id;
+  let id = req.params.id;
 
-    let promise = Post.findById(id);
-    promise.then(
-        function(post){
-            let i;
-            for(i=0; i < post.likes.length; i++){
-                if(post.likes[i] == req.body.user._id){
-                    break;
-                }
-            }
-            if(i == post.likes.length){
-                post.likes.push(req.body.user);
-            }else{
-                post.likes.splice(i, 1)
-            }
+  let promise = Post.findById(id);
+  promise.then(
+      function(post){
+          let i;
+          for(i=0; i < post.likes.length; i++){
+              if(post.likes[i] == req.body.user._id){
+                  break;
+              }
+          }
+          if(i == post.likes.length){
+              post.likes.push(req.body.user);
+          }else{
+              post.likes.splice(i, 1)
+          }
 
-            let promise2 = Post.findByIdAndUpdate(id, post);
-            promise2.then(
-                function(new_post){
-                    res.status(200).json(new_post);
-                }
-            ).catch(
-                function(error){
-                    res.status(500);
-                }
-            )
-        }
-    ).catch(
-        function(error){
-            res.status(404).send("Post not found");
-        }
-    )
+          let promise2 = Post.findByIdAndUpdate(id, post);
+          promise2.then(
+              function(new_post){
+                  let promise3 = Post.findById(id)
+                      .populate('user', '-password')
+                      .populate('station').exec();
+                  promise3.then(
+                    function(post){
+                      res.status(200).json(post);
+                    }
+                  ).catch(
+                    function(error){
+                      res.status(500);
+                    }
+                  )
+              }
+          ).catch(
+              function(error){
+                  res.status(500);
+              }
+          )
+      }
+  ).catch(
+      function(error){
+          res.status(404).send("Post not found");
+      }
+  )
 }
