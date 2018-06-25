@@ -27,6 +27,7 @@ import { PostService } from './services/post.service';
 import { CommentComponent } from './comment/comment.component';
 import { TimeAgoPipe } from './diretivas/time-ago-pipe';
 import { StationsMapComponent } from './stations-map/stations-map.component';
+import { ComofuncionaComponent } from './comofunciona/comofunciona.component';
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import { StationsMapComponent } from './stations-map/stations-map.component';
     SortGridPipe,
     SafePipe,
     TimeAgoPipe,
-    StationsMapComponent
+    StationsMapComponent,
+    ComofuncionaComponent
   ],
   imports: [
     BrowserModule,

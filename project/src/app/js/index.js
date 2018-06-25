@@ -1,6 +1,6 @@
-$('.nav-tabs a').click(function(e){
-    e.preventDefault()
-    $(this).tab('show')
+$('.nav-tabs a').click(function (e) {
+  e.preventDefault()
+  $(this).tab('show')
 })
 
 $('.carousel').carousel()
@@ -24,3 +24,15 @@ $('#exampleModal').on('show.bs.modal', function (event) {
 $('#myAlert').on('closed.bs.alert', function () {
   // do something…
 })
+
+$(document).ready(function($) {
+  $('#accordion').find('.accordion-toggle').click(function(){
+
+    //Expand or collapse this panel
+    $(this).next().slideToggle('fast');
+
+    //Hide the other panels
+    $(".accordion-content").not($(this).next()).slideUp('fast');
+
+  });
+});
