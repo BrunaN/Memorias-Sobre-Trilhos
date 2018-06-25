@@ -162,6 +162,28 @@ input{
     color:#333530;
 }
 
+.addFile{
+    border-radius: 8px;
+    text-align: center;
+    border: none;
+    font-size: 18px;
+    padding: 10px 30px;
+    color: #E9D4A9;
+    background-color: #3E4238; 
+    cursor: pointer;
+    user-select: none;
+    box-sizing: border-box;
+    width: 300px;
+    margin: 20px 0;
+    display: block;
+    color: #b55480;
+    background-color: #f6eedd; 
+}
+
+input[type='file'] {
+    display: none
+}
+
 #comecar{
     margin: auto;
     border-radius: 8px;

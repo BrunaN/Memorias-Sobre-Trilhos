@@ -7,16 +7,19 @@
       <div class="user-image" *ngIf="post.user.avatar">
         <img [src]="urlImgAvatar() | safe: 'resourceUrl'" alt="">
       </div>
-      <h3 class="user-name">
-        <a href="" (click)="userProfile()">{{post.user.name}}</a>
-      </h3>
-      <div class="time">
-        {{ post.date | timeAgo }}
+      <div class="post-infos">
+        <div class="infos">
+          <a href="" class="user-name" (click)="userProfile()">{{post.user.name}}</a>
+          <button class="options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="glyphicon glyphicon-option-horizontal"></span>
+          </button>
+        </div>
+        
+        <div class="time">
+          {{ post.date | timeAgo }}
+        </div>
+        
       </div>
-      <button class="options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <span class="glyphicon glyphicon-option-horizontal"></span>
-      </button>
-      
     </div>
 
     <div class="post-content">
@@ -33,14 +36,14 @@
     
 
     <div class="post-footer">
-      <div class="time">
+      <div class="gostar">
         <a href="#" *ngIf="post.likes.length > 0">{{post.likes.length}}</a>
-        <a href="#" (click)="like($event)">Gostar</a>
+        <button (click)="like($event)"><img src="../../assets/img/gostar.png">Gostar</button>
       </div>
       <div class="interaction">
-        <a href="#" (click)="comentar($event)">Comentar</a>
+        <button (click)="comentar($event)"><img src="../../assets/img/comentar.png">Comentar</button>
         <div class="compartilhar">
-          <a href="" ceiboShare [facebook]="{u: repoUrl}">Compartilhar</a>
+          <button ceiboShare [facebook]="{u: repoUrl}"><img src="../../assets/img/compartilhar.png">Compartilhar</button>
         </div>
       </div>
     </div>
@@ -51,7 +54,14 @@
     </div>
     <div *ngIf="this.loginService.userLogged()">
       <div class="comentario-input">
-        <input [(ngModel)]="text" name="text" type="text"><button type="submit" (click)="insert($event)">Ok</button>
+          <div class="image" *ngIf="!post.user.avatar">
+            <img src="../../assets/img/avatar.png" alt="">
+          </div>
+          <div class="image" *ngIf="post.user.avatar">
+            <img [src]="urlImgAvatar() | safe: 'resourceUrl'" alt="">
+          </div>
+          <input [(ngModel)]="text" name="text" type="text" placeholder="Adicione um comentário">
+          <button type="submit" (click)="insert($event)">Enviar<img src="../../assets/img/enviar.png"></button>
       </div>
     </div>
   </div>
