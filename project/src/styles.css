@@ -8,7 +8,7 @@
     font-family: sans-serif;
 }
 
-/* .button{
+.button{
     margin: auto;
     border-radius: 8px;
     text-align: center;
@@ -21,7 +21,7 @@
     cursor: pointer;
     user-select: none;
     box-shadow: 1px 1px 2px #3E4238;
-} */
+}
 
 .botao-verde{
     background-color: #3E4238;
