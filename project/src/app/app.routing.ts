@@ -8,7 +8,9 @@ import { CadastroComponent } from './cadastro/cadastro.component';
 import { Routes, RouterModule } from '@angular/router';
 import { PostCardComponent } from './post-card/post-card.component';
 import { StationContentComponent } from './station-content/station-content.component';
+import { ComofuncionaComponent } from './comofunciona/comofunciona.component';
 import { Component } from '@angular/core';
+
 
 const APP_ROUTES: Routes=[
     {path: "", redirectTo: "/home", pathMatch: "full"},
@@ -19,6 +21,7 @@ const APP_ROUTES: Routes=[
     {path: "perfil", component: ProfileComponent},
     {path: "sonho-azul", component: SonhoAzulComponent},
     {path: "resultados", component: ResultPagesComponent},
-    {path: "estacao/:id", component: StationContentComponent}
+    {path: "estacao/:id", component: StationContentComponent},
+    {path: "comofunciona", component: ComofuncionaComponent}
 ]
 export const routing=RouterModule.forRoot(APP_ROUTES);
