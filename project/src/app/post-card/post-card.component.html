@@ -10,24 +10,24 @@
       <div class="post-infos">
         <div class="infos">
           <a href="" class="user-name" (click)="userProfile()">{{post.user.name}}</a>
-          <div class="dropdown">
-              <button class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                  <span class="glyphicon glyphicon-option-horizontal"></span>  
-              </button>
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="#">Separated link</a></li>
-              </ul>
-            </div>
+          <a class="dropdown options">
+            <button class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                <span class="glyphicon glyphicon-option-horizontal"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+            </ul>
+          </a>
         </div>
-        
+
         <div class="time">
           {{ post.date | timeAgo }}
         </div>
-        
+
       </div>
     </div>
 
@@ -42,7 +42,7 @@
         {{post.description}}
       </div>
     </div>
-    
+
 
     <div class="post-footer">
       <div class="gostar">

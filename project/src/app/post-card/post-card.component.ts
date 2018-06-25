@@ -21,7 +21,7 @@ export class PostCardComponent implements OnInit {
 
   repoUrl = 'https://facebook.com/';
 
-  user: Usuario = this.loginService.user;
+  user: Usuario = undefined;
   text: string = "";
   URL_IMG: string = "http://localhost:3000/uploads/";
 
@@ -36,8 +36,8 @@ export class PostCardComponent implements OnInit {
     "comentar-border": false
   };
 
-  constructor(private postService: PostService, private commentService: CommentService, protected loginService: LoginService,  private sanitizer: DomSanitizer, private usuarioService: UsuarioService, private router: Router) { 
-    
+  constructor(private postService: PostService, private commentService: CommentService, protected loginService: LoginService,  private sanitizer: DomSanitizer, private usuarioService: UsuarioService, private router: Router) {
+    this.user = this.loginService.user;
   }
 
   safeUrl(url){
@@ -106,7 +106,9 @@ export class PostCardComponent implements OnInit {
     if(!this.user){
       return false;
     }
-    for(let i=0; i<this.post.likes.lenght; i++){
+    console.log(this.post, this.user);
+    for(let i=0; i<this.post.likes.length; i++){
+      console.log(this.post.likes[i], this.user._id);
       if(this.post.likes[i]==this.user._id){
         return true;
       }
@@ -119,8 +121,8 @@ export class PostCardComponent implements OnInit {
     this.postService.likePost(this.post, this.user)
                 .subscribe(data => {
                   this.post = data;
-                  this.deuLike = !this.deuLike;
-                  console.log(this.post)
+                  this.deuLike = this.liked();
+                  console.log(this.deuLike);
                 },
                   error => {
                   console.log(error);
@@ -141,7 +143,7 @@ export class PostCardComponent implements OnInit {
   userProfile(){
     this.usuarioService.getUsuario(this.post.user)
                       .subscribe(data => {
-                        
+
                         console.log(data);
                       },
                         error => {
