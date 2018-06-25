@@ -25,6 +25,7 @@ export class PostCardComponent implements OnInit {
   text: string = "";
   URL_IMG: string = "http://localhost:3000/uploads/";
 
+  deuLike: boolean = false;
   request: boolean = false;
 
   comentario = {
@@ -35,7 +36,9 @@ export class PostCardComponent implements OnInit {
     "comentar-border": false
   };
 
-  constructor(private postService: PostService, private commentService: CommentService, protected loginService: LoginService,  private sanitizer: DomSanitizer, private usuarioService: UsuarioService, private router: Router) { }
+  constructor(private postService: PostService, private commentService: CommentService, protected loginService: LoginService,  private sanitizer: DomSanitizer, private usuarioService: UsuarioService, private router: Router) { 
+    
+  }
 
   safeUrl(url){
     return this.sanitizer.bypassSecurityTrustResourceUrl(url);
@@ -50,6 +53,7 @@ export class PostCardComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.deuLike = this.liked();
   }
 
   insert(e){
@@ -98,11 +102,24 @@ export class PostCardComponent implements OnInit {
     }
   }
 
+  liked(){
+    if(!this.user){
+      return false;
+    }
+    for(let i=0; i<this.post.likes.lenght; i++){
+      if(this.post.likes[i]==this.user._id){
+        return true;
+      }
+    }
+    return false;
+  }
+
   like(e){
     e.preventDefault();
     this.postService.likePost(this.post, this.user)
                 .subscribe(data => {
                   this.post = data;
+                  this.deuLike = !this.deuLike;
                   console.log(this.post)
                 },
                   error => {

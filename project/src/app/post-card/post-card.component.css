@@ -231,3 +231,7 @@ button img{
   padding-left: 6px;
   width: 28px;
 }
+
+.liked{
+  display: none;
+}
