@@ -24,12 +24,13 @@
         <img [src]="urlImg() | safe: 'resourceUrl'" alt="">
       </div>
       <div class="video" *ngIf="post.video">
-        <iframe [src]="safeUrl(this.post.video)" frameborder="0" scrolling="no" autoplay="0" allowfullscreen></iframe>
+        <iframe [src]="safeUrl(this.post.video)" frameborder="0" scrolling="no"  allownetworking></iframe>
       </div>
       <div class="description">
         {{post.description}}
       </div>
     </div>
+    
 
     <div class="post-footer">
       <div class="time">
