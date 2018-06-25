@@ -100,11 +100,69 @@
     font-size: 20px;
     padding: 15px;
     box-sizing: border-box;
-    width: 360px;
+    width: 350px;
     margin-top: 30px;
+    height: 140px;
 }
 
-button{
+input{
+    border-radius: 8px;
+    border: 1px solid transparent;
+    font-size: 18px;
+    padding: 7px 10px;
+    background-color: #ffff;
+    opacity: 0.6;
+    box-shadow: none;
+    box-sizing: border-box;
+    width: 460px;
+    height: 41px;
+    outline: none;
+    box-shadow: 1px 1px 2px #333530;
+    display: block;
+}
+
+.concluir a{
+    cursor: pointer;
+}
+
+.concluir a:hover{
+    border-bottom: 2px solid #56989B;
+}
+
+.posts{
+    padding: 25px;
+}
+
+.botao{
+    float: right;
+    border-radius: 8px;
+    text-align: center;
+    width: 150px;
+    border: none;
+    font-size: 18px;
+    padding: 10px 30px;
+    color: #E9D4A9;
+    background-color: #3E4238; 
+    cursor: pointer;
+    user-select: none;
+    box-shadow: 1px 1px 2px #3E4238;
+    margin-bottom: 20px;
+    box-sizing: border-box;    
+}
+
+.modal-dialog .modal-content .modal-header{
+    border: none;
+}
+
+.modal-dialog .modal-content .modal-footer{
+    border: none;
+}
+
+.modal-dialog .modal-content .modal-header h1{
+    color:#333530;
+}
+
+#comecar{
     margin: auto;
     border-radius: 8px;
     text-align: center;
@@ -119,29 +177,28 @@ button{
     box-shadow: 1px 1px 2px #3E4238;
 }
 
-input{
-    display: block;
-    border-radius: 8px;
-    font-size: 15px;
-    border: 1px solid transparent;
-    padding: 5px 8px;
-    background-color: #ffff;
-    opacity: 0.25;
-    box-shadow: none;
-    box-sizing: border-box;
-    width: 80%;
-    outline: none;
-    box-shadow: 1px 1px 2px #3E4238;
-    margin: auto;
-    margin-top: 7px;
-    margin-bottom: 5px;
-    text-align: center;
-}
-
-.concluir a{
+#close{
+    color: #56989B;
+    line-height: 51px;
+    font-size: 30px;
+    float: right;
     cursor: pointer;
 }
 
-.concluir a:hover{
+#cancelar{
+    text-align: center;
+    border: none;
+    line-height: 45px;
+    font-size: 14px;
+    color:#333530;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 10px 22px;
+    margin: 8px;
+    padding-top: 15px;
+    background-color: none; 
+}
+
+#cancelar:hover{
     border-bottom: 2px solid #56989B;
 }

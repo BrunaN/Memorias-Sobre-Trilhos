@@ -3,9 +3,9 @@
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" id="close" data-dismiss="modal" aria-label="Close">
+          <a id="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">x</span>
-          </button>
+          </a>
           <h1 class="modal-title" id="myModalLabel">Editar perfil</h1>
         </div>
         <div class="modal-body">
@@ -14,9 +14,9 @@
               <input type="file" name="avatar" id="file" (change)="handleFileInput($event)">
             </div>
             <div>
-              <!-- <label for="titulo">Nome:</label> -->
+              <label for="nome">Nome:</label>
               <br>
-              <input [(ngModel)]="nome" type="text" name:"nome">
+              <input type="text">
             </div>
             <div>
               <label for="titulo">Estado:</label>
@@ -31,8 +31,8 @@
           </form>
         </div>
         <div class="modal-footer">
-            <button type="button" data-dismiss="modal">Cancelar</button>
-          <button type="button" data-dismiss="modal" (click)="atualizarUsuario($event)">Salvar</button>
+          <a data-dismiss="modal" id="cancelar">Cancelar</a>
+          <button class="botao" type="button" data-dismiss="modal" (click)="atualizarUsuario($event)">Salvar</button>
         </div>
       </div>
     </div>
@@ -54,7 +54,7 @@
         </p>
         <ul>
           <li>
-            Quixadá-ce
+            {{this.loginService.user.cidade}}
           </li>
         </ul>
       </div>
@@ -71,7 +71,7 @@
     </div>
   </div>
   <div class="col-md-5 conteudo">
-    <h2>Olá {{this.loginService.user.name}}</h2>
+    <h2>Olá, {{this.loginService.user.name}}</h2>
     <div class="posts" *ngFor="let post of posts">
       <app-post-card [post]=post>
 
@@ -82,7 +82,7 @@
         <p>
           Você ainda não adicionou nenhuma memória
         </p>
-        <button>
+        <button id="comecar">
           Começar
         </button>
       </div>
