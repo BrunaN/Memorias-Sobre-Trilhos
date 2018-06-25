@@ -10,6 +10,13 @@
       <h3 class="user-name">
         <a href="" (click)="userProfile()">{{post.user.name}}</a>
       </h3>
+      <div class="time">
+        {{ post.date | timeAgo }}
+      </div>
+      <button class="options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span class="glyphicon glyphicon-option-horizontal"></span>
+      </button>
+      
     </div>
 
     <div class="post-content">
@@ -27,21 +34,19 @@
 
     <div class="post-footer">
       <div class="time">
-        {{ post.date | timeAgo }}
+        <a href="#" *ngIf="post.likes.length > 0">{{post.likes.length}}</a>
+        <a href="#" (click)="like($event)">Gostar</a>
       </div>
       <div class="interaction">
-        <a href="#" (click)="usersLikes($event)" *ngIf="post.likes.length > 0">{{post.likes.length}}</a>
-        <a href="#" (click)="like($event)">Gostar</a>
         <a href="#" (click)="comentar($event)">Comentar</a>
         <div class="compartilhar">
           <a href="" ceiboShare [facebook]="{u: repoUrl}">Compartilhar</a>
         </div>
       </div>
-      <div class="gostei"></div>
     </div>
   </div>
   <div class="comentarios" [ngClass]="comentario">
-    <div class="comentario-list" *ngFor="let comment of comments | sortgrid : '-date'">
+    <div class="comentario-list" *ngFor="let comment of comments">
       <app-comment [comment]=comment></app-comment>
     </div>
     <div *ngIf="this.loginService.userLogged()">
@@ -49,6 +54,6 @@
         <input [(ngModel)]="text" name="text" type="text"><button type="submit" (click)="insert($event)">Ok</button>
       </div>
     </div>
-
   </div>
+
 </div>
