@@ -10,16 +10,17 @@
       <div class="post-infos">
         <div class="infos">
           <a href="" class="user-name" (click)="userProfile()">{{post.user.name}}</a>
-          <a class="dropdown options">
+          <div *ngIf="!loginService.user || post.user._id != loginService.user._id" class="compartilhar">
+            <button ceiboShare [facebook]="{u: repoUrl}"><img src="../../assets/img/compartilhar.png">Compartilhar</button>
+          </div>
+          <a *ngIf="loginService.user && post.user._id == loginService.user._id" class="dropdown options">
             <button class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                 <span class="glyphicon glyphicon-option-horizontal"></span>
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="#">Separated link</a></li>
+              <li><a href="#"><img src="../../assets/img/compartilhar.png">Compartilhar</a></li>
+              <li><a href="#"><span class="glyphicon glyphicon-pencil"></span>Editar</a></li>
+              <li><a href="#"><span class="glyphicon glyphicon-trash"></span>Remover</a></li>
             </ul>
           </a>
         </div>
@@ -47,18 +48,15 @@
     <div class="post-footer">
       <div class="gostar">
         <a href="#" *ngIf="post.likes.length > 0">{{post.likes.length}}</a>
-        <div *ngIf="deuLike">
+        <div *ngIf="!loginService.user || !deuLike">
           <button (click)="like($event)"><img src="../../assets/img/gostar.png">Gostar</button>
         </div>
-        <div *ngIf="!deuLike">
+        <div *ngIf="loginService.user && deuLike">
           <button (click)="like($event)"><img src="../../assets/img/liked.png">Gostar</button>
         </div>
       </div>
       <div class="interaction">
         <button (click)="comentar($event)"><img src="../../assets/img/comentar.png">Comentar</button>
-        <div class="compartilhar">
-          <button ceiboShare [facebook]="{u: repoUrl}"><img src="../../assets/img/compartilhar.png">Compartilhar</button>
-        </div>
       </div>
     </div>
   </div>
