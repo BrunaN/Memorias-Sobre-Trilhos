@@ -34,6 +34,7 @@ import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StationsComponent } from './stations/stations.component';
 import { SobreComponent } from './sobre/sobre.component';
+import { EquipeComponent } from './equipe/equipe.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { SobreComponent } from './sobre/sobre.component';
     StationsMapComponent,
     ComofuncionaComponent,
     StationsComponent,
-    SobreComponent
+    SobreComponent,
+    EquipeComponent
   ],
   imports: [
     BrowserModule,

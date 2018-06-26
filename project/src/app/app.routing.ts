@@ -12,6 +12,7 @@ import { ComofuncionaComponent } from './comofunciona/comofunciona.component';
 import { Component } from '@angular/core';
 import { StationsComponent } from './stations/stations.component';
 import { SobreComponent } from './sobre/sobre.component';
+import { EquipeComponent } from './equipe/equipe.component';
 
 const APP_ROUTES: Routes=[
     {path: "", redirectTo: "/home", pathMatch: "full"},
@@ -25,6 +26,7 @@ const APP_ROUTES: Routes=[
     {path: "estacao/:id", component: StationContentComponent},
     {path: "comofunciona", component: ComofuncionaComponent},
     {path: "estacoes", component: StationsComponent},
-    {path: "sobre", component: SobreComponent}
+    {path: "sobre", component: SobreComponent},
+    {path: "equipe", component: EquipeComponent}
 ]
 export const routing=RouterModule.forRoot(APP_ROUTES);

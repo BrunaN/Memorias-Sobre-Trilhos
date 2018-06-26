@@ -1,0 +1,21 @@
+.equipe {
+    background-image: url("/assets/img/textura_1.png");
+    background-color: #E9D4A9;
+    background-size: cover;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    text-align: center;
+}
+
+.imagem img {
+    max-width: 150px;
+    padding: 20px;
+    border-radius: 50%;
+}
+
+.nome {
+    margin-left: -100px;
+    margin-top: 20px;
+    padding-left: 20px;
+    text-align: left;
+}
