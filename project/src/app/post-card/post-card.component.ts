@@ -127,6 +127,17 @@ export class PostCardComponent implements OnInit {
                 });
   }
 
+  remove(e){
+    e.preventDefault();
+    this.postService.removePost(this.post, this.loginService.user)
+                .subscribe(data => {
+                  console.log(data);
+                },
+                  error => {
+                  console.log(error);
+                });
+  }
+
   usersLikes(e){
     e.preventDefault();
     this.postService.getUsersLikes(this.post)

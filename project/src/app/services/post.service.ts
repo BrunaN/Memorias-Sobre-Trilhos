@@ -104,4 +104,18 @@ export class PostService {
                         .catch((error: Response) => Observable.throw(error));
     }
 
+    removePost(post:Post, user: Usuario){
+        return this.http.delete((this.url + "/" + post._id + "?user="+ user._id))
+                        .map((response: Response) => {
+                            let res = response.json();
+                            for(let i=0; i<this.posts.length; i++){
+                                if(this.posts[i]._id == post._id){
+                                    this.posts.splice(i, 1)
+                                }
+                            }
+                            return this.posts;
+                        })
+                        .catch((error: Response) => Observable.throw(error));
+    }
+
 }
