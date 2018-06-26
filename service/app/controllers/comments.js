@@ -102,12 +102,12 @@ module.exports.likeComment = function (req, res) {
                 }
             }
             if (i == comment.likes.length) {
-                comment.likes.push(comment.body.user);
+                comment.likes.push(req.body.user);
             } else {
                 comment.likes.splice(i, 1)
             }
 
-            let promise2 = Comment.findByIdAndUpdate(id, post);
+            let promise2 = Comment.findByIdAndUpdate(id, comment);
             promise2.then(
                 function (new_comment) {
                     let promise3 = Comment.findById(id)
@@ -131,7 +131,7 @@ module.exports.likeComment = function (req, res) {
         }
     ).catch(
         function (error) {
-            res.status(404).send("Post not found");
+            res.status(404).send("comment not found");
         }
     )
 }

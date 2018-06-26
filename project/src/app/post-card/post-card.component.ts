@@ -62,7 +62,7 @@ export class PostCardComponent implements OnInit {
     let _id: string;
     this.commentService.insertComment(new Comment(_id, this.loginService.user, this.post._id, this.text, new Date(), this.likes))
                     .subscribe(data => {
-                      //console.log(data);
+                      console.log(data);
                       this.text = "";
                     },
                       error => {
