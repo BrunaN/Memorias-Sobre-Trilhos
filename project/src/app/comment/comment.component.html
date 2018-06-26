@@ -10,7 +10,7 @@
     <div class="container">
       <div class="infos">
         <div class="user-name">
-          <a href="#">{{ comment.user.name }}</a>
+          <a href="" [routerLink]="['/perfil', comment.user._id]">{{ comment.user.name }}</a>
         </div>
         <div class="comment-text">
           {{ comment.text }}

@@ -33,6 +33,7 @@ import { ComofuncionaComponent } from './comofunciona/comofunciona.component';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StationsComponent } from './stations/stations.component';
+import { SobreComponent } from './sobre/sobre.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { StationsComponent } from './stations/stations.component';
     TimeAgoPipe,
     StationsMapComponent,
     ComofuncionaComponent,
-    StationsComponent
+    StationsComponent,
+    SobreComponent
   ],
   imports: [
     BrowserModule,

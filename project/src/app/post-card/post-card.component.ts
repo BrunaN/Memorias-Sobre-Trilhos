@@ -42,7 +42,8 @@ export class PostCardComponent implements OnInit {
   }
 
   safeUrl(url){
-    return this.sanitizer.bypassSecurityTrustResourceUrl(url+"&autoplay=0");
+    url = url.replace("watch?v=", "embed/");
+    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
   }
 
   urlImg(){

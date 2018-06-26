@@ -1,0 +1,51 @@
+.comofunciona-content{
+    box-sizing: border-box;
+    padding-bottom: 30px;
+    background-color: #E9D4A9;
+    background-image: url("/assets/img/textura_1.png");
+    min-height: calc(100vh - 121px + 260px);
+}
+
+.comofunciona-content .container{
+    width: 74%;
+}
+
+.comofunciona-content .container .content-infos{
+    margin-top: calc(-230px + 131px);
+    padding: 35px 50px 25px 50px;
+    position: relative;
+    z-index: 10;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.comofunciona-content .container .infos .name{
+    margin-top: 100px;
+    padding: 35px 0;
+    padding-top: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.comofunciona-content .container .infos .name li{
+    font-size: 32px;
+    font-weight: bolder;
+    color:#333530;
+    margin: 0;
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.comofunciona-content .container .infos .name li:before{
+    content: '';
+    padding: 0;
+    display: inline-block;
+    height: 25px;
+    width: 22px;
+    margin-right: 6px;
+}
+
+.download img{
+    max-width: 30px;
+    max-height: 30px;
+} 
