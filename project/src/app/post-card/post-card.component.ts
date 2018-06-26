@@ -24,6 +24,7 @@ export class PostCardComponent implements OnInit {
 
   user: Usuario = undefined;
   text: string = "";
+  likes;
   URL_IMG: string = "http://localhost:3000/uploads/";
 
   deuLike: boolean = false;
@@ -59,7 +60,7 @@ export class PostCardComponent implements OnInit {
   insert(e){
     e.preventDefault();
     let _id: string;
-    this.commentService.insertComment(new Comment(_id, this.loginService.user, this.post._id, this.text, new Date()))
+    this.commentService.insertComment(new Comment(_id, this.loginService.user, this.post._id, this.text, new Date(), this.likes))
                     .subscribe(data => {
                       console.log(data);
                       this.text = "";

@@ -21,8 +21,12 @@
           {{ comment.date | timeAgo }}
         </div>
         <div class="gostar">
-          <button *ngIf="!loginService.user || comment.user._id != loginService.user._id">
+          <a href="#" *ngIf="comment.likes.length > 0">{{comment.likes.length}}</a>
+          <button *ngIf="!loginService.user || comment.user._id != loginService.user._id || !deuLike" (click)="like($event)">
             <img src="../../assets/img/gostar.png">Gostar
+          </button>
+          <button *ngIf="loginService.user && deuLike" (click)="like($event)">
+            <img src="../../assets/img/liked.png">Gostar
           </button>
         </div>
         <a *ngIf="loginService.user && comment.user._id == loginService.user._id" class="dropdown options">
@@ -39,7 +43,7 @@
                 <span class="glyphicon glyphicon-pencil"></span>Editar</a>
             </li>
             <li>
-              <a href="#">
+              <a href="#" (click)="remove($event)">
                 <span class="glyphicon glyphicon-trash"></span>Remover</a>
             </li>
           </ul>

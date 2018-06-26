@@ -23,7 +23,7 @@ export class CommentService {
                         .map((response: Response) => {
                             let res = response.json();
                             let user = this.loginService.user;
-                            let comment = new Comment(res._id, user, res.post, res.text, res.date);
+                            let comment = new Comment(res._id, user, res.post, res.text, res.date, res.likes);
                             this.comments.push(comment);
                             return comment;
                         })
@@ -37,9 +37,34 @@ export class CommentService {
                             this.comments = [];
                             for(let comment of response.json()){
                                 let user = new Usuario(comment.user._id, comment.user.name, comment.user.email, comment.user.password, comment.user.avatar, comment.user.estado, comment.user.cidade);
-                                this.comments.push(new Comment(comment._id, user, comment.post, comment.text, comment.date));
+                                this.comments.push(new Comment(comment._id, user, comment.post, comment.text, comment.date, comment.likes));
                             }
                             return this.comments
+                        })
+                        .catch((error: Response) => Observable.throw(error));
+    }
+
+    likeComment(comment: Comment, user: Usuario){
+        return this.http.put((this.url + "/" + comment._id + "/like"), {user: user})
+                        .map((response: Response) => {
+                            let res = response.json();
+                            let comment = new Comment(res._id, res.user, res.post, res.text, res.date, res.likes);
+                            console.log(comment);
+                            return comment;
+                        })
+                        .catch((error: Response) => Observable.throw(error));
+    }
+
+    removeComment(comment: Comment, user: Usuario){
+        return this.http.delete((this.url + "/" + comment._id + "?user="+ user._id))
+                        .map((response: Response) => {
+                            let res = response.json();
+                            for(let i=0; i<this.comments.length; i++){
+                                if(this.comments[i]._id == comment._id){
+                                    this.comments.splice(i, 1)
+                                }
+                            }
+                            return this.comments;
                         })
                         .catch((error: Response) => Observable.throw(error));
     }
