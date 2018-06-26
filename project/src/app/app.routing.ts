@@ -18,7 +18,7 @@ const APP_ROUTES: Routes=[
     {path: "cadastro", component: CadastroComponent},
     {path: "login", component: LoginComponent},
     {path: "redefinir-senha", component: RecoverPasswordComponent},
-    {path: "perfil", component: ProfileComponent},
+    {path: "perfil/:id", component: ProfileComponent},
     {path: "sonho-azul", component: SonhoAzulComponent},
     {path: "resultados", component: ResultPagesComponent},
     {path: "estacao/:id", component: StationContentComponent},

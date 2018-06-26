@@ -39,8 +39,8 @@ export class UsuarioService {
             .catch((error: Response) => Observable.throw(error));
     }
 
-    getUsuario(usuario: Usuario) {
-        return this.http.get(this.urlUsuarios + "/" + usuario._id)
+    getUsuario(idUsuario) {
+        return this.http.get(this.urlUsuarios + "/" + idUsuario)
             .map((response: Response) => {
                 let res = response.json();
                 let usuario = new Usuario(res._id, res.name, res.email, res.password, res.avatar, res.estado, res.cidade);
@@ -49,7 +49,7 @@ export class UsuarioService {
             .catch((error: Response) => Observable.throw(error));
     }
 
-    update(usuario: Usuario){
+    update(usuario){
         let formData = new FormData();
         if (usuario.avatar) {
           formData.append('avatar', usuario.avatar);
