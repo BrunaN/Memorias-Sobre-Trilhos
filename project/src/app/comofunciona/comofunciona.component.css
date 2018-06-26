@@ -1,7 +1,8 @@
 .comofunciona-content{
     box-sizing: border-box;
     padding-bottom: 30px;
-    background-color: #f6eedd;
+    background-color: #E9D4A9;
+    background-image: url("/assets/img/textura_1.png");
     min-height: calc(100vh - 121px + 260px);
 }
 
@@ -11,9 +12,7 @@
 
 .comofunciona-content .container .content-infos{
     margin-top: calc(-230px + 131px);
-    background-color: #f9f5ed;
     padding: 35px 50px 25px 50px;
-    border: solid 1px rgba(0, 0, 0, .3);
     position: relative;
     z-index: 10;
     border-radius: 4px;
@@ -45,40 +44,78 @@
     width: 22px;
     margin-right: 6px;
 }
-.comofunciona-texto{
-    padding: 50px;
-}
-.asabranca-texto p{
-    line-height: 35px;
-    text-align: justify;
-    font-size: 20px;
-    
-}
-.asabranca-texto img{
-    margin-left: 20px;
-    margin-bottom: 40px;
-    float: right;
-    max-height: 450px;
-    max-width: 600px;
 
+.seta{
+    float: right;
+    padding: 2px;
+    max-height: 20px;
+    max-width: 20px;
 }
 .content-posts{
     padding: 50px;
 }
-
-.accordion-toggle {
-    cursor: pointer;
-    
+.accordion-content h4{
+    line-height: 25px;
+    padding-left: 15px;
+    padding-right:15px;
+    text-align: justify;
 }
-.accordion-content {
+#accordion{
+    padding-top: 40px;
+}
+.accordion-toggle {
+    margin-left: 300px;
+    margin-right: 300px;
+    padding-left: 200px;
+    cursor: pointer;
+    background: rgba(58, 50, 29, 0.5);
+    border-radius: 5px;
+    padding: 10px;
+    color: white;
+}
+
+.accordion-content {  
+    margin-left: 200px;
+    margin-right: 200px;
     display: none;
+    box-sizing: border-box;
     text-align: center;
     padding-top: 20px;
+    border-radius: 5px;
+    border: solid 1px #333530;
+    padding-bottom: 10px;
 }
-.accordion-content.default {display: block;}
 
-.imagem{
+.accordion-content .imagem{
     max-height: 500px;
     max-width: 700px;
     padding-bottom: 20px;
+    border: solid 1px #333530;
+    border-radius: 5px;
 }
+
+.sobre{
+
+    background-size: cover;
+    text-align: center;
+  }
+
+.sobre .imagem {
+    margin: auto;
+    height: 210px;
+    width: 210px;
+    background-color: #E9D4A9;
+    border-radius: 50%;
+    box-sizing: border-box solid rgb(0,0,0,0.1);
+  }
+  
+.sobre .imagem img {
+    width: 100%;
+    border-radius: 50%;
+  }
+  h2 {
+    margin: auto;
+    text-align: center;
+    padding: 30px;
+  }
+  
