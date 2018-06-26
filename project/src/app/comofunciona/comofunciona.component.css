@@ -17,7 +17,7 @@
 
 .comofunciona-content .container .content-infos{
     margin-top: calc(-230px + 131px);
-    padding: 35px 50px 25px 50px;
+    padding-top: 60px;
     position: relative;
     z-index: 10;
     border-radius: 4px;
@@ -25,29 +25,19 @@
 }
 
 .comofunciona-content .container .infos .name{
-    margin-top: 100px;
-    padding: 35px 0;
-    padding-top: 0;
+    padding-top: 50px;
+    padding-bottom: 10px;
     box-sizing: border-box;
     text-align: center;
 }
 
-.comofunciona-content .container .infos .name li{
-    font-size: 32px;
+.comofunciona-content .container .infos .name h2{
+    font-size: 35px;
     font-weight: bolder;
     color:#333530;
     margin: 0;
     list-style-type: none;
     padding-left: 0;
-}
-
-.comofunciona-content .container .infos .name li:before{
-    content: '';
-    padding: 0;
-    display: inline-block;
-    height: 25px;
-    width: 22px;
-    margin-right: 6px;
 }
 
 .seta{
@@ -100,24 +90,22 @@
 }
 
 .sobre{
-
     background-size: cover;
     text-align: center;
-  }
+}
 
 .sobre .imagem_cf {
     margin: auto;
-    max-height: 500px;
-    max-width: 700px;
- 
-  }
+    height: 500px;
+}
 
 .sobre .imagem img {
     width: 100%;
     border-radius: 50%;
-  }
-  h2 {
+}
+
+h2 {
     margin: auto;
     text-align: center;
     padding: 30px;
-  }
+}
