@@ -71,12 +71,14 @@
     
 }
 .asabranca-texto img{
-    margin-left: 20px;
-    margin-bottom: 40px;
-    float: right;
     max-height: 450px;
     max-width: 600px;
+}
 
+.container .imagem_texto{
+    padding: 40px;
+    margin: auto;
+    text-align: center;
 }
 .content-posts{
     padding: 50px;

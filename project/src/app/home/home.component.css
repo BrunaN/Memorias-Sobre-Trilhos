@@ -102,14 +102,14 @@ h2 {
 
 .imagem {
   margin: auto;
-  height: 210px;
-  width: 210px;
+  max-height: 210px;
+  max-width: 210px;
   background-color: #E9D4A9;
   border-radius: 50%;
 }
 
 .imagem img {
-  width: 100%;
+  max-width: 100%;
   border-radius: 50%;
 }
 
