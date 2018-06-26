@@ -49,7 +49,7 @@ export class UsuarioService {
             .catch((error: Response) => Observable.throw(error));
     }
 
-    update(usuario: Usuario){
+    update(usuario){
         let formData = new FormData();
         if (usuario.avatar) {
           formData.append('avatar', usuario.avatar);

@@ -1,6 +1,6 @@
 <div class="row profile">
   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-dialog modal-md" role="document">
       <div class="modal-content">
         <div class="modal-header">
           <a id="close" data-dismiss="modal" aria-label="Close">
@@ -14,17 +14,25 @@
               <label class="addFile" for="file">Adicionar foto</label>
               <input type="file" name="avatar" id="file" (change)="handleFileInput($event)">
             </div>
-            <div>
+            <div class="form-group">
               <label for="nome">Nome:</label>
-              <input type="text">
+              <input type="text" [(ngModel)]="nome" name="nome">
             </div>
-            <div>
-              <label for="titulo">Estado:</label>
-              <input type="text">
+            <div class="form-group">
+              <select [(ngModel)]="estado" (change)="onSelect($event.target.value)" id="sel1" name="estado" required>
+                <option value="-1" disabled="disabled"> Selecione seu estado</option>
+                <option *ngFor="let estado of estados" value={{estado.id}}>
+                  {{estado.nome}}
+                </option>
+              </select>
             </div>
-            <div>
-              <label for="titulo">Cidade:</label>
-              <input type="text">
+            <div class="form-group">
+              <select [(ngModel)]="cidade" name="cidade" required>
+                <option value="" disabled="disabled"> Selecione sua cidade</option>
+                <option *ngFor="let cidade of cidades" value={{cidade.id}}>
+                  {{cidade.nome}}
+                </option>
+              </select>
             </div>
           </form>
         </div>
@@ -36,46 +44,47 @@
     </div>
   </div>
   <div class="col-md-3 col-md-offset-2 perfil">
-    <div class="img" *ngIf="!user.avatar">
+    <div class="img" *ngIf="!user || !user.avatar">
       <img src="../../assets/img/avatar.png" alt="">
     </div>
-    <div class="img" *ngIf="user.avatar">
+    <div class="img" *ngIf="user && user.avatar">
         <img [src]="urlImg() | safe: 'resourceUrl'" alt="">
     </div>
-    <div class="informacoes">
+    <div class="informacoes" *ngIf="user">
       <div>
         <h2>
-          {{this.loginService.user.name}}
+          {{this.user.name}}
         </h2>
         <p>
-          {{this.loginService.user.email}}
+          {{this.user.email}}
         </p>
-        <ul>
+        <ul *ngIf="user && user.cidade">
           <li>
-            {{this.loginService.user.cidade}}
+            {{this.user.cidade}}
           </li>
         </ul>
       </div>
     </div>
     <div class="pessoal">
       <ul>
-        <li>
-          <a href="" data-toggle="modal" data-target="#myModal">editar perfil</a>
+        <li *ngIf="user && loginService.user && loginService.user._id == user._id">
+          <a href="" data-toggle="modal" data-target="#myModal">Editar perfil</a>
         </li>
         <li>
-          <a href="">estações</a>
+          <a href="">Estações</a>
         </li>
       </ul>
     </div>
   </div>
-  <div class="col-md-5 conteudo">
-    <h2>Olá, {{this.loginService.user.name}}</h2>
+  <div class="col-md-5 conteudo" *ngIf="user">
+    <h2 *ngIf="user && loginService.user && loginService.user._id == user._id">Olá, {{this.user.name}}</h2>
+    <h2 *ngIf="user && (!loginService.user || loginService.user._id != user._id)">Perfil de {{this.user.name}}</h2>
     <div class="posts" *ngFor="let post of posts">
       <app-post-card [post]=post [station]=flag>
 
       </app-post-card>
     </div>
-    <div *ngIf="posts.length == 0">
+    <div *ngIf="posts.length == 0 && user && loginService.user && loginService.user._id == user._id">
       <div class="conteudo-vazio">
         <p>
           Você ainda não adicionou nenhuma memória
@@ -83,6 +92,14 @@
         <button id="comecar">
           Começar
         </button>
+      </div>
+    </div>
+
+    <div *ngIf="posts.length == 0 && user && (!loginService.user || loginService.user._id != user._id)">
+      <div class="conteudo-vazio">
+        <p>
+          {{user.name}} ainda não adicionou nenhuma memória
+        </p>
       </div>
     </div>
 

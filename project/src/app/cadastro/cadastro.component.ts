@@ -65,7 +65,7 @@ export class CadastroComponent implements OnInit {
             .subscribe(data =>{
               console.log(data);
               this.loginService.local(data);
-              let msg = '<div>Que tal editar seu perfil agora?<div><a href="" routerLink="/perfil/'+data._id+'" class="btn btn-success">Ver perfil</a></div></div>';
+              let msg = '<div>Que tal editar seu perfil agora?<div><a href="/perfil/'+data._id+'" class="btn btn-success">Ver perfil</a></div></div>';
               this.toastr.success(msg, 'Olá, '+data.name, {
                 disableTimeOut: true,
                 enableHtml: true
