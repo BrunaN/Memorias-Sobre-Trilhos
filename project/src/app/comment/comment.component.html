@@ -22,7 +22,7 @@
         </div>
         <div class="gostar">
           <a href="#" *ngIf="comment.likes.length > 0">{{comment.likes.length}}</a>
-          <button *ngIf="!loginService.user || comment.user._id != loginService.user._id || !deuLike" (click)="like($event)">
+          <button *ngIf="!loginService.user || (comment.user._id != loginService.user._id && !deuLike)" (click)="like($event)">
             <img src="../../assets/img/gostar.png">Gostar
           </button>
           <button *ngIf="loginService.user && deuLike" (click)="like($event)">

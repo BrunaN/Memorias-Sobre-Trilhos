@@ -42,7 +42,7 @@ export class PostCardComponent implements OnInit {
   }
 
   safeUrl(url){
-    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
+    return this.sanitizer.bypassSecurityTrustResourceUrl(url+"&autoplay=0");
   }
 
   urlImg(){

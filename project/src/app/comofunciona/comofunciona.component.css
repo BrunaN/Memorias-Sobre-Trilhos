@@ -4,6 +4,7 @@
     background-color: #E9D4A9;
     background-image: url("/assets/img/textura_1.png");
     min-height: calc(100vh - 121px + 260px);
+    width: 100vw;
 }
 
 .comofunciona-content .container{
