@@ -10,7 +10,7 @@
       <div class="post-infos">
         <div class="infos">
           <a href="" class="user-name" (click)="userProfile()">{{post.user.name}}</a>
-          <li *ngIf="station">{{post.station.name}}</li>
+              <a *ngIf="station" class="station-name" href="" [routerLink]="['/estacao', post.station.id]"><img src="../../assets/img/marcador_1.png">{{post.station.name}}</a>
           <div *ngIf="!loginService.user || post.user._id != loginService.user._id" class="compartilhar">
             <button ceiboShare [facebook]="{u: repoUrl}"><img src="../../assets/img/compartilhar.png">Compartilhar</button>
           </div>
@@ -24,6 +24,7 @@
               <li><a href="#"><span class="glyphicon glyphicon-trash"></span>Remover</a></li>
             </ul>
           </a>
+          
         </div>
 
         <div class="time">
