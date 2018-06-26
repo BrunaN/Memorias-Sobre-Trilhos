@@ -17,6 +17,7 @@ import { Router, RouterModule } from '@angular/router';
 })
 export class PostCardComponent implements OnInit {
   @Input() post: Post;
+  @Input() station: boolean = false;
   comments: Comment [] = [];
 
   repoUrl = 'https://facebook.com/';

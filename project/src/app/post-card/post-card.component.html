@@ -10,6 +10,7 @@
       <div class="post-infos">
         <div class="infos">
           <a href="" class="user-name" (click)="userProfile()">{{post.user.name}}</a>
+          <li *ngIf="station">{{post.station.name}}</li>
           <div *ngIf="!loginService.user || post.user._id != loginService.user._id" class="compartilhar">
             <button ceiboShare [facebook]="{u: repoUrl}"><img src="../../assets/img/compartilhar.png">Compartilhar</button>
           </div>

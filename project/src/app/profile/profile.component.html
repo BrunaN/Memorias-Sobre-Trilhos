@@ -71,7 +71,7 @@
   <div class="col-md-5 conteudo">
     <h2>Olá, {{this.loginService.user.name}}</h2>
     <div class="posts" *ngFor="let post of posts">
-      <app-post-card [post]=post>
+      <app-post-card [post]=post [station]=flag>
 
       </app-post-card>
     </div>
