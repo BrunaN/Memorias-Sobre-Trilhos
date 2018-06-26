@@ -66,12 +66,18 @@
           <button (click)="like($event)"><img src="../../assets/img/liked.png">Gostar</button>
         </div>
       </div>
-      <div class="interaction">
+      <div class="interaction" *ngIf="this.loginService.userLogged()">
         <button (click)="comentar($event)"><img src="../../assets/img/comentar.png">Comentar</button>
+      </div>
+      <div class="interaction" *ngIf="!this.loginService.userLogged()">
+        <button (click)="comentar($event)"><img src="../../assets/img/comentar.png">Comentários</button>
       </div>
     </div>
   </div>
   <div class="comentarios" [ngClass]="comentario">
+    <div *ngIf="comments == 0">
+      <p>Não contém nenhum comentário</p>
+    </div>
     <div class="comentario-list" *ngFor="let comment of comments">
       <app-comment [comment]=comment></app-comment>
     </div>

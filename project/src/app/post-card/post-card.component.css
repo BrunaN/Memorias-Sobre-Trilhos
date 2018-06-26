@@ -189,6 +189,13 @@
   background-color: #f9f5ed;
 }
 
+.comentarios p{
+  text-align: center;
+  padding: 10px;
+  font-size: 15px;
+  color: #aaa;
+}
+
 .comentar-display{
   display: none;
 }
