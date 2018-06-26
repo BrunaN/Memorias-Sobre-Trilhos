@@ -42,7 +42,7 @@ export class ProfileComponent implements OnInit {
     handleFileInput(event) {
         if(event.target.files.length){
             this.avatar = event.target.files[0];
-            console.log(this.avatar);
+            //console.log(this.avatar);
         }
     }
 
@@ -52,7 +52,7 @@ export class ProfileComponent implements OnInit {
           usuarioService.getUsuario(this._id)
                       .subscribe(data => {
                         this.user = data;
-                        console.log(this.user);
+                        //console.log(this.user);
                         this.posts = [];
                         this.nome = this.user.name;
 
@@ -67,18 +67,18 @@ export class ProfileComponent implements OnInit {
                                 this.listaCidades[i] = [];
                                 for(let j = 0, s2 = data.estados[i].cidades.length; j < s2; j++){
                                   if(this.estado == i && data.estados[i].cidades[j] == this.user.cidade){
-                                    console.log(data.estados[i].cidades[j], this.user.cidade);
+                                    //console.log(data.estados[i].cidades[j], this.user.cidade);
                                     this.cidade = j;
-                                    console.log(j);
+                                    //console.log(j);
                                   }
                                   this.listaCidades[i].push(new Cidade(j, data.estados[i].cidades[j], i));
                                 }
                               }
 
                               this.cidades = this.listaCidades[this.estado];
-                              console.log(this.cidade);
+                              //console.log(this.cidade);
                           },error => {
-                              console.log(error);
+                              //console.log(error);
                           });
                         }
 
@@ -86,7 +86,7 @@ export class ProfileComponent implements OnInit {
                             .subscribe(data => {
                               this.posts = data;
                             }, error => {
-                                console.log(error);
+                                //console.log(error);
                             });
                       },
                       error => {
@@ -130,7 +130,7 @@ export class ProfileComponent implements OnInit {
               }
             },
             error => {
-              console.log(error);
+              //console.log(error);
             });
     }
 

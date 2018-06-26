@@ -20,7 +20,7 @@ export class UsuarioService {
         return this.http.post(this.urlUsuarios, usuario)
             .map((response: Response) => {
                 let res = response.json();
-                console.log(res);
+                //console.log(res);
                 let user = new Usuario(res._id, res.name, res.email, res.password, res.avatar, res.estado, res.cidade);
                 return user
             })
@@ -57,11 +57,11 @@ export class UsuarioService {
 
         for ( let key in usuario ) {
           if(key != 'avatar' && usuario[key]){
-            console.log(key, usuario[key]);
+            //console.log(key, usuario[key]);
             formData.append(key, usuario[key]);
           }
         }
-        console.log(formData)
+        //console.log(formData)
         return this.http.put((this.urlUsuarios + "/" + usuario._id), formData)
                         .map((response: Response) => {
                             let res = response.json();

@@ -61,11 +61,11 @@ export class PostCardComponent implements OnInit {
     let _id: string;
     this.commentService.insertComment(new Comment(_id, this.loginService.user, this.post._id, this.text, new Date()))
                     .subscribe(data => {
-                      console.log(data);
+                      //console.log(data);
                       this.text = "";
                     },
                       error => {
-                      console.log(error);
+                      //console.log(error);
                     });
   }
 
@@ -73,13 +73,13 @@ export class PostCardComponent implements OnInit {
     this.comments = [];
     this.commentService.getComments(this.post)
                       .subscribe(data => {
-                        console.log(data);
+                        //console.log(data);
                         this.comments = data;
-                        console.log(this.comments);
+                        //console.log(this.comments);
                         this.request = true;
                       },
                         error => {
-                        console.log(error);
+                        //console.log(error);
                         this.request = true;
                       });
   }
@@ -87,7 +87,7 @@ export class PostCardComponent implements OnInit {
   comentar(e){
     e.preventDefault();
 
-    console.log(this.request);
+    //console.log(this.request);
 
     if(!this.request){
       this.get();
@@ -120,10 +120,10 @@ export class PostCardComponent implements OnInit {
                 .subscribe(data => {
                   this.post = data;
                   this.deuLike = this.liked();
-                  console.log(this.deuLike);
+                  //console.log(this.deuLike);
                 },
                   error => {
-                  console.log(error);
+                  //console.log(error);
                 });
   }
 
@@ -131,10 +131,10 @@ export class PostCardComponent implements OnInit {
     e.preventDefault();
     this.postService.removePost(this.post, this.loginService.user)
                 .subscribe(data => {
-                  console.log(data);
+                  //console.log(data);
                 },
                   error => {
-                  console.log(error);
+                  //console.log(error);
                 });
   }
 
@@ -142,10 +142,10 @@ export class PostCardComponent implements OnInit {
     e.preventDefault();
     this.postService.getUsersLikes(this.post)
                 .subscribe(data => {
-                  console.log(data);
+                  //console.log(data);
                 },
                   error => {
-                  console.log(error);
+                  //console.log(error);
                 });
   }
 
@@ -153,10 +153,10 @@ export class PostCardComponent implements OnInit {
     this.usuarioService.getUsuario(this.post.user)
                       .subscribe(data => {
 
-                        console.log(data);
+                        //console.log(data);
                       },
                         error => {
-                        console.log(error);
+                        //console.log(error);
                       });
   }
 
