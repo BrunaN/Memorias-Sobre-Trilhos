@@ -17,6 +17,7 @@ import { Router, RouterModule } from '@angular/router';
 })
 export class PostCardComponent implements OnInit {
   @Input() post: Post;
+  @Input() station: boolean = false;
   comments: Comment [] = [];
 
   repoUrl = 'https://facebook.com/';
@@ -37,7 +38,6 @@ export class PostCardComponent implements OnInit {
   };
 
   constructor(private postService: PostService, private commentService: CommentService, protected loginService: LoginService,  private sanitizer: DomSanitizer, private usuarioService: UsuarioService, private router: Router) {
-    this.user = this.loginService.user;
   }
 
   safeUrl(url){
@@ -59,7 +59,7 @@ export class PostCardComponent implements OnInit {
   insert(e){
     e.preventDefault();
     let _id: string;
-    this.commentService.insertComment(new Comment(_id, this.user, this.post._id, this.text, new Date()))
+    this.commentService.insertComment(new Comment(_id, this.loginService.user, this.post._id, this.text, new Date()))
                     .subscribe(data => {
                       console.log(data);
                       this.text = "";
@@ -103,13 +103,11 @@ export class PostCardComponent implements OnInit {
   }
 
   liked(){
-    if(!this.user){
+    if(!this.loginService.user){
       return false;
     }
-    console.log(this.post, this.user);
     for(let i=0; i<this.post.likes.length; i++){
-      console.log(this.post.likes[i], this.user._id);
-      if(this.post.likes[i]==this.user._id){
+      if(this.post.likes[i]==this.loginService.user._id){
         return true;
       }
     }
@@ -118,7 +116,7 @@ export class PostCardComponent implements OnInit {
 
   like(e){
     e.preventDefault();
-    this.postService.likePost(this.post, this.user)
+    this.postService.likePost(this.post, this.loginService.user)
                 .subscribe(data => {
                   this.post = data;
                   this.deuLike = this.liked();

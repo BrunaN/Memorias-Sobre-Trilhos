@@ -1,3 +1,4 @@
+import { LoginService } from './../services/login.service';
 import { Comment } from './../models/comment.model';
 import { Component, OnInit, Input } from '@angular/core';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
@@ -12,7 +13,7 @@ export class CommentComponent implements OnInit {
   URL_IMG: string = "http://localhost:3000/uploads/";
 
   @Input() comment : Comment;
-  constructor(private sanitizer: DomSanitizer) { }
+  constructor(private sanitizer: DomSanitizer, protected loginService: LoginService) { }
 
   ngOnInit() {
   }

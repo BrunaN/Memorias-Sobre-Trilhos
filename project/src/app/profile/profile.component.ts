@@ -18,6 +18,7 @@ export class ProfileComponent implements OnInit {
 
     user: Usuario;
     posts: Post[] = [];
+    flag: boolean = true;
 
     nome: string = "";
     avatar: File;
