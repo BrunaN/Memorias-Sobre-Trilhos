@@ -28,7 +28,25 @@ export class PostCardComponent implements OnInit {
   URL_IMG: string = "http://localhost:3000/uploads/";
 
   deuLike: boolean = false;
+  editarPost: boolean = false;
   request: boolean = false;
+
+  editar(e){
+    e.preventDefault();
+    this.editarPost = true;
+  }
+
+  concluir(){
+    this.postService.editPost(this.post)
+    .subscribe(data => {
+                this.editarPost = false;
+                console.log(data)},
+                error => console.log(error));
+  }
+
+  cancelar(){
+    this.editarPost = false;
+  }
 
   comentario = {
     "comentar-display": true

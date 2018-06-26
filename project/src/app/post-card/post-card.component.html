@@ -20,7 +20,7 @@
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
               <li><a href="#"><img src="../../assets/img/compartilhar.png">Compartilhar</a></li>
-              <li><a href="#"><span class="glyphicon glyphicon-pencil"></span>Editar</a></li>
+              <li><a href="#" (click)="editar($event)"><span class="glyphicon glyphicon-pencil"></span>Editar</a></li>
               <li><a href="#" (click)="remove($event)"><span class="glyphicon glyphicon-trash"></span>Remover</a></li>
             </ul>
           </a>
@@ -41,8 +41,17 @@
       <div class="video" *ngIf="post.video">
         <iframe [src]="safeUrl(this.post.video)" frameborder="0" scrolling="no"></iframe>
       </div>
-      <div class="description">
+      <div *ngIf="!editarPost" class="description">
         {{post.description}}
+      </div>
+      <input *ngIf="editarPost" [(ngModel)]="post.description">
+      <div class="editar" *ngIf="editarPost">
+          <button type="button" class="btn btn-default" (click)="concluir()">
+              <span class="glyphicon glyphicon-ok">Concluir</span>
+          </button>
+          <button type="button" class="btn btn-default" (click)="cancelar()">
+              <span class="glyphicon glyphicon-remove">Cancelar</span>
+          </button>
       </div>
     </div>
 

@@ -140,6 +140,28 @@
   float: right;
 }
 
+.post-content input{
+  width: 422px;
+  display: inline-block;
+  height: 45px;
+  font-size: 16px;
+  padding: 6px 9px;
+  background-color: #f9f5ed;
+  border: none;
+  box-shadow: none;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.post-content .editar{
+  display: inline-block;
+  font-size: 14px;
+}
+
+.post-content .editar span{
+  padding-right: 3px;
+}
+
 .video {
   position: relative;
   padding-bottom: 56.25%;

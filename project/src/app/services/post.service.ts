@@ -118,4 +118,8 @@ export class PostService {
                         .catch((error: Response) => Observable.throw(error));
     }
 
+    editPost(post:Post){
+        return this.http.put((this.url + "/" + post._id), post)
+    };
+
 }
