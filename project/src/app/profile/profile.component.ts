@@ -10,6 +10,7 @@ import { NgModel } from '@angular/forms';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { Router, ActivatedRoute, Params, RouterModule } from '@angular/router';
 import { DataService } from '../services/data.service';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -42,17 +43,17 @@ export class ProfileComponent implements OnInit {
     handleFileInput(event) {
         if(event.target.files.length){
             this.avatar = event.target.files[0];
-            console.log(this.avatar);
+            //console.log(this.avatar);
         }
     }
 
-    constructor(protected loginService: LoginService, private postService: PostService, private sanitizer: DomSanitizer, private usuarioService: UsuarioService, private router: Router, private route: ActivatedRoute, private dataService: DataService) {
+    constructor(protected loginService: LoginService, private postService: PostService, private sanitizer: DomSanitizer, private usuarioService: UsuarioService, private router: Router, private route: ActivatedRoute, private dataService: DataService, private toastr: ToastrService) {
         this.route.params.subscribe(params => {
           this._id = params['id'];
           usuarioService.getUsuario(this._id)
                       .subscribe(data => {
                         this.user = data;
-                        console.log(this.user);
+                        //console.log(this.user);
                         this.posts = [];
                         this.nome = this.user.name;
 
@@ -67,18 +68,18 @@ export class ProfileComponent implements OnInit {
                                 this.listaCidades[i] = [];
                                 for(let j = 0, s2 = data.estados[i].cidades.length; j < s2; j++){
                                   if(this.estado == i && data.estados[i].cidades[j] == this.user.cidade){
-                                    console.log(data.estados[i].cidades[j], this.user.cidade);
+                                    //console.log(data.estados[i].cidades[j], this.user.cidade);
                                     this.cidade = j;
-                                    console.log(j);
+                                    //console.log(j);
                                   }
                                   this.listaCidades[i].push(new Cidade(j, data.estados[i].cidades[j], i));
                                 }
                               }
 
                               this.cidades = this.listaCidades[this.estado];
-                              console.log(this.cidade);
+                              //console.log(this.cidade);
                           },error => {
-                              console.log(error);
+                              //console.log(error);
                           });
                         }
 
@@ -86,7 +87,7 @@ export class ProfileComponent implements OnInit {
                             .subscribe(data => {
                               this.posts = data;
                             }, error => {
-                                console.log(error);
+                                //console.log(error);
                             });
                       },
                       error => {
@@ -128,9 +129,12 @@ export class ProfileComponent implements OnInit {
               if(this.loginService.user && user._id == this.loginService.user._id){
                 this.loginService.local(data);
               }
+              this.toastr.success('', 'Seu perfil foi editado com sucesso!', {
+                progressBar: true
+              });
             },
             error => {
-              console.log(error);
+              //console.log(error);
             });
     }
 

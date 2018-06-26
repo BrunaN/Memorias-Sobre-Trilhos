@@ -37,7 +37,7 @@ export class StationContentComponent implements OnInit {
   handleFileInput(event) {
     if(event.target.files.length)
       this.content = event.target.files[0];
-      console.log(this.content);
+      //console.log(this.content);
   }
 
   constructor(protected loginService: LoginService, private postService: PostService, private route: ActivatedRoute, private estacaoService: EstacaoService, private router: Router, private _sanitizationService: DomSanitizer) {
@@ -46,13 +46,13 @@ export class StationContentComponent implements OnInit {
       estacaoService.getEstacao(this._id)
                 .subscribe(data => {
                   this.station = data;
-                  console.log(this.station);
+                  //console.log(this.station);
                   this.posts = [];
                   this.postService.getPosts(this.station)
                                 .subscribe(data => {
                                   this.posts = data;},
                                   error => {
-                                  console.log(error);
+                                  //console.log(error);
                                 });
                 },
                 error => {
@@ -69,12 +69,12 @@ export class StationContentComponent implements OnInit {
     let post = new Post(this._idPost, this.loginService.user._id, this.station._id, this.content, this.videoInput, this.description, new Date(), this.likes);
     this.postService.insertPost(post)
                 .subscribe(data => {
-                  console.log(data);
+                  //console.log(data);
                   this.content = undefined;
                   this.description = "";
                 },
                   error => {
-                  console.log(error);
+                  //console.log(error);
                 });
   }
 }

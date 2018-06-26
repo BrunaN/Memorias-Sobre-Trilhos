@@ -42,7 +42,6 @@ module.exports.insertPost = function (req, res) {
 
     if (req.file) {
         post.content = req.file.filename;
-        console.log(req.file);
         /*let type = req.file.mimetype.split("/");
         type = type[type.length - 1];
         post.content += "." + type;*/
@@ -216,6 +215,6 @@ module.exports.deletePost = function(req, res){
     ).catch (
         function(error){
             res.status(500).json(error);
-        }   
+        }
     )
 }

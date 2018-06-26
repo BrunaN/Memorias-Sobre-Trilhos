@@ -23,17 +23,19 @@ export class LoginComponent implements OnInit {
     event.preventDefault();
     this.loginService.login(this.email, this.password)
                   .subscribe(data =>{
-                    console.log(data);
+                    //console.log(data);
                     // this.user = data
                     // this.loginService.local(this.user);
                     this.router.navigate(['/home']);
                     //colocar pra retornar pra página onde o usuário tava antes
                     },
-                    error => console.log(error)
+                    error => {
+                      //console.log(error)
+                    }
                   );
   }
 
   ngOnInit() {
-    
+
   }
 }
