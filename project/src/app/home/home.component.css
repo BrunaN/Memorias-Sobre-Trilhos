@@ -139,20 +139,3 @@ h2 {
   border-radius: 10px;
   padding: 20px;
 }
-
-.asa-branca input {
-  border-radius: 8px;
-  display: block;
-  margin: auto;
-  border: 1px solid transparent;
-  font-size: 18px;
-  padding: 7px 10px;
-  background-color: #ffff;
-  opacity: 0.6;
-  box-shadow: none;
-  box-sizing: border-box;
-  width: 300px;
-  outline: none;
-  margin-top: 30px;
-  margin-bottom: 30px;
-}

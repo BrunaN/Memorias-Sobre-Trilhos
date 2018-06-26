@@ -26,12 +26,13 @@
 }
 
 .sobre_nos {
-    padding-top: 100px;
+    padding-top: 30px;
     font-size: 15pt;
     text-align: center;
-    padding-bottom: 180px;
+    padding-bottom: 30px;
     color: #E9D4A9;
     line-height: 35px;
+    padding-bottom: 100px;
 }
 
 .sobre {
@@ -41,19 +42,27 @@
     box-sizing: border-box;
     background-color: #b55480;
     background-size: cover;
-    padding-top: 150px;
     padding: 30px;
 }
 
 .titulo {
     text-align: center;
     margin: auto;
-    padding-top: 120px;
-    padding-bottom: 30px;
+    padding-top: 40px;
 }
 
 .titulo img {
-    max-width: 200px;
+    max-width: 100px;
+}
+
+.titulo-missao {
+    text-align: center;
+    margin: auto;
+    padding-top: 100px;
+}
+
+.titulo-missao img {
+    max-width: 150px;
 }
 
 .fim {
@@ -71,15 +80,38 @@
   }
 
   .download img {
-    max-width: 30px;
-    max-height: 30px;
+    max-width: 100px;
+    max-height: 100px;
+    margin-bottom: 20px;
 }
 
 .fim .sobre_nos {
     padding-top: 80px;
     font-size: 15pt;
     text-align: center;
-    padding-bottom: 50px;
+    padding-bottom: 30px;
     color: rgb(48, 29, 0);
     line-height: 35px;
+}
+
+.comecar{
+    display: block;
+    margin-top: 40px;
+    font-size: 15pt;
+    padding-top: 20px;
+    line-height: 35px;
+    text-align: center;
+    padding-bottom: 5px;
+    background: rgba(255, 238, 196, 0.5);
+    border-radius: 5px;
+    margin-left: 200px;
+    margin-right: 200px;
+}
+.comecar .botao{
+    padding: 20px;
+}
+
+.button{
+    color: #E9D4A9;
+    background: #533F2C;
 }
