@@ -10,7 +10,7 @@ import { PostCardComponent } from './post-card/post-card.component';
 import { StationContentComponent } from './station-content/station-content.component';
 import { ComofuncionaComponent } from './comofunciona/comofunciona.component';
 import { Component } from '@angular/core';
-
+import { SobreComponent } from './sobre/sobre.component';
 
 const APP_ROUTES: Routes=[
     {path: "", redirectTo: "/home", pathMatch: "full"},
@@ -22,6 +22,7 @@ const APP_ROUTES: Routes=[
     {path: "sonho-azul", component: SonhoAzulComponent},
     {path: "resultados", component: ResultPagesComponent},
     {path: "estacao/:id", component: StationContentComponent},
-    {path: "comofunciona", component: ComofuncionaComponent}
+    {path: "comofunciona", component: ComofuncionaComponent},
+    {path: "sobre", component: SobreComponent}
 ]
 export const routing=RouterModule.forRoot(APP_ROUTES);
