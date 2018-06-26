@@ -10,6 +10,7 @@ import { NgModel } from '@angular/forms';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { Router, ActivatedRoute, Params, RouterModule } from '@angular/router';
 import { DataService } from '../services/data.service';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -46,7 +47,7 @@ export class ProfileComponent implements OnInit {
         }
     }
 
-    constructor(protected loginService: LoginService, private postService: PostService, private sanitizer: DomSanitizer, private usuarioService: UsuarioService, private router: Router, private route: ActivatedRoute, private dataService: DataService) {
+    constructor(protected loginService: LoginService, private postService: PostService, private sanitizer: DomSanitizer, private usuarioService: UsuarioService, private router: Router, private route: ActivatedRoute, private dataService: DataService, private toastr: ToastrService) {
         this.route.params.subscribe(params => {
           this._id = params['id'];
           usuarioService.getUsuario(this._id)
@@ -128,6 +129,9 @@ export class ProfileComponent implements OnInit {
               if(this.loginService.user && user._id == this.loginService.user._id){
                 this.loginService.local(data);
               }
+              this.toastr.success('', 'Seu perfil foi editado com sucesso!', {
+                progressBar: true
+              });
             },
             error => {
               //console.log(error);
