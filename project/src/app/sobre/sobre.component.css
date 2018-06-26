@@ -45,4 +45,7 @@
     margin-right: 6px;
 }
 
- 
+.download img{
+    max-width: 30px;
+    max-height: 30px;
+} 
