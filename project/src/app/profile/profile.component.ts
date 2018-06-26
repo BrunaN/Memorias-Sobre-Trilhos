@@ -6,7 +6,7 @@ import { LoginService } from '../services/login.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { NgModel } from '@angular/forms';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
-import { Router, RouterModule } from '@angular/router';
+import { Router, ActivatedRoute, Params, RouterModule } from '@angular/router';
 
 @Component({
     selector: 'app-profile',
@@ -16,11 +16,13 @@ import { Router, RouterModule } from '@angular/router';
 
 export class ProfileComponent implements OnInit {
 
-    user: Usuario = this.loginService.user;
+    user: Usuario;
     posts: Post[] = [];
 
     nome: string = "";
     avatar: File;
+
+    _id: string;
 
     URL_IMG: string = "http://localhost:3000/uploads/";
 
@@ -31,15 +33,27 @@ export class ProfileComponent implements OnInit {
         }
     }
 
-    constructor(protected loginService: LoginService, private postService: PostService, private sanitizer: DomSanitizer, private usuarioService: UsuarioService, private router: Router) {
-        this.posts = [];
+    constructor(protected loginService: LoginService, private postService: PostService, private sanitizer: DomSanitizer, private usuarioService: UsuarioService, private router: Router, private route: ActivatedRoute) {
+        this.route.params.subscribe(params => {
+          this._id = params['id'];
+          usuarioService.getUsuario(this._id)
+                      .subscribe(data => {
+                        this.user = data;
+                        console.log(this.user);
+                        this.posts = [];
 
-        this.postService.getPostsFromUser(this.user)
-            .subscribe(data => {
-                this.posts = data;
-            }, error => {
-                console.log(error);
-            });
+                        this.postService.getPostsFromUser(this.user)
+                            .subscribe(data => {
+                              this.posts = data;
+                            }, error => {
+                                console.log(error);
+                            });
+                      },
+                      error => {
+                        this.router.navigate(['/home']);
+                      });
+        });
+
 
     }
 

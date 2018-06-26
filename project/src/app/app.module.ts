@@ -15,6 +15,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { CeiboShare } from 'ng2-social-share';
+import { ToastrModule } from 'ngx-toastr';
+
 
 import { AppComponent } from './app.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
@@ -28,7 +30,8 @@ import { CommentComponent } from './comment/comment.component';
 import { TimeAgoPipe } from './diretivas/time-ago-pipe';
 import { StationsMapComponent } from './stations-map/stations-map.component';
 import { ComofuncionaComponent } from './comofunciona/comofunciona.component';
-
+import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -56,7 +59,10 @@ import { ComofuncionaComponent } from './comofunciona/comofunciona.component';
     BrowserModule,
     routing,
     FormsModule,
-    HttpModule
+    HttpModule,
+    CommonModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   providers: [UsuarioService, LoginService, PostService, EstacaoService, CommentService],
   bootstrap: [AppComponent]

@@ -7,6 +7,7 @@ import { Estado } from '../models/estado.model';
 import { Usuario } from '../models/usuario.model';
 import { Cidade } from '../models/cidade.model';
 import { Router, RouterModule } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-cadastro',
@@ -30,7 +31,7 @@ export class CadastroComponent implements OnInit {
   cidades: Cidade[] = [];
   listaCidades: any = [];
 
-  constructor(private service: UsuarioService, private dataService: DataService, private loginService: LoginService, private router: Router){
+  constructor(private service: UsuarioService, private dataService: DataService, private loginService: LoginService, private router: Router, private toastr: ToastrService){
     this.dataService.getData()
       .subscribe(data => {
         for(let i = 0, s = data.estados.length; i < s; i++){
@@ -54,6 +55,7 @@ export class CadastroComponent implements OnInit {
     this.cidade = this.cidades[0].id;
   }
 
+
   addUsuario(event){
     event.preventDefault();
     let nomeEstado = this.estados[this.estado].nome;
@@ -63,8 +65,12 @@ export class CadastroComponent implements OnInit {
             .subscribe(data =>{
               console.log(data);
               this.loginService.local(data);
-              this.router.navigate(['/home']);
-              //colocar pra retornar pra página onde o usuário tava antes
+              let msg = '<div>Que tal editar seu perfil agora?<div><a href="" routerLink="/perfil/'+data._id+'" class="btn btn-success">Ver perfil</a></div></div>';
+              this.toastr.success(msg, 'Olá, '+data.name, {
+                disableTimeOut: true,
+                enableHtml: true
+              });
+              //this.router.navigate(['/home']);
               },
               error => console.log(error)
             );
