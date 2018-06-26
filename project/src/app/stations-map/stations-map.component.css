@@ -10,11 +10,16 @@
    cursor: pointer; 
    fill: #3e4238;
    font-size: 18px;
+   user-select: none;
 }
 
 .cidades a:hover{
     fill: #b55480;
     text-decoration: none;
+}
+
+.cidades a text{
+    user-select: none;
 }
 
 .mapa {

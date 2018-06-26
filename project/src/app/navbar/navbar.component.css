@@ -83,11 +83,19 @@ nav .links a:hover{
     color: #333530;
 }
 
+.dropdown-estacoes .container .row div a:hover{
+    color: #56989B;
+}
+
 .dropdown-estacoes #estacoes-close{
     float: right;
     cursor: pointer;
     font-size: 30px;
     padding: 0 30px;
+}
+
+.dropdown-estacoes #estacoes-close:hover{
+    color: #56989B;
 }
 
 span{
