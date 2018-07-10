@@ -5,7 +5,7 @@
         <img src="../../assets/img/avatar.png" alt="">
       </div>
       <div class="user-image" *ngIf="post.user.avatar">
-        <img [src]="urlImgAvatar() | safe: 'resourceUrl'" alt="">
+        <img [src]="urlImgUserPost() | safe: 'resourceUrl'" alt="">
       </div>
       <div class="post-infos">
         <div class="infos">
@@ -81,12 +81,12 @@
     <div class="comentario-list" *ngFor="let comment of comments">
       <app-comment [comment]=comment></app-comment>
     </div>
-    <div *ngIf="this.loginService.userLogged()">
+    <div *ngIf="loginService.userLogged()">
       <div class="comentario-input">
-          <div class="image" *ngIf="!post.user.avatar">
+          <div class="image" *ngIf="!loginService.user.avatar">
             <img src="../../assets/img/avatar.png" alt="">
           </div>
-          <div class="image" *ngIf="post.user.avatar">
+          <div class="image" *ngIf="loginService.user.avatar">
             <img [src]="urlImgAvatar() | safe: 'resourceUrl'" alt="">
           </div>
           <input [(ngModel)]="text" name="text" type="text" placeholder="Adicione um comentário">

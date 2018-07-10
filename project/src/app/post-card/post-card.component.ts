@@ -69,6 +69,10 @@ export class PostCardComponent implements OnInit {
   }
 
   urlImgAvatar(){
+    return this.URL_IMG+this.loginService.user.avatar;
+  }
+
+  urlImgUserPost(){
     return this.URL_IMG+this.post.user.avatar;
   }
 
